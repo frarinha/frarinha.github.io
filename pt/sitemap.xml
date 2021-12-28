@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://frarinha.github.io/pt/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://frarinha.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://frarinha.github.io/pt/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://frarinha.github.io/pt/categories/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://frarinha.github.io/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://frarinha.github.io/pt/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://frarinha.github.io/pt/posts/2014/09/cr%C3%A9ation-dun-nouveau-th%C3%A8me/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://frarinha.github.io/posts/2014/09/creating-a-new-theme/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://frarinha.github.io/pt/posts/2014/09/cr%C3%A9ation-dun-nouveau-th%C3%A8me/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://frarinha.github.io/pt/categories/hugo/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://frarinha.github.io/categories/hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://frarinha.github.io/pt/categories/hugo/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://frarinha.github.io/pt/posts/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://frarinha.github.io/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://frarinha.github.io/pt/posts/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://frarinha.github.io/pt/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://frarinha.github.io/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://frarinha.github.io/pt/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://frarinha.github.io/pt/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://frarinha.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://frarinha.github.io/pt/tags/"
+                />
+  </url>
+  
+</urlset>
