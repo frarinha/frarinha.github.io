@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>keyboard on [KafkaEsc]</title>
+    <link>https://kafkaesc.com/tags/keyboard/</link>
+    <description>Recent content in keyboard on [KafkaEsc]</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 15 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kafkaesc.com/tags/keyboard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swap CAPSLOCK for ESC</title>
+      <link>https://kafkaesc.com/posts/2022/08/swap-capslock-for-esc/</link>
+      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kafkaesc.com/posts/2022/08/swap-capslock-for-esc/</guid>
+      <description>Windows: To swap capslock for esc on windows you have to change the registries
+Windows Registry Editor Version 5.00 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout] &amp;quot;Scancode Map&amp;quot;=hex:00,00,00,00,00,00,00,00,03,00,00,00,3a,00,01,00,01,00,3a,00,00,00,00,00 Copy this code into a .reg file and execute it. Alternatively, you can manually add it to the registries with regedit.
+Linux: Run the following command:
+setxkbmap -option caps:swapescape  Note: To run it automatically at start, add the command to ~/.xinitrc
+ </description>
+    </item>
+    
+  </channel>
+</rss>

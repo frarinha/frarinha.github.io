@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tutorials on [KafkaEsc]</title>
+    <link>https://kafkaesc.com/categories/tutorials/</link>
+    <description>Recent content in tutorials on [KafkaEsc]</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 15 Aug 2022 19:32:59 +0100</lastBuildDate><atom:link href="https://kafkaesc.com/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Get sharable link of an instagram video posts from private accounts</title>
+      <link>https://kafkaesc.com/posts/2022/08/get-sharable-link-of-an-instagram-video-posts-from-private-accounts/</link>
+      <pubDate>Mon, 15 Aug 2022 19:32:59 +0100</pubDate>
+      
+      <guid>https://kafkaesc.com/posts/2022/08/get-sharable-link-of-an-instagram-video-posts-from-private-accounts/</guid>
+      <description>The source of the video it&amp;rsquo;s on the page. The path of the link points exactly to the source of the file, but the domain is incorrect.
+To get the video in a shareable link, you just need to:
+ Open the browser console (F12) Go to Network Filter by Media Click on the package that contains the content that you want Copy the path that&amp;rsquo;s in the link Concatenate it with https://scontent.</description>
+    </item>
+    
+    <item>
+      <title>Add shortcuts to Windows explorer right click menu</title>
+      <link>https://kafkaesc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</link>
+      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kafkaesc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</guid>
+      <description>To add a shortcut to the mouse right-click menu you have to edit the registries at Computer\HKEY_CLASSES_ROOT\Directory\background
+Alternatively you can create a .reg file and execute it. Example creating a shortcut for Atom:
+Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp] @=&amp;#34;Name of the shortcut to show on menu&amp;#34; #path to app icon &amp;#34;Icon&amp;#34;=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\app.ico\&amp;#34;&amp;#34;  [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp\command] #path to app executable file (%V to &amp;#34;open in current location&amp;#34;) @=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\atom.exe\&amp;#34; %V\&amp;#34;&amp;#34;  Copy code to a .</description>
+    </item>
+    
+    <item>
+      <title>Swap CAPSLOCK for ESC</title>
+      <link>https://kafkaesc.com/posts/2022/08/swap-capslock-for-esc/</link>
+      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kafkaesc.com/posts/2022/08/swap-capslock-for-esc/</guid>
+      <description>Windows: To swap capslock for esc on windows you have to change the registries
+Windows Registry Editor Version 5.00 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout] &amp;quot;Scancode Map&amp;quot;=hex:00,00,00,00,00,00,00,00,03,00,00,00,3a,00,01,00,01,00,3a,00,00,00,00,00 Copy this code into a .reg file and execute it. Alternatively, you can manually add it to the registries with regedit.
+Linux: Run the following command:
+setxkbmap -option caps:swapescape  Note: To run it automatically at start, add the command to ~/.xinitrc
+ </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -120,7 +120,24 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://kafkaesc.com/about/">About</a></li><li><a href="https://kafkaesc.com/categories/">Categories</a></li><li><a href="https://kafkaesc.com/posts/">Posts</a></li>
+    <ul class="menu__inner">
+                <li><a href="https://kafkaesc.com/about/">About</a></li>
+                <li><a href="https://kafkaesc.com/posts/">Posts</a></li>
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="https://kafkaesc.com/categories/" class="dropbtn">Resources</a>
+                        <label class="drop-icon" for="Resources">▾</label>
+                        <div class="dropdown-content">
+                                
+                                    <a title="Write Ups" href="https://kafkaesc.com/categories/writeups/">Write Ups</a>
+                                
+                                    <a title="Tutorials" href="https://kafkaesc.com/categories/tutorials/">Tutorials</a>
+                                
+                                    <a title="Cheatsheets" href="https://kafkaesc.com/categories/cheatsheets/">Cheatsheets</a>
+                                
+                        </div>
+                    </li>
+                </div>
     </ul>
 </nav>
 
@@ -361,8 +378,8 @@ Liquid::Template.register_tag('image', Jekyll::ImageTag)
 
             
             <span class="button next">
-                <a href="https://kafkaesc.com/posts/2014/04/hugo-template-primer/">
-                    <span class="button__text">(Hu)go Template Primer</span>
+                <a href="https://kafkaesc.com/posts/2022/08/get-sharable-link-of-an-instagram-video-posts-from-private-accounts/">
+                    <span class="button__text">Get sharable link of an instagram video posts from private accounts</span>
                     <span class="button__icon">→</span>
                 </a>
             </span>

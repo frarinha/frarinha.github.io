@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://kafkaesc.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Aug 2022 19:32:59 +0100</lastBuildDate><atom:link href="https://kafkaesc.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating a New Theme</title>
       <link>https://kafkaesc.com/posts/2014/09/creating-a-new-theme/</link>
@@ -27,6 +27,50 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>Get sharable link of an instagram video posts from private accounts</title>
+      <link>https://kafkaesc.com/posts/2022/08/get-sharable-link-of-an-instagram-video-posts-from-private-accounts/</link>
+      <pubDate>Mon, 15 Aug 2022 19:32:59 +0100</pubDate>
+      
+      <guid>https://kafkaesc.com/posts/2022/08/get-sharable-link-of-an-instagram-video-posts-from-private-accounts/</guid>
+      <description>The source of the video it&amp;rsquo;s on the page. The path of the link points exactly to the source of the file, but the domain is incorrect.
+To get the video in a shareable link, you just need to:
+ Open the browser console (F12) Go to Network Filter by Media Click on the package that contains the content that you want Copy the path that&amp;rsquo;s in the link Concatenate it with https://scontent.</description>
+    </item>
+    
+    <item>
+      <title>Add shortcuts to Windows explorer right click menu</title>
+      <link>https://kafkaesc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</link>
+      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kafkaesc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</guid>
+      <description>To add a shortcut to the mouse right-click menu you have to edit the registries at Computer\HKEY_CLASSES_ROOT\Directory\background
+Alternatively you can create a .reg file and execute it. Example creating a shortcut for Atom:
+Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp] @=&amp;#34;Name of the shortcut to show on menu&amp;#34; #path to app icon &amp;#34;Icon&amp;#34;=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\app.ico\&amp;#34;&amp;#34;  [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp\command] #path to app executable file (%V to &amp;#34;open in current location&amp;#34;) @=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\atom.exe\&amp;#34; %V\&amp;#34;&amp;#34;  Copy code to a .</description>
+    </item>
+    
+    <item>
+      <title>Google Cheat Sheet</title>
+      <link>https://kafkaesc.com/posts/2022/08/google-cheat-sheet/</link>
+      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kafkaesc.com/posts/2022/08/google-cheat-sheet/</guid>
+      <description>Search filters    Filter Description Example     allintext Searches for occurrences of all the keywords given. allintext:&amp;quot;keyword&amp;quot;   intext Searches for the occurrences of keywords all at once or one at a time. intext:&amp;quot;keyword&amp;quot;   inurl Searches for a URL matching one of the keywords. inurl:&amp;quot;keyword&amp;quot;   allinurl Searches for a URL matching all the keywords in the query. allinurl:&amp;quot;keyword&amp;quot;   intitle Searches for occurrences of keywords in title all or one.</description>
+    </item>
+    
+    <item>
+      <title>Swap CAPSLOCK for ESC</title>
+      <link>https://kafkaesc.com/posts/2022/08/swap-capslock-for-esc/</link>
+      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kafkaesc.com/posts/2022/08/swap-capslock-for-esc/</guid>
+      <description>Windows: To swap capslock for esc on windows you have to change the registries
+Windows Registry Editor Version 5.00 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout] &amp;quot;Scancode Map&amp;quot;=hex:00,00,00,00,00,00,00,00,03,00,00,00,3a,00,01,00,01,00,3a,00,00,00,00,00 Copy this code into a .reg file and execute it. Alternatively, you can manually add it to the registries with regedit.
+Linux: Run the following command:
+setxkbmap -option caps:swapescape  Note: To run it automatically at start, add the command to ~/.xinitrc
+ </description>
     </item>
     
     <item>
@@ -50,22 +94,6 @@ This document is a brief primer on using Go templates.</description>
     </item>
     
     <item>
-      <title>Débuter avec Hugo</title>
-      <link>https://kafkaesc.com/posts/2014/04/d%C3%A9buter-avec-hugo/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2014/04/d%C3%A9buter-avec-hugo/</guid>
-      <description>&lt;h2 id=&#34;étape-1-installer-hugo&#34;&gt;Étape 1. Installer Hugo&lt;/h2&gt;
-&lt;p&gt;Allez sur la page de téléchargements de
-&lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;hugo&lt;/a&gt; et téléchargez la version
-appropriée à votre système d&amp;rsquo;exploitation et votre architecture.&lt;/p&gt;
-&lt;p&gt;Sauvegardez le fichier téléchargé à un endroit précis, afin de l&amp;rsquo;utiliser dans
-l&amp;rsquo;étape suivante.&lt;/p&gt;
-&lt;p&gt;Des informations plus complètes sont disponibles sur la page
-&lt;a href=&#34;https://kafkaesc.com/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Getting Started with Hugo</title>
       <link>https://kafkaesc.com/posts/2014/04/getting-started-with-hugo/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
@@ -77,42 +105,6 @@ More complete instructions are available at Install Hugo
 Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
 Follow the following steps:
  Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
-    </item>
-    
-    <item>
-      <title>Introduction aux modèles (Hu)go</title>
-      <link>https://kafkaesc.com/posts/2014/04/introduction-aux-mod%C3%A8les-hugo/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2014/04/introduction-aux-mod%C3%A8les-hugo/</guid>
-      <description>Hugo utilise l&amp;rsquo;excellente librairie go html/template pour son moteur de modèles. c&amp;rsquo;est un moteur extrêmement léger qui offre un très petit nombre de fonctions logiques. À notre expérience, c&amp;rsquo;est juste ce qu&amp;rsquo;il faut pour créer un bon site web statique. Si vous avez déjà utilisé d&amp;rsquo;autre moteurs de modèles pour différents langages ou frameworks, vous allez retrouver beaucoup de similitudes avec les modèles go.
-Ce document est une introduction sur l&amp;rsquo;utilisation de Go templates.</description>
-    </item>
-    
-    <item>
-      <title>Migrer vers Hugo depuis Jekyll</title>
-      <link>https://kafkaesc.com/posts/2014/03/migrer-vers-hugo-depuis-jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2014/03/migrer-vers-hugo-depuis-jekyll/</guid>
-      <description>&lt;h2 id=&#34;déplacez-le-contenu-statique-vers-static&#34;&gt;Déplacez le contenu statique vers &lt;code&gt;static&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;Jekyll a une règle comme quoi tout répertoire qui ne commence pas par &lt;code&gt;_&lt;/code&gt; sera
-copié tel-quel dans le répertoire &lt;code&gt;_site&lt;/code&gt;. Hugo garde tout le contenu statique
-dans le répertoire &lt;code&gt;static&lt;/code&gt;. Vous devez donc déplacer tout ce type de contenu
-là-dedans. Avec Jekylll, l&amp;rsquo;arborescence ressemblant à ceci :&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;▾ &amp;lt;root&amp;gt;/
-    ▾ images/
-        logo.png
-&lt;/code&gt;&lt;/pre&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kafkaesc.com/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/contact/</guid>
-      <description></description>
     </item>
     
     <item>
