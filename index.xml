@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>[KafkaEsc]</title>
-    <link>https://frarinha.github.io/</link>
+    <link>https://kafkaesc.com/</link>
     <description>Recent content on [KafkaEsc]</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://frarinha.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://kafkaesc.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating a New Theme</title>
-      <link>https://frarinha.github.io/posts/2014/09/creating-a-new-theme/</link>
+      <link>https://kafkaesc.com/posts/2014/09/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://frarinha.github.io/posts/2014/09/creating-a-new-theme/</guid>
+      <guid>https://kafkaesc.com/posts/2014/09/creating-a-new-theme/</guid>
       <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
 We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
     <item>
       <title>Migrate to Hugo from Jekyll</title>
-      <link>https://frarinha.github.io/posts/2014/03/migrate-to-hugo-from-jekyll/</link>
+      <link>https://kafkaesc.com/posts/2014/03/migrate-to-hugo-from-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://frarinha.github.io/posts/2014/03/migrate-to-hugo-from-jekyll/</guid>
+      <guid>https://kafkaesc.com/posts/2014/03/migrate-to-hugo-from-jekyll/</guid>
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
@@ -31,30 +31,30 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
     
     <item>
       <title>About</title>
-      <link>https://frarinha.github.io/about/</link>
+      <link>https://kafkaesc.com/about/</link>
       <pubDate>Sun, 14 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frarinha.github.io/about/</guid>
+      <guid>https://kafkaesc.com/about/</guid>
       <description>Currently working as a freelance videographer. Stories are how we learn, communicate and remember. I have always been fascinated by the power of moving pictures, and I&amp;rsquo;m grateful for being able to make a living by sharing my creations. Although making films is one of my biggest passions, I think it would suit better as a hobby. At the moment, I&amp;rsquo;m seeking to transition to the InfoSec field.
 I&amp;rsquo;m looking for a Penetration Testing position.</description>
     </item>
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>https://frarinha.github.io/posts/2014/04/hugo-template-primer/</link>
+      <link>https://kafkaesc.com/posts/2014/04/hugo-template-primer/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://frarinha.github.io/posts/2014/04/hugo-template-primer/</guid>
+      <guid>https://kafkaesc.com/posts/2014/04/hugo-template-primer/</guid>
       <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
 This document is a brief primer on using Go templates.</description>
     </item>
     
     <item>
       <title>Débuter avec Hugo</title>
-      <link>https://frarinha.github.io/posts/2014/04/d%C3%A9buter-avec-hugo/</link>
+      <link>https://kafkaesc.com/posts/2014/04/d%C3%A9buter-avec-hugo/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://frarinha.github.io/posts/2014/04/d%C3%A9buter-avec-hugo/</guid>
+      <guid>https://kafkaesc.com/posts/2014/04/d%C3%A9buter-avec-hugo/</guid>
       <description>&lt;h2 id=&#34;étape-1-installer-hugo&#34;&gt;Étape 1. Installer Hugo&lt;/h2&gt;
 &lt;p&gt;Allez sur la page de téléchargements de
 &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;hugo&lt;/a&gt; et téléchargez la version
@@ -62,15 +62,15 @@ appropriée à votre système d&amp;rsquo;exploitation et votre architecture.&lt
 &lt;p&gt;Sauvegardez le fichier téléchargé à un endroit précis, afin de l&amp;rsquo;utiliser dans
 l&amp;rsquo;étape suivante.&lt;/p&gt;
 &lt;p&gt;Des informations plus complètes sont disponibles sur la page
-&lt;a href=&#34;https://frarinha.github.io/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;</description>
+&lt;a href=&#34;https://kafkaesc.com/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>https://frarinha.github.io/posts/2014/04/getting-started-with-hugo/</link>
+      <link>https://kafkaesc.com/posts/2014/04/getting-started-with-hugo/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://frarinha.github.io/posts/2014/04/getting-started-with-hugo/</guid>
+      <guid>https://kafkaesc.com/posts/2014/04/getting-started-with-hugo/</guid>
       <description>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.
 Save it somewhere specific as we will be using it in the next step.
 More complete instructions are available at Install Hugo
@@ -81,20 +81,20 @@ Follow the following steps:
     
     <item>
       <title>Introduction aux modèles (Hu)go</title>
-      <link>https://frarinha.github.io/posts/2014/04/introduction-aux-mod%C3%A8les-hugo/</link>
+      <link>https://kafkaesc.com/posts/2014/04/introduction-aux-mod%C3%A8les-hugo/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://frarinha.github.io/posts/2014/04/introduction-aux-mod%C3%A8les-hugo/</guid>
+      <guid>https://kafkaesc.com/posts/2014/04/introduction-aux-mod%C3%A8les-hugo/</guid>
       <description>Hugo utilise l&amp;rsquo;excellente librairie go html/template pour son moteur de modèles. c&amp;rsquo;est un moteur extrêmement léger qui offre un très petit nombre de fonctions logiques. À notre expérience, c&amp;rsquo;est juste ce qu&amp;rsquo;il faut pour créer un bon site web statique. Si vous avez déjà utilisé d&amp;rsquo;autre moteurs de modèles pour différents langages ou frameworks, vous allez retrouver beaucoup de similitudes avec les modèles go.
 Ce document est une introduction sur l&amp;rsquo;utilisation de Go templates.</description>
     </item>
     
     <item>
       <title>Migrer vers Hugo depuis Jekyll</title>
-      <link>https://frarinha.github.io/posts/2014/03/migrer-vers-hugo-depuis-jekyll/</link>
+      <link>https://kafkaesc.com/posts/2014/03/migrer-vers-hugo-depuis-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://frarinha.github.io/posts/2014/03/migrer-vers-hugo-depuis-jekyll/</guid>
+      <guid>https://kafkaesc.com/posts/2014/03/migrer-vers-hugo-depuis-jekyll/</guid>
       <description>&lt;h2 id=&#34;déplacez-le-contenu-statique-vers-static&#34;&gt;Déplacez le contenu statique vers &lt;code&gt;static&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;Jekyll a une règle comme quoi tout répertoire qui ne commence pas par &lt;code&gt;_&lt;/code&gt; sera
 copié tel-quel dans le répertoire &lt;code&gt;_site&lt;/code&gt;. Hugo garde tout le contenu statique
@@ -108,19 +108,19 @@ là-dedans. Avec Jekylll, l&amp;rsquo;arborescence ressemblant à ceci :&lt;/p&g
     
     <item>
       <title></title>
-      <link>https://frarinha.github.io/contact/</link>
+      <link>https://kafkaesc.com/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://frarinha.github.io/contact/</guid>
+      <guid>https://kafkaesc.com/contact/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://frarinha.github.io/pgp/</link>
+      <link>https://kafkaesc.com/pgp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://frarinha.github.io/pgp/</guid>
+      <guid>https://kafkaesc.com/pgp/</guid>
       <description>-----BEGIN PGP PUBLIC KEY BLOCK----- mQENBGC438gBCADRvLldHgKLHgQhSZzLDl6VhC8UUVVMOcNaMP91Fu0djGeRWyyc PWdy8Vlds+8BHU/i6RT0YIsuWGXvxsHxZ1UOFNE8uqyGgpzSeSuDYVvUNR/xxD1Q izqu4r4QS9iOfa4i70aPdBBdLKWMdzUo0wxwfrn6aViT5QM5mWtYdBq4rRCZPeO+ /li/Z2yFCTUqQTfV0RnpUGAfZGOJDEulOfEk2YT0p+1Igo0f9L4dvyyn+paStWbK U6NWdURvzDNavobeF6WTG3cA6R8MwnRR9PnUtnn7d+DC11i3N9s77YKexcM7azGt BosrDbPC4NtE+25jY/YDIYWL0k+tJiSYSY6rABEBAAG0JkZyYW5jaXNjbyBGYXJp bmhhIDxmcmFyaW5oYUBnbWFpbC5jb20+iQFUBBMBCAA+FiEEw3BsVSH7R+QPOLcX B9dfi/AV8ywFAmC438gCGwMFCQPCPWgFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AA CgkQB9dfi/AV8yzOmwgAnAUwOxE/sG8c41uletorp4ErIOX48ZbG10nVxv39dtTb 4JwaqKDq86GExatgXYQcjYyiNIjOd8RGAiK/9SZgtfSgXaEYnGrvFwsFi8Ncasua eo36Jkfc4hcxhPqFm2UAFA8kyYuTZznLHfMYjUCf9EEEcnRIybZy6tPTIgragja5 rmiJkNe2atGYsXempozj9vKCF2Q1dRtlYHHrU5YF2jzhfXv2IUJvOhECmS3d3oSc SQBvVI5XXeDcX7CQBrDGzlws8ebbv1W2jIj0eaYSeJJs3LhSyb8ouB3IHUvYTA26 nn4ofnjo9mKbqTAmJtQCE9qpv5IeuBT6KuxAUOH+6LkBDQRguN/IAQgA4hZ5F6Cc eWnWh/zaQ3UKnmE3KdRmmcozskuYrm9IZu/bOIs58sEMxcJFX2BqgVil2XRL4Zjs mFAInxKYL2ovTPv9fi9OEcAHewObyCtkppcCe+kiLqRZ1HmzcvJLMUFWvhu8Ipoo L64ItQb8z7F1hvkJa/X1PaOnvzatEcJH1jB46bGdjhMzr9FWtdw9fn/6tKgwGTTQ q4kQ/EMHH0gfkS9rf6AL9hd4Q9Pxf+v9/UudR3khO/pvq5t9fOSTS7gS4bR1tCww 7DaID9rKGKZ+/++R8Ml7F7EtqIehMedFR40PDfnK+Zu4IsEaKL4T4YfbQM9nV5N/ cP1pxI07UCBx7wARAQABiQE8BBgBCAAmFiEEw3BsVSH7R+QPOLcXB9dfi/AV8ywF AmC438gCGwwFCQPCPWgACgkQB9dfi/AV8yyM9wf8CdgZfgwbDHs8+AFZ7cg3n95V vs+1TkVuCFMUnKA3jhF1TvYcfFNUZA6+/D2hzowMopoPbVanv5mAgAZuQg2an4ij Uw/uwt4vaK1ERaYJQwh76GTEf8MYe+KIlzvcTYqjoT9r2/O/qA/thTerlTENrQV0 LPsRF09kyPPr+z3Sj9zWIPBFYg7/AyPQSOvu5b9SGAPYNqEVYLbzAv75mw2Px13n GGG/mds13F31WEZBi1poe+aogmoS2vtdV0Lxko8GiCbfJer3tdqYa+N0+gJCgWOb nc9eSVWx6CBQW00TGLOMhzyludigGZeEQHYLRfqA/yGuuZLkzMWLRxs6to2Bww== =9mML -----END PGP PUBLIC KEY BLOCK----- </description>
     </item>
     

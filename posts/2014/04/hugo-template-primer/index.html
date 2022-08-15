@@ -10,7 +10,7 @@ This document is a brief primer on using Go templates." />
 <meta name="keywords" content=", go, golang, templates, themes, development" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="https://frarinha.github.io/posts/2014/04/hugo-template-primer/" />
+<link rel="canonical" href="https://kafkaesc.com/posts/2014/04/hugo-template-primer/" />
 
 
     <title>
@@ -26,16 +26,16 @@ This document is a brief primer on using Go templates." />
 
 
 
-<link rel="stylesheet" href="https://frarinha.github.io/main.da0c436c974ef05003e32ba5281396971458a4d1f7b76fec22fbb0e7d50359af.css">
+<link rel="stylesheet" href="https://kafkaesc.com/main.da0c436c974ef05003e32ba5281396971458a4d1f7b76fec22fbb0e7d50359af.css">
 
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://frarinha.github.io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://frarinha.github.io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://frarinha.github.io/favicon-16x16.png">
-    <link rel="manifest" href="https://frarinha.github.io/site.webmanifest">
-    <link rel="mask-icon" href="https://frarinha.github.io/safari-pinned-tab.svg" color="">
-    <link rel="shortcut icon" href="https://frarinha.github.io/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://kafkaesc.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://kafkaesc.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://kafkaesc.com/favicon-16x16.png">
+    <link rel="manifest" href="https://kafkaesc.com/site.webmanifest">
+    <link rel="mask-icon" href="https://kafkaesc.com/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://kafkaesc.com/favicon.ico">
     <meta name="msapplication-TileColor" content="">
     <meta name="theme-color" content="">
 
@@ -47,14 +47,14 @@ This document is a brief primer on using Go templates.">
 <meta itemprop="datePublished" content="2014-04-02T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2014-04-02T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1487">
-<meta itemprop="image" content="https://frarinha.github.io"/>
+<meta itemprop="image" content="https://kafkaesc.com"/>
 
 
 
 <meta itemprop="keywords" content="go,golang,templates,themes,development," />
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://frarinha.github.io"/>
+<meta name="twitter:image" content="https://kafkaesc.com"/>
 
 <meta name="twitter:title" content="(Hu)go Template Primer"/>
 <meta name="twitter:description" content="Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
@@ -67,10 +67,10 @@ This document is a brief primer on using Go templates."/>
 <meta property="og:description" content="Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
 This document is a brief primer on using Go templates." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://frarinha.github.io/posts/2014/04/hugo-template-primer/" />
-<meta property="og:image" content="https://frarinha.github.io"/>
+<meta property="og:url" content="https://kafkaesc.com/posts/2014/04/hugo-template-primer/" />
+<meta property="og:image" content="https://kafkaesc.com"/>
 <meta property="article:published_time" content="2014-04-02T00:00:00+00:00" />
-<meta property="article:modified_time" content="2014-04-02T00:00:00+00:00" /><meta property="og:see_also" content="https://frarinha.github.io/posts/2014/09/creating-a-new-theme/" /><meta property="og:see_also" content="https://frarinha.github.io/posts/2014/03/migrate-to-hugo-from-jekyll/" /><meta property="og:see_also" content="https://frarinha.github.io/posts/2014/04/getting-started-with-hugo/" />
+<meta property="article:modified_time" content="2014-04-02T00:00:00+00:00" /><meta property="og:see_also" content="https://kafkaesc.com/posts/2014/09/creating-a-new-theme/" /><meta property="og:see_also" content="https://kafkaesc.com/posts/2014/03/migrate-to-hugo-from-jekyll/" /><meta property="og:see_also" content="https://kafkaesc.com/posts/2014/04/getting-started-with-hugo/" />
 
 
 
@@ -102,7 +102,7 @@ This document is a brief primer on using Go templates." />
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="https://frarinha.github.io/" style="text-decoration: none;">
+        <a href="https://kafkaesc.com/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark"> </span>
@@ -120,7 +120,7 @@ This document is a brief primer on using Go templates." />
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://frarinha.github.io/about/">About</a></li><li><a href="https://frarinha.github.io/categories/">Categories</a></li><li><a href="https://frarinha.github.io/posts/">Posts</a></li>
+    <ul class="menu__inner"><li><a href="https://kafkaesc.com/about/">About</a></li><li><a href="https://kafkaesc.com/categories/">Categories</a></li><li><a href="https://kafkaesc.com/posts/">Posts</a></li>
     </ul>
 </nav>
 
@@ -159,7 +159,7 @@ This document is a brief primer on using Go templates." />
 
     <article>
       <h1 class="post-title">
-        <a href="https://frarinha.github.io/posts/2014/04/hugo-template-primer/">(Hu)go Template Primer</a>
+        <a href="https://kafkaesc.com/posts/2014/04/hugo-template-primer/">(Hu)go Template Primer</a>
       </h1>
 
       
@@ -206,7 +206,7 @@ functions.</p>
 <p>Each Go template has a struct (object) made available to it. In hugo each
 template is passed either a page or a node struct depending on which type of
 page you are rendering. More details are available on the
-<a href="https://frarinha.github.io/layout/variables">variables</a> page.</p>
+<a href="https://kafkaesc.com/layout/variables">variables</a> page.</p>
 <p>A variable is accessed by referencing the variable name.</p>
 <pre><code>&lt;title&gt;{{ .Title }}&lt;/title&gt;
 </code></pre>
@@ -217,7 +217,7 @@ page you are rendering. More details are available on the
 <h2 id="functions">Functions</h2>
 <p>Go template ship with a few functions which provide basic functionality. The Go
 template system also provides a mechanism for applications to extend the
-available functions with their own. <a href="https://frarinha.github.io/layout/functions">Hugo template
+available functions with their own. <a href="https://kafkaesc.com/layout/functions">Hugo template
 functions</a> provide some additional functionality we believe
 are useful for building websites. Functions are called by using their name
 followed by the required parameters separated by spaces. Template
@@ -348,7 +348,7 @@ type (supported by your front matter/config format) and use them however
 you want to inside of your templates.</p>
 <h2 id="using-content-page-parameters">Using Content (page) Parameters</h2>
 <p>In each piece of content you can provide variables to be used by the
-templates. This happens in the <a href="https://frarinha.github.io/content/front-matter">front matter</a>.</p>
+templates. This happens in the <a href="https://kafkaesc.com/content/front-matter">front matter</a>.</p>
 <p>An example of this is used in this documentation site. Most of the pages
 benefit from having the table of contents provided. Sometimes the TOC just
 doesn&rsquo;t make a lot of sense. We&rsquo;ve defined a variable in our front matter
@@ -413,11 +413,11 @@ so, such as in this example:</p>
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
-        <span class="tag"><a href="https://frarinha.github.io/tags/go/">go</a></span>
-        <span class="tag"><a href="https://frarinha.github.io/tags/golang/">golang</a></span>
-        <span class="tag"><a href="https://frarinha.github.io/tags/templates/">templates</a></span>
-        <span class="tag"><a href="https://frarinha.github.io/tags/themes/">themes</a></span>
-        <span class="tag"><a href="https://frarinha.github.io/tags/development/">development</a></span>
+        <span class="tag"><a href="https://kafkaesc.com/tags/go/">go</a></span>
+        <span class="tag"><a href="https://kafkaesc.com/tags/golang/">golang</a></span>
+        <span class="tag"><a href="https://kafkaesc.com/tags/templates/">templates</a></span>
+        <span class="tag"><a href="https://kafkaesc.com/tags/themes/">themes</a></span>
+        <span class="tag"><a href="https://kafkaesc.com/tags/development/">development</a></span>
         
     </p>
 
@@ -425,8 +425,8 @@ so, such as in this example:</p>
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
 
-        <span class="tag"><a href="https://frarinha.github.io/categories/development/">Development</a></span>
-        <span class="tag"><a href="https://frarinha.github.io/categories/golang/">golang</a></span>
+        <span class="tag"><a href="https://kafkaesc.com/categories/development/">Development</a></span>
+        <span class="tag"><a href="https://kafkaesc.com/categories/golang/">golang</a></span>
         
     </p>
 
@@ -471,7 +471,7 @@ so, such as in this example:</p>
         <div class="pagination__buttons">
             
             <span class="button previous">
-                <a href="https://frarinha.github.io/posts/2014/03/migrate-to-hugo-from-jekyll/">
+                <a href="https://kafkaesc.com/posts/2014/03/migrate-to-hugo-from-jekyll/">
                     <span class="button__icon">←</span>
                     <span class="button__text">Migrate to Hugo from Jekyll</span>
                 </a>
@@ -480,7 +480,7 @@ so, such as in this example:</p>
 
             
             <span class="button next">
-                <a href="https://frarinha.github.io/posts/2014/04/d%C3%A9buter-avec-hugo/">
+                <a href="https://kafkaesc.com/posts/2014/04/d%C3%A9buter-avec-hugo/">
                     <span class="button__text">Débuter avec Hugo</span>
                     <span class="button__icon">→</span>
                 </a>
@@ -518,7 +518,7 @@ so, such as in this example:</p>
 
 
 
-<script type="text/javascript" src="https://frarinha.github.io/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="https://kafkaesc.com/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
 
 
 
