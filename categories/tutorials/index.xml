@@ -27,7 +27,8 @@ To get the video in a shareable link, you just need to:
       <guid>https://kafkaesc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</guid>
       <description>To add a shortcut to the mouse right-click menu you have to edit the registries at Computer\HKEY_CLASSES_ROOT\Directory\background
 Alternatively you can create a .reg file and execute it. Example creating a shortcut for Atom:
-Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp] @=&amp;#34;Name of the shortcut to show on menu&amp;#34; #path to app icon &amp;#34;Icon&amp;#34;=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\app.ico\&amp;#34;&amp;#34;  [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp\command] #path to app executable file (%V to &amp;#34;open in current location&amp;#34;) @=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\atom.exe\&amp;#34; %V\&amp;#34;&amp;#34;  Copy code to a .</description>
+Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp] @=&amp;#34;Open Atom here&amp;#34; #path to app icon &amp;#34;Icon&amp;#34;=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\app.ico\&amp;#34;&amp;#34;  [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp\command] #path to app executable file (%V to &amp;#34;open in current location&amp;#34;) @=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\atom.exe\&amp;#34; %V\&amp;#34;&amp;#34; (Don&amp;rsquo;t forget to change the variable names)
+ Copy code to a .</description>
     </item>
     
     <item>

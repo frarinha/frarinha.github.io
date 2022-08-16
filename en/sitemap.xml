@@ -3,26 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://kafkaesc.com/posts/2014/09/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://kafkaesc.com/pt/posts/2014/09/cr%C3%A9ation-dun-nouveau-th%C3%A8me/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://kafkaesc.com/posts/2014/09/creating-a-new-theme/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/posts/2014/03/migrate-to-hugo-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://kafkaesc.com/</loc>
     <lastmod>2022-08-15T19:32:59+01:00</lastmod>
     <xhtml:link
@@ -65,16 +45,6 @@
   <url>
     <loc>https://kafkaesc.com/posts/</loc>
     <lastmod>2022-08-15T19:32:59+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://kafkaesc.com/pt/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://kafkaesc.com/posts/"
-                />
   </url>
   
   <url>
@@ -108,12 +78,12 @@
   </url>
   
   <url>
-    <loc>https://kafkaesc.com/posts/2022/08/google-cheat-sheet/</loc>
+    <loc>https://kafkaesc.com/tags/google-dorking/</loc>
     <lastmod>2022-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kafkaesc.com/tags/google-dorking/</loc>
+    <loc>https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/</loc>
     <lastmod>2022-08-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -148,13 +118,12 @@
   </url>
   
   <url>
-    <loc>https://kafkaesc.com/series/hugo-101/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <loc>https://kafkaesc.com/pgp/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kafkaesc.com/series/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -165,71 +134,6 @@
                 hreflang="en"
                 href="https://kafkaesc.com/series/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/posts/2014/04/hugo-template-primer/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://kafkaesc.com/pt/posts/2014/04/introduction-aux-mod%C3%A8les-hugo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://kafkaesc.com/posts/2014/04/hugo-template-primer/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/categories/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/posts/2014/04/getting-started-with-hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/categories/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/templates/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/themes/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/pgp/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>

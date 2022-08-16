@@ -9,27 +9,6 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 15 Aug 2022 19:32:59 +0100</lastBuildDate><atom:link href="https://kafkaesc.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Creating a New Theme</title>
-      <link>https://kafkaesc.com/posts/2014/09/creating-a-new-theme/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2014/09/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
-    </item>
-    
-    <item>
-      <title>Migrate to Hugo from Jekyll</title>
-      <link>https://kafkaesc.com/posts/2014/03/migrate-to-hugo-from-jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2014/03/migrate-to-hugo-from-jekyll/</guid>
-      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
-▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
-    </item>
-    
-    <item>
       <title>Get sharable link of an instagram video posts from private accounts</title>
       <link>https://kafkaesc.com/posts/2022/08/get-sharable-link-of-an-instagram-video-posts-from-private-accounts/</link>
       <pubDate>Mon, 15 Aug 2022 19:32:59 +0100</pubDate>
@@ -48,15 +27,16 @@ To get the video in a shareable link, you just need to:
       <guid>https://kafkaesc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</guid>
       <description>To add a shortcut to the mouse right-click menu you have to edit the registries at Computer\HKEY_CLASSES_ROOT\Directory\background
 Alternatively you can create a .reg file and execute it. Example creating a shortcut for Atom:
-Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp] @=&amp;#34;Name of the shortcut to show on menu&amp;#34; #path to app icon &amp;#34;Icon&amp;#34;=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\app.ico\&amp;#34;&amp;#34;  [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp\command] #path to app executable file (%V to &amp;#34;open in current location&amp;#34;) @=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\atom.exe\&amp;#34; %V\&amp;#34;&amp;#34;  Copy code to a .</description>
+Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp] @=&amp;#34;Open Atom here&amp;#34; #path to app icon &amp;#34;Icon&amp;#34;=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\app.ico\&amp;#34;&amp;#34;  [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp\command] #path to app executable file (%V to &amp;#34;open in current location&amp;#34;) @=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\atom.exe\&amp;#34; %V\&amp;#34;&amp;#34; (Don&amp;rsquo;t forget to change the variable names)
+ Copy code to a .</description>
     </item>
     
     <item>
-      <title>Google Cheat Sheet</title>
-      <link>https://kafkaesc.com/posts/2022/08/google-cheat-sheet/</link>
+      <title>Google Dorking Cheat Sheet</title>
+      <link>https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/</link>
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://kafkaesc.com/posts/2022/08/google-cheat-sheet/</guid>
+      <guid>https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/</guid>
       <description>Search filters    Filter Description Example     allintext Searches for occurrences of all the keywords given. allintext:&amp;quot;keyword&amp;quot;   intext Searches for the occurrences of keywords all at once or one at a time. intext:&amp;quot;keyword&amp;quot;   inurl Searches for a URL matching one of the keywords. inurl:&amp;quot;keyword&amp;quot;   allinurl Searches for a URL matching all the keywords in the query. allinurl:&amp;quot;keyword&amp;quot;   intitle Searches for occurrences of keywords in title all or one.</description>
     </item>
     
@@ -81,30 +61,6 @@ setxkbmap -option caps:swapescape  Note: To run it automatically at start, add t
       <guid>https://kafkaesc.com/about/</guid>
       <description>Currently working as a freelance videographer. Stories are how we learn, communicate and remember. I have always been fascinated by the power of moving pictures, and I&amp;rsquo;m grateful for being able to make a living by sharing my creations. Although making films is one of my biggest passions, I think it would suit better as a hobby. At the moment, I&amp;rsquo;m seeking to transition to the InfoSec field.
 I&amp;rsquo;m looking for a Penetration Testing position.</description>
-    </item>
-    
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>https://kafkaesc.com/posts/2014/04/hugo-template-primer/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2014/04/hugo-template-primer/</guid>
-      <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
-This document is a brief primer on using Go templates.</description>
-    </item>
-    
-    <item>
-      <title>Getting Started with Hugo</title>
-      <link>https://kafkaesc.com/posts/2014/04/getting-started-with-hugo/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2014/04/getting-started-with-hugo/</guid>
-      <description>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at Install Hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
     </item>
     
     <item>

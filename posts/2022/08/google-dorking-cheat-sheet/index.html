@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="kafka ">
+<meta name="description" content="Search filters    Filter Description Example     allintext Searches for occurrences of all the keywords given. allintext:&amp;quot;keyword&amp;quot;   intext Searches for the occurrences of keywords all at once or one at a time. intext:&amp;quot;keyword&amp;quot;   inurl Searches for a URL matching one of the keywords. inurl:&amp;quot;keyword&amp;quot;   allinurl Searches for a URL matching all the keywords in the query. allinurl:&amp;quot;keyword&amp;quot;   intitle Searches for occurrences of keywords in title all or one." />
+<meta name="keywords" content=", google dorking, research" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/" />
+
+
+    <title>
+        
+            Google Dorking Cheat Sheet :: [KafkaEsc] 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://kafkaesc.com/main.bc572f86409bdb93797dcfcce944ae54be23cb6dca8696ed32b935e0e1d748d8.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://kafkaesc.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://kafkaesc.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://kafkaesc.com/favicon-16x16.png">
+    <link rel="manifest" href="https://kafkaesc.com/site.webmanifest">
+    <link rel="mask-icon" href="https://kafkaesc.com/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://kafkaesc.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+    <meta name="theme-color" content="">
+
+
+
+<meta itemprop="name" content="Google Dorking Cheat Sheet">
+<meta itemprop="description" content="Search filters    Filter Description Example     allintext Searches for occurrences of all the keywords given. allintext:&quot;keyword&quot;   intext Searches for the occurrences of keywords all at once or one at a time. intext:&quot;keyword&quot;   inurl Searches for a URL matching one of the keywords. inurl:&quot;keyword&quot;   allinurl Searches for a URL matching all the keywords in the query. allinurl:&quot;keyword&quot;   intitle Searches for occurrences of keywords in title all or one.">
+<meta itemprop="datePublished" content="2022-08-15T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-08-15T00:00:00+00:00" />
+<meta itemprop="wordCount" content="537">
+<meta itemprop="image" content="https://kafkaesc.com"/>
+
+
+
+<meta itemprop="keywords" content="google dorking,research," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://kafkaesc.com"/>
+
+<meta name="twitter:title" content="Google Dorking Cheat Sheet"/>
+<meta name="twitter:description" content="Search filters    Filter Description Example     allintext Searches for occurrences of all the keywords given. allintext:&quot;keyword&quot;   intext Searches for the occurrences of keywords all at once or one at a time. intext:&quot;keyword&quot;   inurl Searches for a URL matching one of the keywords. inurl:&quot;keyword&quot;   allinurl Searches for a URL matching all the keywords in the query. allinurl:&quot;keyword&quot;   intitle Searches for occurrences of keywords in title all or one."/>
+
+
+
+
+    <meta property="og:title" content="Google Dorking Cheat Sheet" />
+<meta property="og:description" content="Search filters    Filter Description Example     allintext Searches for occurrences of all the keywords given. allintext:&quot;keyword&quot;   intext Searches for the occurrences of keywords all at once or one at a time. intext:&quot;keyword&quot;   inurl Searches for a URL matching one of the keywords. inurl:&quot;keyword&quot;   allinurl Searches for a URL matching all the keywords in the query. allinurl:&quot;keyword&quot;   intitle Searches for occurrences of keywords in title all or one." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/" />
+<meta property="og:image" content="https://kafkaesc.com"/>
+<meta property="article:published_time" content="2022-08-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-08-15T00:00:00+00:00" />
+
+
+
+
+    <meta property="article:section" content="cheatsheets" />
+
+
+
+    <meta property="article:published_time" content="2022-08-15 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://kafkaesc.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark"> </span>
+            <span class="logo__text">/home/KafkaEsc</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   background-color:#67a2c9;
+                   animation-duration:3s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+                <li><a href="https://kafkaesc.com/about/">About</a></li>
+                <li><a href="https://kafkaesc.com/posts/">Posts</a></li>
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="https://kafkaesc.com/categories/" class="dropbtn">Resources</a>
+                        <label class="drop-icon" for="Resources">▾</label>
+                        <div class="dropdown-content">
+                                
+                                    <a title="Write Ups" href="https://kafkaesc.com/categories/writeups/">Write Ups</a>
+                                
+                                    <a title="Tutorials" href="https://kafkaesc.com/categories/tutorials/">Tutorials</a>
+                                
+                                    <a title="Cheatsheets" href="https://kafkaesc.com/categories/cheatsheets/">Cheatsheets</a>
+                                
+                        </div>
+                    </li>
+                </div>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        3 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/">Google Dorking Cheat Sheet</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <h2 id="search-filters">Search filters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Filter</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">allintext</td>
+<td style="text-align:left">Searches for occurrences of all the keywords given.</td>
+<td style="text-align:left"><code>allintext:&quot;keyword&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">intext</td>
+<td style="text-align:left">Searches for the occurrences of keywords all at once or one at a time.</td>
+<td style="text-align:left"><code>intext:&quot;keyword&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">inurl</td>
+<td style="text-align:left">Searches for a URL matching one of the keywords.</td>
+<td style="text-align:left"><code>inurl:&quot;keyword&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">allinurl</td>
+<td style="text-align:left">Searches for a URL matching all the keywords in the query.</td>
+<td style="text-align:left"><code>allinurl:&quot;keyword&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">intitle</td>
+<td style="text-align:left">Searches for occurrences of keywords in title all or one.</td>
+<td style="text-align:left"><code>intitle:&quot;keyword&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">allintitle</td>
+<td style="text-align:left">Searches for occurrences of keywords all at a time.</td>
+<td style="text-align:left"><code>allintitle:&quot;keyword&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">site</td>
+<td style="text-align:left">Specifically searches that particular site and lists all the results for that site.</td>
+<td style="text-align:left"><code>site:&quot;www.google.com&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">filetype</td>
+<td style="text-align:left">Searches for a particular filetype mentioned in the query.</td>
+<td style="text-align:left"><code>filetype:&quot;pdf&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">link</td>
+<td style="text-align:left">Searches for external links to pages.</td>
+<td style="text-align:left"><code>link:&quot;keyword&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">numrange</td>
+<td style="text-align:left">Used to locate specific numbers in your searches.</td>
+<td style="text-align:left"><code>numrange:321-325</code></td>
+</tr>
+<tr>
+<td style="text-align:left">before/after</td>
+<td style="text-align:left">Used to search within a particular date range.</td>
+<td style="text-align:left"><code>filetype:pdf &amp; (before:2000-01-01 after:2001-01-01)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">allinanchor (and also inanchor)</td>
+<td style="text-align:left">This shows sites which have the keyterms in links pointing to them, in order of the most links.</td>
+<td style="text-align:left"><code>inanchor:rat</code></td>
+</tr>
+<tr>
+<td style="text-align:left">allinpostauthor (and also inpostauthor)</td>
+<td style="text-align:left">Exclusive to blog search, this one picks out blog posts that are written by specific individuals.</td>
+<td style="text-align:left"><code>allinpostauthor:&quot;keyword&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">related</td>
+<td style="text-align:left">List web pages that are “similar” to a specified web page.</td>
+<td style="text-align:left"><code>related:www.google.com</code></td>
+</tr>
+<tr>
+<td style="text-align:left">cache</td>
+<td style="text-align:left">Shows the version of the web page that Google has in its cache.</td>
+<td style="text-align:left"><code>cache:www.google.com</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<pre><code>intext:&quot;index of /&quot;
+Nina Simone intitle:”index.of” “parent directory” “size” “last modified” “description” I Put A Spell On You (mp4|mp3|avi|flac|aac|ape|ogg) -inurl:(jsp|php|html|aspx|htm|cf|shtml|lyrics-realm|mp3-collection) -site:.info
+Bill Gates intitle:”index.of” “parent directory” “size” “last modified” “description” Microsoft (pdf|txt|epub|doc|docx) -inurl:(jsp|php|html|aspx|htm|cf|shtml|ebooks|ebook) -site:.info
+parent directory DVDRip -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+parent directory MP3 -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+parent directory Name of Singer or album -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+filetype:config inurl:web.config inurl:ftp
+“Windows XP Professional” 94FBR
+ext:(doc | pdf | xls | txt | ps | rtf | odt | sxw | psw | ppt | pps | xml) (intext:confidential salary | intext:&quot;budget approved&quot;) inurl:confidential
+ext:(doc | pdf | xls | txt | ps | rtf | odt | sxw | psw | ppt | pps | xml) (intext:confidential salary | intext:”budget approved”) inurl:confidential
+</code></pre><h2 id="operators">Operators</h2>
+<h4 id="search-term">Search Term</h4>
+<p>This operator searches for the exact phrase within speech marks only.  This is ideal when the phrase you are using to search is ambiguous and  could be easily confused with something else, or when you’re not quite  getting relevant enough results back. For example:</p>
+<pre><code>&quot;Tinned Sandwiches&quot;
+</code></pre><h4 id="or">OR</h4>
+<p>This self explanatory operator searches for a given search term OR an equivalent term.</p>
+<pre><code>site:facebook.com | site:twitter.com
+</code></pre><h4 id="and">AND</h4>
+<pre><code>site:facebook.com &amp; site:twitter.com
+</code></pre><h4 id="operators-combinaison">Operators combinaison</h4>
+<pre><code>(site:facebook.com | site:twitter.com) &amp; intext:&quot;login&quot;
+(site:facebook.com | site:twitter.com) (intext:&quot;login&quot;)
+</code></pre><h4 id="include-results">Include results</h4>
+<p>This will order results by the number of occurrence of the keyword.</p>
+<pre><code>-site:facebook.com +site:facebook.*
+</code></pre><h4 id="exclude-results">Exclude results</h4>
+<pre><code>site:facebook.* -site:facebook.com
+</code></pre><h4 id="synonyms">Synonyms</h4>
+<p>Adding a tilde to a search word tells Google that you want it to bring back synonyms for the term as well. For example, entering “~set” will bring back results that include words like “configure”, “collection” and “change” which are all synonyms of “set”. Fun fact: “set” has the most definitions of any word in the dictionary.</p>
+<pre><code>~set
+</code></pre><h4 id="glob-pattern-">Glob pattern (*)</h4>
+<p>Putting an asterisk in a search tells Google ‘I don’t know what goes  here’. Basically, it’s really good for finding half remembered song  lyrics or names of things.</p>
+<pre><code>site:*.com
+</code></pre>
+      </div>
+    </article>
+
+    
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://kafkaesc.com/tags/google-dorking/">google dorking</a></span>
+        <span class="tag"><a href="https://kafkaesc.com/tags/research/">research</a></span>
+        
+    </p>
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://kafkaesc.com/categories/cheatsheets/">cheatsheets</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        537 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2022-08-15 01:00
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+
+    
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h"></span>
+            <hr />
+        </div>
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://kafkaesc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">Add shortcuts to Windows explorer right click menu</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="https://kafkaesc.com/posts/2022/08/swap-capslock-for-esc/">
+                    <span class="button__text">Swap CAPSLOCK for ESC</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>V2UncmUgYWxsIG1hZCBoZXJlLgo=</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://kafkaesc.com/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>
