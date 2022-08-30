@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wordpress on [KafkaEsc]</title>
+    <link>https://kafkaesc.com/tags/wordpress/</link>
+    <description>Recent content in wordpress on [KafkaEsc]</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 22 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kafkaesc.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>THM - Retro</title>
+      <link>https://kafkaesc.com/posts/2022/06/thm-retro/</link>
+      <pubDate>Wed, 22 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kafkaesc.com/posts/2022/06/thm-retro/</guid>
+      <description>Enum nmap Nmap scan report for 10.10.34.228 Host is up (0.20s latency). Not shown: 65533 filtered tcp ports (no-response) PORT STATE SERVICE VERSION 80/tcp open http Microsoft IIS httpd 10.0 |_http-title: IIS Windows Server | http-methods: | Supported Methods: OPTIONS TRACE GET HEAD POST |_ Potentially risky methods: TRACE |_http-server-header: Microsoft-IIS/10.0 3389/tcp open ms-wbt-server Microsoft Terminal Services | rdp-ntlm-info: | Target_Name: RETROWEB | NetBIOS_Domain_Name: RETROWEB | NetBIOS_Computer_Name: RETROWEB | DNS_Domain_Name: RetroWeb | DNS_Computer_Name: RetroWeb | Product_Version: 10.</description>
+    </item>
+    
+  </channel>
+</rss>

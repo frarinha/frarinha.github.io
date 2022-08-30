@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 15 Aug 2022 19:32:59 +0100</lastBuildDate><atom:link href="https://kafkaesc.com/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kafkaesc.com/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Decteting and Enumerating SQLi</title>
+      <link>https://kafkaesc.com/posts/2022/08/decteting-and-enumerating-sqli/</link>
+      <pubDate>Sat, 27 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kafkaesc.com/posts/2022/08/decteting-and-enumerating-sqli/</guid>
+      <description>Entry point &#39; &amp;quot; ` &#39;) &amp;quot;) `) &#39;)) &amp;quot;)) `)) This should break the query. By adding a comment symbol after, it should be accepted if an injection is present.
+Some sanitization of characters might be in place to prevent injections. Try encoding the payload to bypass it. See more useful payloads examples here.
+Comments MySQL
+#comment -- comment [Note the space after the double dash] /*comment*/ /*! MYSQL Special SQL */ PostgreSQL</description>
+    </item>
+    
     <item>
       <title>Get sharable link of an instagram video posts from private accounts</title>
       <link>https://kafkaesc.com/posts/2022/08/get-sharable-link-of-an-instagram-video-posts-from-private-accounts/</link>

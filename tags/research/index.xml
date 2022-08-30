@@ -9,11 +9,11 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 15 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kafkaesc.com/tags/research/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Google Dorking Cheat Sheet</title>
-      <link>https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/</link>
+      <title>Google Dorking Cheatsheet</title>
+      <link>https://kafkaesc.com/posts/2022/08/google-dorking-cheatsheet/</link>
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/</guid>
+      <guid>https://kafkaesc.com/posts/2022/08/google-dorking-cheatsheet/</guid>
       <description>Search filters    Filter Description Example     allintext Searches for occurrences of all the keywords given. allintext:&amp;quot;keyword&amp;quot;   intext Searches for the occurrences of keywords all at once or one at a time. intext:&amp;quot;keyword&amp;quot;   inurl Searches for a URL matching one of the keywords. inurl:&amp;quot;keyword&amp;quot;   allinurl Searches for a URL matching all the keywords in the query. allinurl:&amp;quot;keyword&amp;quot;   intitle Searches for occurrences of keywords in title all or one.</description>
     </item>
     
