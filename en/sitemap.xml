@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://kafkaesc.com/</loc>
-    <lastmod>2022-08-30T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -15,11 +14,12 @@
                 hreflang="en"
                 href="https://kafkaesc.com/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://kafkaesc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</loc>
+    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://kafkaesc.com/categories/</loc>
-    <lastmod>2022-08-30T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -30,36 +30,33 @@
                 hreflang="en"
                 href="https://kafkaesc.com/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kafkaesc.com/categories/cheatsheets/</loc>
-    <lastmod>2022-08-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/msfvenom/</loc>
-    <lastmod>2022-08-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/posts/2022/08/msfvenom-cheatsheet/</loc>
-    <lastmod>2022-08-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/payloads/</loc>
-    <lastmod>2022-08-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kafkaesc.com/tags/google-dorking/</loc>
+    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/</loc>
+    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kafkaesc.com/tags/keyboard/</loc>
+    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kafkaesc.com/tags/linux/</loc>
+    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://kafkaesc.com/posts/</loc>
-    <lastmod>2022-08-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kafkaesc.com/tags/research/</loc>
+    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kafkaesc.com/posts/2022/08/swap-capslock-for-esc/</loc>
+    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://kafkaesc.com/tags/</loc>
-    <lastmod>2022-08-30T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -70,124 +67,19 @@
                 hreflang="en"
                 href="https://kafkaesc.com/tags/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/posts/2022/08/decteting-and-enumerating-sqli/</loc>
-    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/owasp/</loc>
-    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/sqli/</loc>
-    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kafkaesc.com/categories/tutorials/</loc>
-    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/webapp/</loc>
-    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/posts/2022/08/get-sharable-link-of-an-instagram-video-posts-from-private-accounts/</loc>
-    <lastmod>2022-08-15T19:32:59+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/instagram/</loc>
-    <lastmod>2022-08-15T19:32:59+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</loc>
     <lastmod>2022-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/google-dorking/</loc>
-    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/posts/2022/08/google-dorking-cheatsheet/</loc>
-    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/keyboard/</loc>
-    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/linux/</loc>
-    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/research/</loc>
-    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/posts/2022/08/swap-capslock-for-esc/</loc>
-    <lastmod>2022-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kafkaesc.com/tags/windows/</loc>
     <lastmod>2022-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kafkaesc.com/about/</loc>
     <lastmod>2022-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/easy/</loc>
-    <lastmod>2022-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/posts/2022/06/thm-retro/</loc>
-    <lastmod>2022-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/tryhackme/</loc>
-    <lastmod>2022-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/windows-kernel-exploit/</loc>
-    <lastmod>2022-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/tags/wordpress/</loc>
-    <lastmod>2022-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kafkaesc.com/categories/write-ups/</loc>
-    <lastmod>2022-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kafkaesc.com/pgp/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kafkaesc.com/series/</loc>
     <xhtml:link
                 rel="alternate"
@@ -200,5 +92,4 @@
                 href="https://kafkaesc.com/series/"
                 />
   </url>
-  
 </urlset>

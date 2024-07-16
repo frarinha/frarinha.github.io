@@ -7,61 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 30 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kafkaesc.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>msfvenom</title>
-      <link>https://kafkaesc.com/tags/msfvenom/</link>
-      <pubDate>Tue, 30 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/tags/msfvenom/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>payloads</title>
-      <link>https://kafkaesc.com/tags/payloads/</link>
-      <pubDate>Tue, 30 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/tags/payloads/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>owasp</title>
-      <link>https://kafkaesc.com/tags/owasp/</link>
-      <pubDate>Sat, 27 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/tags/owasp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sqli</title>
-      <link>https://kafkaesc.com/tags/sqli/</link>
-      <pubDate>Sat, 27 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/tags/sqli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>webapp</title>
-      <link>https://kafkaesc.com/tags/webapp/</link>
-      <pubDate>Sat, 27 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/tags/webapp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>instagram</title>
-      <link>https://kafkaesc.com/tags/instagram/</link>
-      <pubDate>Mon, 15 Aug 2022 19:32:59 +0100</pubDate>
-      
-      <guid>https://kafkaesc.com/tags/instagram/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Mon, 15 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kafkaesc.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>google dorking</title>
       <link>https://kafkaesc.com/tags/google-dorking/</link>
@@ -95,6 +41,15 @@
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://kafkaesc.com/tags/research/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://kafkaesc.com/tags/windows/</link>
+      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://kafkaesc.com/tags/windows/</guid>
       <description></description>
     </item>
     

