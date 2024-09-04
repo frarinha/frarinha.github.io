@@ -2,75 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>[KafkaEsc]</title>
-    <link>https://kafkaesc.com/</link>
+    <link>https://kafka-esc.com/</link>
     <description>Recent content on [KafkaEsc]</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 15 Aug 2022 19:32:59 +0100</lastBuildDate><atom:link href="https://kafkaesc.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Sep 2024 22:45:39 +0000</lastBuildDate>
+    <atom:link href="https://kafka-esc.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Get sharable link of an instagram video posts from private accounts</title>
-      <link>https://kafkaesc.com/posts/2022/08/get-sharable-link-of-an-instagram-video-posts-from-private-accounts/</link>
-      <pubDate>Mon, 15 Aug 2022 19:32:59 +0100</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2022/08/get-sharable-link-of-an-instagram-video-posts-from-private-accounts/</guid>
-      <description>The source of the video it&amp;rsquo;s on the page. The path of the link points exactly to the source of the file, but the domain is incorrect.
-To get the video in a shareable link, you just need to:
- Open the browser console (F12) Go to Network Filter by Media Click on the package that contains the content that you want Copy the path that&amp;rsquo;s in the link Concatenate it with https://scontent.</description>
+      <title>Storage &amp; Vaults 1</title>
+      <link>https://kafka-esc.com/posts/2024/09/storage-vaults-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/posts/2024/09/storage-vaults-1/</guid>
+      <description>Storage Accounts List all storage accounts&#xA;Get-AzStorageAccount Get-AzStorageAccount | fl az storage account list --query &amp;#34;[].name&amp;#34; -o tsv Storage Tables az storage table list --account-name custdatabase --output table --auth-mode login Role Assignment for storage objects Get-AzRoleAssignment -Scope &amp;#34;/subscriptions/fce3c371-9ec3-4784-8738-880e93ca657a/resourceGroups/content-static-2/providers/Microsoft.Storage/storageAccounts/custdatabase&amp;#34; | Select-Object DisplayName, RoleDefinitionName List permissions for Storage Account $Acce ss_Token = (Get-AzAccessToken).Token $storageAccount = Get-AzStorageAccount $SubscriptionID = (Get-AzSubscription).Id $ResourceGroupName = $storageAccount.ResourceGroupName $StorageAccountName = $storageAccount.StorageAccountName $URI = &amp;#34;https://management.azure.com/subscriptions/$SubscriptionID/resourceGroups/$ResourceGroupName/providers/Microsoft.Storage/storageAccounts/$StorageAccountName/providers/Microsoft.Authorization/permissions?api-version=2022-04-01&amp;#34; $RequestParams = @{ Method = &amp;#39;GET&amp;#39; Uri = $URI Headers = @{ &amp;#39;Authorization&amp;#39; = &amp;#34;Bearer $Access_Token&amp;#34; } } $Permissions = (Invoke-RestMethod @RequestParams).</description>
     </item>
-    
+    <item>
+      <title>test</title>
+      <link>https://kafka-esc.com/posts/2024/09/test/</link>
+      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/posts/2024/09/test/</guid>
+      <description>Test sub title print(&amp;#34;hey&amp;#34;) This is a list:&#xA;blah fion opa gay </description>
+    </item>
     <item>
       <title>Add shortcuts to Windows explorer right click menu</title>
-      <link>https://kafkaesc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</link>
+      <link>https://kafka-esc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</link>
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</guid>
-      <description>To add a shortcut to the mouse right-click menu you have to edit the registries at Computer\HKEY_CLASSES_ROOT\Directory\background
-Alternatively you can create a .reg file and execute it. Example creating a shortcut for Atom:
-Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp] @=&amp;#34;Open Atom here&amp;#34; #path to app icon &amp;#34;Icon&amp;#34;=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\app.ico\&amp;#34;&amp;#34;  [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp\command] #path to app executable file (%V to &amp;#34;open in current location&amp;#34;) @=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\atom.exe\&amp;#34; %V\&amp;#34;&amp;#34; (Don&amp;rsquo;t forget to change the variable names)
- Copy code to a .</description>
+      <guid>https://kafka-esc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</guid>
+      <description>To add a shortcut to the mouse right-click menu you have to edit the registries at Computer\HKEY_CLASSES_ROOT\Directory\background&#xA;Alternatively you can create a .reg file and execute it. Example creating a shortcut for Atom:&#xA;Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp] @=&amp;#34;Open Atom here&amp;#34; #path to app icon &amp;#34;Icon&amp;#34;=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\app.ico\&amp;#34;&amp;#34; [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp\command] #path to app executable file (%V to &amp;#34;open in current location&amp;#34;) @=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\atom.exe\&amp;#34; %V\&amp;#34;&amp;#34; (Don&amp;rsquo;t forget to change the variable names)&#xA;Copy code to a .</description>
     </item>
-    
     <item>
       <title>Google Dorking Cheat Sheet</title>
-      <link>https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/</link>
+      <link>https://kafka-esc.com/posts/2022/08/google-dorking-cheat-sheet/</link>
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2022/08/google-dorking-cheat-sheet/</guid>
-      <description>Search filters    Filter Description Example     allintext Searches for occurrences of all the keywords given. allintext:&amp;quot;keyword&amp;quot;   intext Searches for the occurrences of keywords all at once or one at a time. intext:&amp;quot;keyword&amp;quot;   inurl Searches for a URL matching one of the keywords. inurl:&amp;quot;keyword&amp;quot;   allinurl Searches for a URL matching all the keywords in the query. allinurl:&amp;quot;keyword&amp;quot;   intitle Searches for occurrences of keywords in title all or one.</description>
+      <guid>https://kafka-esc.com/posts/2022/08/google-dorking-cheat-sheet/</guid>
+      <description>Search filters Filter Description Example allintext Searches for occurrences of all the keywords given. allintext:&amp;quot;keyword&amp;quot; intext Searches for the occurrences of keywords all at once or one at a time. intext:&amp;quot;keyword&amp;quot; inurl Searches for a URL matching one of the keywords. inurl:&amp;quot;keyword&amp;quot; allinurl Searches for a URL matching all the keywords in the query. allinurl:&amp;quot;keyword&amp;quot; intitle Searches for occurrences of keywords in title all or one. intitle:&amp;quot;keyword&amp;quot; allintitle Searches for occurrences of keywords all at a time.</description>
     </item>
-    
     <item>
       <title>Swap CAPSLOCK for ESC</title>
-      <link>https://kafkaesc.com/posts/2022/08/swap-capslock-for-esc/</link>
+      <link>https://kafka-esc.com/posts/2022/08/swap-capslock-for-esc/</link>
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/posts/2022/08/swap-capslock-for-esc/</guid>
-      <description>Windows: To swap capslock for esc on windows you have to change the registries
-Windows Registry Editor Version 5.00 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout] &amp;quot;Scancode Map&amp;quot;=hex:00,00,00,00,00,00,00,00,03,00,00,00,3a,00,01,00,01,00,3a,00,00,00,00,00 Copy this code into a .reg file and execute it. Alternatively, you can manually add it to the registries with regedit.
-Linux: Run the following command:
-setxkbmap -option caps:swapescape  Note: To run it automatically at start, add the command to ~/.xinitrc
- </description>
+      <guid>https://kafka-esc.com/posts/2022/08/swap-capslock-for-esc/</guid>
+      <description>Windows: To swap capslock for esc on windows you have to change the registries&#xA;Windows Registry Editor Version 5.00 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout] &amp;#34;Scancode Map&amp;#34;=hex:00,00,00,00,00,00,00,00,03,00,00,00,3a,00,01,00,01,00,3a,00,00,00,00,00 Copy this code into a .reg file and execute it. Alternatively, you can manually add it to the registries with regedit.&#xA;Linux: Run the following command:&#xA;setxkbmap -option caps:swapescape Note: To run it automatically at start, add the command to ~/.xinitrc</description>
     </item>
-    
     <item>
       <title>About</title>
-      <link>https://kafkaesc.com/about/</link>
+      <link>https://kafka-esc.com/about/</link>
       <pubDate>Sun, 14 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/about/</guid>
-      <description>Currently working as a freelance videographer. Stories are how we learn, communicate and remember. I have always been fascinated by the power of moving pictures, and I&amp;rsquo;m grateful for being able to make a living by sharing my creations. Although making films is one of my biggest passions, I think it would suit better as a hobby. At the moment, I&amp;rsquo;m seeking to transition to the InfoSec field.
-I&amp;rsquo;m looking for a Penetration Testing position.</description>
+      <guid>https://kafka-esc.com/about/</guid>
+      <description>Currently working as a freelance videographer. Stories are how we learn, communicate and remember. I have always been fascinated by the power of moving pictures, and I&amp;rsquo;m grateful for being able to make a living by sharing my creations. Although making films is one of my biggest passions, I think it would suit better as a hobby. At the moment, I&amp;rsquo;m seeking to transition to the InfoSec field.&#xA;I&amp;rsquo;m looking for a Penetration Testing position.</description>
     </item>
-    
     <item>
       <title></title>
-      <link>https://kafkaesc.com/pgp/</link>
+      <link>https://kafka-esc.com/pgp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/pgp/</guid>
-      <description>-----BEGIN PGP PUBLIC KEY BLOCK----- mQENBGC438gBCADRvLldHgKLHgQhSZzLDl6VhC8UUVVMOcNaMP91Fu0djGeRWyyc PWdy8Vlds+8BHU/i6RT0YIsuWGXvxsHxZ1UOFNE8uqyGgpzSeSuDYVvUNR/xxD1Q izqu4r4QS9iOfa4i70aPdBBdLKWMdzUo0wxwfrn6aViT5QM5mWtYdBq4rRCZPeO+ /li/Z2yFCTUqQTfV0RnpUGAfZGOJDEulOfEk2YT0p+1Igo0f9L4dvyyn+paStWbK U6NWdURvzDNavobeF6WTG3cA6R8MwnRR9PnUtnn7d+DC11i3N9s77YKexcM7azGt BosrDbPC4NtE+25jY/YDIYWL0k+tJiSYSY6rABEBAAG0JkZyYW5jaXNjbyBGYXJp bmhhIDxmcmFyaW5oYUBnbWFpbC5jb20+iQFUBBMBCAA+FiEEw3BsVSH7R+QPOLcX B9dfi/AV8ywFAmC438gCGwMFCQPCPWgFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AA CgkQB9dfi/AV8yzOmwgAnAUwOxE/sG8c41uletorp4ErIOX48ZbG10nVxv39dtTb 4JwaqKDq86GExatgXYQcjYyiNIjOd8RGAiK/9SZgtfSgXaEYnGrvFwsFi8Ncasua eo36Jkfc4hcxhPqFm2UAFA8kyYuTZznLHfMYjUCf9EEEcnRIybZy6tPTIgragja5 rmiJkNe2atGYsXempozj9vKCF2Q1dRtlYHHrU5YF2jzhfXv2IUJvOhECmS3d3oSc SQBvVI5XXeDcX7CQBrDGzlws8ebbv1W2jIj0eaYSeJJs3LhSyb8ouB3IHUvYTA26 nn4ofnjo9mKbqTAmJtQCE9qpv5IeuBT6KuxAUOH+6LkBDQRguN/IAQgA4hZ5F6Cc eWnWh/zaQ3UKnmE3KdRmmcozskuYrm9IZu/bOIs58sEMxcJFX2BqgVil2XRL4Zjs mFAInxKYL2ovTPv9fi9OEcAHewObyCtkppcCe+kiLqRZ1HmzcvJLMUFWvhu8Ipoo L64ItQb8z7F1hvkJa/X1PaOnvzatEcJH1jB46bGdjhMzr9FWtdw9fn/6tKgwGTTQ q4kQ/EMHH0gfkS9rf6AL9hd4Q9Pxf+v9/UudR3khO/pvq5t9fOSTS7gS4bR1tCww 7DaID9rKGKZ+/++R8Ml7F7EtqIehMedFR40PDfnK+Zu4IsEaKL4T4YfbQM9nV5N/ cP1pxI07UCBx7wARAQABiQE8BBgBCAAmFiEEw3BsVSH7R+QPOLcXB9dfi/AV8ywF AmC438gCGwwFCQPCPWgACgkQB9dfi/AV8yyM9wf8CdgZfgwbDHs8+AFZ7cg3n95V vs+1TkVuCFMUnKA3jhF1TvYcfFNUZA6+/D2hzowMopoPbVanv5mAgAZuQg2an4ij Uw/uwt4vaK1ERaYJQwh76GTEf8MYe+KIlzvcTYqjoT9r2/O/qA/thTerlTENrQV0 LPsRF09kyPPr+z3Sj9zWIPBFYg7/AyPQSOvu5b9SGAPYNqEVYLbzAv75mw2Px13n GGG/mds13F31WEZBi1poe+aogmoS2vtdV0Lxko8GiCbfJer3tdqYa+N0+gJCgWOb nc9eSVWx6CBQW00TGLOMhzyludigGZeEQHYLRfqA/yGuuZLkzMWLRxs6to2Bww== =9mML -----END PGP PUBLIC KEY BLOCK----- </description>
+      <guid>https://kafka-esc.com/pgp/</guid>
+      <description>-----BEGIN PGP PUBLIC KEY BLOCK-----&#xD;mQENBGC438gBCADRvLldHgKLHgQhSZzLDl6VhC8UUVVMOcNaMP91Fu0djGeRWyyc&#xD;PWdy8Vlds+8BHU/i6RT0YIsuWGXvxsHxZ1UOFNE8uqyGgpzSeSuDYVvUNR/xxD1Q&#xD;izqu4r4QS9iOfa4i70aPdBBdLKWMdzUo0wxwfrn6aViT5QM5mWtYdBq4rRCZPeO+&#xD;/li/Z2yFCTUqQTfV0RnpUGAfZGOJDEulOfEk2YT0p+1Igo0f9L4dvyyn+paStWbK&#xD;U6NWdURvzDNavobeF6WTG3cA6R8MwnRR9PnUtnn7d+DC11i3N9s77YKexcM7azGt&#xD;BosrDbPC4NtE+25jY/YDIYWL0k+tJiSYSY6rABEBAAG0JkZyYW5jaXNjbyBGYXJp&#xD;bmhhIDxmcmFyaW5oYUBnbWFpbC5jb20+iQFUBBMBCAA+FiEEw3BsVSH7R+QPOLcX&#xD;B9dfi/AV8ywFAmC438gCGwMFCQPCPWgFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AA&#xD;CgkQB9dfi/AV8yzOmwgAnAUwOxE/sG8c41uletorp4ErIOX48ZbG10nVxv39dtTb&#xD;4JwaqKDq86GExatgXYQcjYyiNIjOd8RGAiK/9SZgtfSgXaEYnGrvFwsFi8Ncasua&#xD;eo36Jkfc4hcxhPqFm2UAFA8kyYuTZznLHfMYjUCf9EEEcnRIybZy6tPTIgragja5&#xD;rmiJkNe2atGYsXempozj9vKCF2Q1dRtlYHHrU5YF2jzhfXv2IUJvOhECmS3d3oSc&#xD;SQBvVI5XXeDcX7CQBrDGzlws8ebbv1W2jIj0eaYSeJJs3LhSyb8ouB3IHUvYTA26&#xD;nn4ofnjo9mKbqTAmJtQCE9qpv5IeuBT6KuxAUOH+6LkBDQRguN/IAQgA4hZ5F6Cc&#xD;eWnWh/zaQ3UKnmE3KdRmmcozskuYrm9IZu/bOIs58sEMxcJFX2BqgVil2XRL4Zjs&#xD;mFAInxKYL2ovTPv9fi9OEcAHewObyCtkppcCe+kiLqRZ1HmzcvJLMUFWvhu8Ipoo&#xD;L64ItQb8z7F1hvkJa/X1PaOnvzatEcJH1jB46bGdjhMzr9FWtdw9fn/6tKgwGTTQ&#xD;q4kQ/EMHH0gfkS9rf6AL9hd4Q9Pxf+v9/UudR3khO/pvq5t9fOSTS7gS4bR1tCww&#xD;7DaID9rKGKZ+/++R8Ml7F7EtqIehMedFR40PDfnK+Zu4IsEaKL4T4YfbQM9nV5N/&#xD;cP1pxI07UCBx7wARAQABiQE8BBgBCAAmFiEEw3BsVSH7R+QPOLcXB9dfi/AV8ywF&#xD;AmC438gCGwwFCQPCPWgACgkQB9dfi/AV8yyM9wf8CdgZfgwbDHs8+AFZ7cg3n95V&#xD;vs+1TkVuCFMUnKA3jhF1TvYcfFNUZA6+/D2hzowMopoPbVanv5mAgAZuQg2an4ij&#xD;Uw/uwt4vaK1ERaYJQwh76GTEf8MYe+KIlzvcTYqjoT9r2/O/qA/thTerlTENrQV0&#xD;LPsRF09kyPPr+z3Sj9zWIPBFYg7/AyPQSOvu5b9SGAPYNqEVYLbzAv75mw2Px13n&#xD;GGG/mds13F31WEZBi1poe+aogmoS2vtdV0Lxko8GiCbfJer3tdqYa+N0+gJCgWOb&#xD;nc9eSVWx6CBQW00TGLOMhzyludigGZeEQHYLRfqA/yGuuZLkzMWLRxs6to2Bww==&#xD;=9mML&#xD;-----END PGP PUBLIC KEY BLOCK----- </description>
     </item>
-    
   </channel>
 </rss>

@@ -2,65 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on [KafkaEsc]</title>
-    <link>https://kafkaesc.com/tags/</link>
+    <link>https://kafka-esc.com/tags/</link>
     <description>Recent content in Tags on [KafkaEsc]</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 15 Aug 2022 19:32:59 +0100</lastBuildDate><atom:link href="https://kafkaesc.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Sep 2024 22:45:39 +0000</lastBuildDate>
+    <atom:link href="https://kafka-esc.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>instagram</title>
-      <link>https://kafkaesc.com/tags/instagram/</link>
-      <pubDate>Mon, 15 Aug 2022 19:32:59 +0100</pubDate>
-      
-      <guid>https://kafkaesc.com/tags/instagram/</guid>
+      <title>Blog</title>
+      <link>https://kafka-esc.com/tags/blog/</link>
+      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/tags/blog/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>google dorking</title>
-      <link>https://kafkaesc.com/tags/google-dorking/</link>
+      <title>Dorking</title>
+      <link>https://kafka-esc.com/tags/dorking/</link>
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/tags/google-dorking/</guid>
+      <guid>https://kafka-esc.com/tags/dorking/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>keyboard</title>
-      <link>https://kafkaesc.com/tags/keyboard/</link>
+      <title>Google</title>
+      <link>https://kafka-esc.com/tags/google/</link>
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/tags/keyboard/</guid>
+      <guid>https://kafka-esc.com/tags/google/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>linux</title>
-      <link>https://kafkaesc.com/tags/linux/</link>
+      <title>Keyboard</title>
+      <link>https://kafka-esc.com/tags/keyboard/</link>
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/tags/linux/</guid>
+      <guid>https://kafka-esc.com/tags/keyboard/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>research</title>
-      <link>https://kafkaesc.com/tags/research/</link>
+      <title>Linux</title>
+      <link>https://kafka-esc.com/tags/linux/</link>
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/tags/research/</guid>
+      <guid>https://kafka-esc.com/tags/linux/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>windows</title>
-      <link>https://kafkaesc.com/tags/windows/</link>
+      <title>Research</title>
+      <link>https://kafka-esc.com/tags/research/</link>
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kafkaesc.com/tags/windows/</guid>
+      <guid>https://kafka-esc.com/tags/research/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Windows</title>
+      <link>https://kafka-esc.com/tags/windows/</link>
+      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/tags/windows/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
