@@ -16,12 +16,5 @@
       <guid>https://kafka-esc.com/posts/2024/09/storage-vaults-1/</guid>
       <description>Storage Accounts List all storage accounts&#xA;Get-AzStorageAccount Get-AzStorageAccount | fl az storage account list --query &amp;#34;[].name&amp;#34; -o tsv Storage Tables az storage table list --account-name custdatabase --output table --auth-mode login Role Assignment for storage objects Get-AzRoleAssignment -Scope &amp;#34;/subscriptions/fce3c371-9ec3-4784-8738-880e93ca657a/resourceGroups/content-static-2/providers/Microsoft.Storage/storageAccounts/custdatabase&amp;#34; | Select-Object DisplayName, RoleDefinitionName List permissions for Storage Account $Acce ss_Token = (Get-AzAccessToken).Token $storageAccount = Get-AzStorageAccount $SubscriptionID = (Get-AzSubscription).Id $ResourceGroupName = $storageAccount.ResourceGroupName $StorageAccountName = $storageAccount.StorageAccountName $URI = &amp;#34;https://management.azure.com/subscriptions/$SubscriptionID/resourceGroups/$ResourceGroupName/providers/Microsoft.Storage/storageAccounts/$StorageAccountName/providers/Microsoft.Authorization/permissions?api-version=2022-04-01&amp;#34; $RequestParams = @{ Method = &amp;#39;GET&amp;#39; Uri = $URI Headers = @{ &amp;#39;Authorization&amp;#39; = &amp;#34;Bearer $Access_Token&amp;#34; } } $Permissions = (Invoke-RestMethod @RequestParams).</description>
     </item>
-    <item>
-      <title>test</title>
-      <link>https://kafka-esc.com/posts/2024/09/test/</link>
-      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>https://kafka-esc.com/posts/2024/09/test/</guid>
-      <description>Test sub title print(&amp;#34;hey&amp;#34;) This is a list:&#xA;blah fion opa gay </description>
-    </item>
   </channel>
 </rss>

@@ -227,29 +227,6 @@ Get-AzStorageAccount Get-AzStorageAccount | fl az storage account list --query &
         </item>
         
         <item>
-            <title>test</title>
-            <link>https://kafka-esc.com/posts/2024/09/test/</link>
-            <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
-            
-            <guid>https://kafka-esc.com/posts/2024/09/test/</guid>
-            <description>Test sub title print(&amp;#34;hey&amp;#34;) This is a list:
-blah fion opa gay </description>
-            <content type="html"><![CDATA[<h1 id="test">Test</h1>
-<h2 id="sub-title">sub title</h2>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#81a1c1">print</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#34;hey&#34;</span><span style="color:#eceff4">)</span>
-</span></span></code></pre></div><hr>
-<p>This is a list:</p>
-<ul>
-<li>blah</li>
-<li>fion</li>
-<li>opa</li>
-<li>gay</li>
-</ul>
-<p><img src="/img/archive/Pasted%20image%2020240902231017.png"></p>
-]]></content>
-        </item>
-        
-        <item>
             <title>Add shortcuts to Windows explorer right click menu</title>
             <link>https://kafka-esc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</link>
             <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
