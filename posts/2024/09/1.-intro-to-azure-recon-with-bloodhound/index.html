@@ -7,7 +7,7 @@
 <meta name="author" content="">
 <meta name="description" content="Scenario After discovering that a public company GitHub repository contained accidentally committed credentials, Mega Big Tech has requested us to investigate the extent of potential exposure. They want to determine if these credentials can be used to access their cloud environment and if any confidential data is at risk.
 Azure credentials Password: Bigt3ch123! IAM user: Jose.Rodriguez@megabigtech.com To quote John Lambert, Defenders think in lists. Attackers think in graphs. As long as this is true, attackers win ." />
-<meta name="keywords" content=", blog" />
+<meta name="keywords" content=", blog, azure, pwnedlabs" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://kafka-esc.com/posts/2024/09/1.-intro-to-azure-recon-with-bloodhound/" />
@@ -48,10 +48,10 @@ Azure credentials Password: Bigt3ch123! IAM user: Jose.Rodriguez@megabigtech.co
   <meta itemprop="description" content="Scenario After discovering that a public company GitHub repository contained accidentally committed credentials, Mega Big Tech has requested us to investigate the extent of potential exposure. They want to determine if these credentials can be used to access their cloud environment and if any confidential data is at risk.
 Azure credentials Password: Bigt3ch123! IAM user: Jose.Rodriguez@megabigtech.com To quote John Lambert, Defenders think in lists. Attackers think in graphs. As long as this is true, attackers win .">
   <meta itemprop="datePublished" content="2024-09-04T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-09-04T22:11:41+00:00">
+  <meta itemprop="dateModified" content="2024-09-08T17:57:41+00:00">
   <meta itemprop="wordCount" content="551">
   <meta itemprop="image" content="https://kafka-esc.com/">
-  <meta itemprop="keywords" content="Blog">
+  <meta itemprop="keywords" content="Blog,Azure,Pwnedlabs">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://kafka-esc.com/">
@@ -66,18 +66,18 @@ Azure credentials Password: Bigt3ch123! IAM user: Jose.Rodriguez@megabigtech.co
   <meta property="og:title" content="1. Intro to Azure Recon with BloodHound">
   <meta property="og:description" content="Scenario After discovering that a public company GitHub repository contained accidentally committed credentials, Mega Big Tech has requested us to investigate the extent of potential exposure. They want to determine if these credentials can be used to access their cloud environment and if any confidential data is at risk.
 Azure credentials Password: Bigt3ch123! IAM user: Jose.Rodriguez@megabigtech.com To quote John Lambert, Defenders think in lists. Attackers think in graphs. As long as this is true, attackers win .">
-  <meta property="og:locale" content="en">
+  <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-09-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-09-04T22:11:41+00:00">
+    <meta property="article:modified_time" content="2024-09-08T17:57:41+00:00">
     <meta property="article:tag" content="Blog">
+    <meta property="article:tag" content="Azure">
+    <meta property="article:tag" content="Pwnedlabs">
     <meta property="og:image" content="https://kafka-esc.com/">
 
 
 
-
-    <meta property="article:section" content="blog" />
 
     <meta property="article:section" content="writeups" />
 
@@ -125,15 +125,15 @@ Azure credentials Password: Bigt3ch123! IAM user: Jose.Rodriguez@megabigtech.co
                 <li><a href="/posts/">Posts</a></li>
                 <div class="submenu">
                     <li class="dropdown">
-                        <a href="/categories/" class="dropbtn">Resources</a>
-                        <label class="drop-icon" for="Resources">▾</label>
+                        <a href="/categories/" class="dropbtn">Hacking</a>
+                        <label class="drop-icon" for="Hacking">▾</label>
                         <div class="dropdown-content">
+                                
+                                    <a title="Articles" href="/categories/articles/">Articles</a>
                                 
                                     <a title="Write Ups" href="/categories/writeups/">Write Ups</a>
                                 
-                                    <a title="Tutorials" href="/categories/tutorials/">Tutorials</a>
-                                
-                                    <a title="Cheatsheets" href="/categories/cheatsheets/">Cheatsheets</a>
+                                    <a title="CVEs" href="/categories/CVEs/">CVEs</a>
                                 
                         </div>
                     </li>
@@ -198,9 +198,9 @@ IAM user: Jose.Rodriguez@megabigtech.com
 <p>To quote John Lambert, <a href="https://github.com/JohnLaTwC/Shared/blob/master/Defenders%20think%20in%20lists.%20Attackers%20think%20in%20graphs.%20As%20long%20as%20this%20is%20true%2C%20attackers%20win.md">Defenders think in lists. Attackers think in graphs. As long as this is true, attackers win</a> . As defenders, thinking in graphs as an attacker would will allow us to more proactively secure our networks.</p>
 <div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az login -u &lt;email&gt; -p &lt;password&gt; --allow-no-subscriptions
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./azurehound  -u <span style="color:#a3be8c">&#34;Jose.Rodriguez@megabigtech.com&#34;</span> -p <span style="color:#a3be8c">&#39;Bigt3ch123!&#39;</span> list --tenant <span style="color:#a3be8c">&#34;2590ccef-687d-493b-ae8d-441cbab63a72&#34;</span> -o output.json
-</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904194244.png"></p>
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904194244.png" alt=""></p>
 <h3 id="bloudhound">Bloudhound</h3>
-<p><img src="/img/archive/Pasted%20image%2020240904194850.png"></p>
+<p><img src="/img/archive/Pasted%20image%2020240904194850.png" alt=""></p>
 <ul>
 <li><strong>UPDATE MANAGER</strong>: This is a custom directory role. On clicking the role we see the description &ldquo;Allows helpdesk staff to update the manager role when users change teams&rdquo;. This doesn&rsquo;t seem too interesting from a security perspective.</li>
 <li><strong>DIRECTORY READERS</strong>: This directory role that allows users to read basic directory information, excluding sensitive data values.</li>
@@ -246,37 +246,37 @@ IAM user: Jose.Rodriguez@megabigtech.com
 </span></span><span style="display:flex;"><span>    <span style="color:#81a1c1">Write-Host</span> <span style="color:#a3be8c">&#34;---------------------------------------------&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#eceff4">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#eceff4">}</span>
-</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904210427.png"></p>
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904210427.png" alt=""></p>
 <pre tabindex="0"><code>archive@megabigtech.com
 D4taS3cur1ty!!
 </code></pre><p>After logging into to the <a href="https://portal.azure.com/">Azure Portal</a> we can check the user in the console. We see that Helpdesk staff added the attribute to allow them to login and troubleshoot as this user.</p>
-<p><img src="/img/archive/Pasted%20image%2020240904211420.png"></p>
+<p><img src="/img/archive/Pasted%20image%2020240904211420.png" alt=""></p>
 <p>Let&rsquo;s now turn our attention to aspects that BloodHound may have missed. It&rsquo;s worth noting that although BloodHound does a great job at finding the directory roles, a current blind-spot in this tool is Azure role assignments that are assigned at a subscription, management group, resource group or individual resource level.</p>
-<p><img src="/img/archive/Pasted%20image%2020240904212035.png"></p>
+<p><img src="/img/archive/Pasted%20image%2020240904212035.png" alt=""></p>
 <p><strong>Checking Role Assignments</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Get-AzRoleAssignment</span>
-</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904212239.png"></p>
-<p><img src="/img/archive/Pasted%20image%2020240904212420.png"></p>
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904212239.png" alt=""></p>
+<p><img src="/img/archive/Pasted%20image%2020240904212420.png" alt=""></p>
 <p>Extracted:</p>
 <pre tabindex="0"><code># Credentials: User: security-user | Password: Imp0sec0sT!
 az storage blob download --account-name securityconfigs --container-name security-pc --name config-latest.xml --auth-mode login
-</code></pre><p><img src="/img/archive/Pasted%20image%2020240904212811.png"></p>
+</code></pre><p><img src="/img/archive/Pasted%20image%2020240904212811.png" alt=""></p>
 <h3 id="enumerate-vm">Enumerate VM</h3>
 <div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Get-AzVM</span> -ResourceGroupName <span style="color:#a3be8c">&#34;content-static-2&#34;</span> -Name <span style="color:#a3be8c">&#34;SECURITY-PC&#34;</span>  -UserData
-</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904213720.png"></p>
-<p><img src="/img/archive/Pasted%20image%2020240904213739.png"></p>
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904213720.png" alt=""></p>
+<p><img src="/img/archive/Pasted%20image%2020240904213739.png" alt=""></p>
 <div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az login -u security-user@megabigtech.com -p <span style="color:#a3be8c">&#39;Imp0sec0sT!&#39;</span> --allow-no-subscriptions
 </span></span><span style="display:flex;"><span>az storage blob download --account-name securityconfigs --container-name security-pc --name config-latest.xml --auth-mode login <span style="color:#eceff4">|</span> xq
-</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904214148.png"></p>
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904214148.png" alt=""></p>
 <div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#81a1c1">&lt;GlobalAdmin&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#81a1c1">&lt;Username&gt;</span>ryan@megabigtech.com<span style="color:#81a1c1">&lt;/Username&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#81a1c1">&lt;Password&gt;</span>AzureAdmin12345!<span style="color:#81a1c1">&lt;/Password&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#81a1c1">&lt;Email&gt;</span>ryan@megabigtech.com<span style="color:#81a1c1">&lt;/Email&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#81a1c1">&lt;TwoFactorAuthentication&gt;</span>Enabled<span style="color:#81a1c1">&lt;/TwoFactorAuthentication&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#81a1c1">&lt;/GlobalAdmin&gt;</span>
-</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904214816.png"></p>
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904214816.png" alt=""></p>
 <div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage blob download --account-name securityconfigs --container-name security-pc -n flag.txt --auth-mode login
-</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904215721.png"></p>
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904215721.png" alt=""></p>
 
       </div>
     </article>
@@ -288,7 +288,13 @@ az storage blob download --account-name securityconfigs --container-name securit
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
-        <span class="tag"><a href="https://kafka-esc.com/tags/blog/">blog</a></span>
+        
+        
+                <span class="tag"><a href="https://kafka-esc.com/tags/azure/">azure</a></span>
+            
+        
+                <span class="tag"><a href="https://kafka-esc.com/tags/pwnedlabs/">pwnedlabs</a></span>
+            
         
     </p>
 
@@ -296,42 +302,12 @@ az storage blob download --account-name securityconfigs --container-name securit
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
 
-        <span class="tag"><a href="https://kafka-esc.com/categories/blog/">blog</a></span>
         <span class="tag"><a href="https://kafka-esc.com/categories/writeups/">writeups</a></span>
         
     </p>
 
 
-      <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-          <polyline points="14 2 14 8 20 8"></polyline>
-          <line x1="16" y1="13" x2="8" y2="13"></line>
-          <line x1="16" y1="17" x2="8" y2="17"></line>
-          <polyline points="10 9 9 9 8 9"></polyline>
-        </svg>
-        551 Words
-      </p>
-
-      <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-          <line x1="16" y1="2" x2="16" y2="6"></line>
-          <line x1="8" y1="2" x2="8" y2="6"></line>
-          <line x1="3" y1="10" x2="21" y2="10"></line>
-        </svg>
-        
-          2024-09-04 01:00
-        
-
-         
-          
-            
-              (Last updated: 2024-09-04 23:11)
-            
-          
-        
-      </p>
+      
     </div>
 
     
@@ -345,18 +321,11 @@ az storage blob download --account-name securityconfigs --container-name securit
 
         <div class="pagination__buttons">
             
-            <span class="button previous">
-                <a href="https://kafka-esc.com/posts/2024/09/office-365/">
-                    <span class="button__icon">←</span>
-                    <span class="button__text">Office 365</span>
-                </a>
-            </span>
-            
 
             
             <span class="button next">
-                <a href="https://kafka-esc.com/posts/2024/09/storage-vaults-1/">
-                    <span class="button__text">Storage &amp; Vaults 1</span>
+                <a href="https://kafka-esc.com/posts/2023/10/cve-2023-43045-ibm-otp-bypass/">
+                    <span class="button__text">CVE-2023-43045 - IBM OTP Bypass</span>
                     <span class="button__icon">→</span>
                 </a>
             </span>

@@ -5,17 +5,9 @@
     <link>https://kafka-esc.com/categories/</link>
     <description>Recent content in Categories on [KafkaEsc]</description>
     <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 07 Sep 2024 14:38:14 +0000</lastBuildDate>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Sep 2024 18:16:14 +0000</lastBuildDate>
     <atom:link href="https://kafka-esc.com/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Blog</title>
-      <link>https://kafka-esc.com/categories/blog/</link>
-      <pubDate>Sat, 07 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>https://kafka-esc.com/categories/blog/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Writeups</title>
       <link>https://kafka-esc.com/categories/writeups/</link>
@@ -24,10 +16,10 @@
       <description></description>
     </item>
     <item>
-      <title>Cheatsheets</title>
-      <link>https://kafka-esc.com/categories/cheatsheets/</link>
-      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://kafka-esc.com/categories/cheatsheets/</guid>
+      <title>CVEs</title>
+      <link>https://kafka-esc.com/categories/cves/</link>
+      <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/categories/cves/</guid>
       <description></description>
     </item>
     <item>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pwnedlabs on [KafkaEsc]</title>
+    <link>https://kafka-esc.com/tags/pwnedlabs/</link>
+    <description>Recent content in Pwnedlabs on [KafkaEsc]</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Sep 2024 17:57:41 +0000</lastBuildDate>
+    <atom:link href="https://kafka-esc.com/tags/pwnedlabs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1. Intro to Azure Recon with BloodHound</title>
+      <link>https://kafka-esc.com/posts/2024/09/1.-intro-to-azure-recon-with-bloodhound/</link>
+      <pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/posts/2024/09/1.-intro-to-azure-recon-with-bloodhound/</guid>
+      <description>Scenario After discovering that a public company GitHub repository contained accidentally committed credentials, Mega Big Tech has requested us to investigate the extent of potential exposure. They want to determine if these credentials can be used to access their cloud environment and if any confidential data is at risk.&#xA;Azure credentials Password: Bigt3ch123! IAM user: Jose.Rodriguez@megabigtech.com To quote John Lambert, Defenders think in lists. Attackers think in graphs. As long as this is true, attackers win .</description>
+    </item>
+  </channel>
+</rss>

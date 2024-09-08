@@ -5,29 +5,42 @@
     <link>https://kafka-esc.com/tags/</link>
     <description>Recent content in Tags on [KafkaEsc]</description>
     <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 07 Sep 2024 14:38:14 +0000</lastBuildDate>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Sep 2024 18:16:14 +0000</lastBuildDate>
     <atom:link href="https://kafka-esc.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog</title>
       <link>https://kafka-esc.com/tags/blog/</link>
-      <pubDate>Sat, 07 Sep 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
       <guid>https://kafka-esc.com/tags/blog/</guid>
       <description></description>
     </item>
     <item>
-      <title>Dorking</title>
-      <link>https://kafka-esc.com/tags/dorking/</link>
-      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://kafka-esc.com/tags/dorking/</guid>
+      <title>Azure</title>
+      <link>https://kafka-esc.com/tags/azure/</link>
+      <pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/tags/azure/</guid>
       <description></description>
     </item>
     <item>
-      <title>Google</title>
-      <link>https://kafka-esc.com/tags/google/</link>
-      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://kafka-esc.com/tags/google/</guid>
+      <title>Pwnedlabs</title>
+      <link>https://kafka-esc.com/tags/pwnedlabs/</link>
+      <pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/tags/pwnedlabs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IBM</title>
+      <link>https://kafka-esc.com/tags/ibm/</link>
+      <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/tags/ibm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Otp_bypass</title>
+      <link>https://kafka-esc.com/tags/otp_bypass/</link>
+      <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/tags/otp_bypass/</guid>
       <description></description>
     </item>
     <item>
@@ -42,13 +55,6 @@
       <link>https://kafka-esc.com/tags/linux/</link>
       <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
       <guid>https://kafka-esc.com/tags/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Research</title>
-      <link>https://kafka-esc.com/tags/research/</link>
-      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://kafka-esc.com/tags/research/</guid>
       <description></description>
     </item>
     <item>

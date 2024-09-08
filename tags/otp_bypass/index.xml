@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Otp_bypass on [KafkaEsc]</title>
+    <link>https://kafka-esc.com/tags/otp_bypass/</link>
+    <description>Recent content in Otp_bypass on [KafkaEsc]</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Sep 2024 18:16:14 +0000</lastBuildDate>
+    <atom:link href="https://kafka-esc.com/tags/otp_bypass/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE-2023-43045 - IBM OTP Bypass</title>
+      <link>https://kafka-esc.com/posts/2023/10/cve-2023-43045-ibm-otp-bypass/</link>
+      <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/posts/2023/10/cve-2023-43045-ibm-otp-bypass/</guid>
+      <description>Security Bulletin: IBM Sterling Partner Engagement Manager is vulnerable to one-time password bypass (CVE-2023-43045) Summary IBM Sterling Partner Engagement Manager has addressed a reflected one-time password bypass vulnerability.&#xA;Vulnerability Details CVEID: CVE-2023-43045&#xA;DESCRIPTION: IBM Sterling Partner Engagement Manager could allow a remote user to perform unauthorized actions due to improper authentication.&#xA;CVSS Base score: 5.9&#xA;CVSS Temporal Score: See: https://exchange.xforce.ibmcloud.com/vulnerabilities/266896 for the current score.&#xA;CVSS Vector: (CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N)&#xA;Affected Products and Versions Affected Product(s) Version(s) IBM Sterling Partner Engagement Manager Essentials Edition 6.</description>
+    </item>
+  </channel>
+</rss>
