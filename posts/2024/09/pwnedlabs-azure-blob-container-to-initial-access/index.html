@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Lab: https://pwnedlabs.io/labs/azure-blob-container-to-initial-access
+Scenario Mega Big Tech have adopted a hybrid cloud architecture and continues to use a local on-premise Active Directory domain, as well as the Azure cloud. They are wary of being targeted due to their importance in the tech world, and have asked your team to assess the security of their infrastructure, including cloud services. An interesting URL has been found in some public documentation, and you are tasked with assessing it." />
+<meta name="keywords" content=", blog, azure, blobs, storage" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://kafka-esc.com/posts/2024/09/pwnedlabs-azure-blob-container-to-initial-access/" />
+
+
+
+    <title>
+        
+            PwnedLabs - Azure Blob Container to Initial Access :: [KafkaEsc] 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.5c821d626e2f5bf848ce9331ce39856890e28e88bc072abdbddf51295122b80d.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+    <meta name="theme-color" content="">
+
+
+
+
+  <meta itemprop="name" content="PwnedLabs - Azure Blob Container to Initial Access">
+  <meta itemprop="description" content="Lab: https://pwnedlabs.io/labs/azure-blob-container-to-initial-access
+Scenario Mega Big Tech have adopted a hybrid cloud architecture and continues to use a local on-premise Active Directory domain, as well as the Azure cloud. They are wary of being targeted due to their importance in the tech world, and have asked your team to assess the security of their infrastructure, including cloud services. An interesting URL has been found in some public documentation, and you are tasked with assessing it.">
+  <meta itemprop="datePublished" content="2024-09-01T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-09-09T21:39:35+00:00">
+  <meta itemprop="wordCount" content="692">
+  <meta itemprop="image" content="https://kafka-esc.com/d4hzf6a-cf291fb5-d8ff-4dcc-8381-30acb13cb09d.png">
+  <meta itemprop="keywords" content="Blog,Azure,Blobs,Storage">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://kafka-esc.com/d4hzf6a-cf291fb5-d8ff-4dcc-8381-30acb13cb09d.png">
+  <meta name="twitter:title" content="PwnedLabs - Azure Blob Container to Initial Access">
+  <meta name="twitter:description" content="Lab: https://pwnedlabs.io/labs/azure-blob-container-to-initial-access
+Scenario Mega Big Tech have adopted a hybrid cloud architecture and continues to use a local on-premise Active Directory domain, as well as the Azure cloud. They are wary of being targeted due to their importance in the tech world, and have asked your team to assess the security of their infrastructure, including cloud services. An interesting URL has been found in some public documentation, and you are tasked with assessing it.">
+
+
+
+    <meta property="og:url" content="https://kafka-esc.com/posts/2024/09/pwnedlabs-azure-blob-container-to-initial-access/">
+  <meta property="og:site_name" content="[KafkaEsc]">
+  <meta property="og:title" content="PwnedLabs - Azure Blob Container to Initial Access">
+  <meta property="og:description" content="Lab: https://pwnedlabs.io/labs/azure-blob-container-to-initial-access
+Scenario Mega Big Tech have adopted a hybrid cloud architecture and continues to use a local on-premise Active Directory domain, as well as the Azure cloud. They are wary of being targeted due to their importance in the tech world, and have asked your team to assess the security of their infrastructure, including cloud services. An interesting URL has been found in some public documentation, and you are tasked with assessing it.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-09-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-09-09T21:39:35+00:00">
+    <meta property="article:tag" content="Blog">
+    <meta property="article:tag" content="Azure">
+    <meta property="article:tag" content="Blobs">
+    <meta property="article:tag" content="Storage">
+    <meta property="og:image" content="https://kafka-esc.com/d4hzf6a-cf291fb5-d8ff-4dcc-8381-30acb13cb09d.png">
+
+
+
+
+    <meta property="article:section" content="writeups" />
+
+    <meta property="article:section" content="articles" />
+
+
+
+    <meta property="article:published_time" content="2024-09-01 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark"> </span>
+            <span class="logo__text">/home/KafkaEsc</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   background-color:#67a2c9;
+                   animation-duration:3s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+                <li><a href="/about/">About</a></li>
+                <li><a href="/posts/">Posts</a></li>
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/categories/" class="dropbtn">Hacking</a>
+                        <label class="drop-icon" for="Hacking">▾</label>
+                        <div class="dropdown-content">
+                                
+                                    <a title="Articles" href="/categories/articles/">Articles</a>
+                                
+                                    <a title="Write Ups" href="/categories/writeups/">Write Ups</a>
+                                
+                                    <a title="CVEs" href="/categories/CVEs/">CVEs</a>
+                                
+                        </div>
+                    </li>
+                </div>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        4 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://kafka-esc.com/posts/2024/09/pwnedlabs-azure-blob-container-to-initial-access/">PwnedLabs - Azure Blob Container to Initial Access</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <p>Lab: <a href="https://pwnedlabs.io/labs/azure-blob-container-to-initial-access">https://pwnedlabs.io/labs/azure-blob-container-to-initial-access</a></p>
+<h3 id="scenario">Scenario</h3>
+<p>Mega Big Tech have adopted a hybrid cloud architecture and continues to use a local on-premise Active Directory domain, as well as the Azure cloud. They are wary of being targeted due to their importance in the tech world, and have asked your team to assess the security of their infrastructure, including cloud services. An interesting URL has been found in some public documentation, and you are tasked with assessing it.</p>
+<p><strong>URL:</strong> <code>https://mbtwebsite.blob.core.windows.net/$web/index.html</code></p>
+<hr>
+<h2 id="enumerate-domain-name">Enumerate domain name</h2>
+<p>Let&rsquo;s start our enumeration on the domain <code>megabigtech.com</code>. I&rsquo;ll be using <a href="https://github.com/Gerenios/AADInternals">AADInternals</a> for this. If you have never used it, go ahead and install it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Install-Module</span> -Name AADInternals -Force -scope currentuser
+</span></span></code></pre></div><p>We can use the <code>Invoke-AADIntReconAsOutsider</code> module to enumerate the domain. If you have no idea how to use a certain module in powershell, you can always use the <code>Get-Help</code> cmdlet.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Get-Help</span> -Name <span style="color:#81a1c1">Invoke-AADIntReconAsOutsider</span> -Examples
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240909212751.png" alt=""></p>
+<p>Let&rsquo;s use the first example on our target domain.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Invoke-AADIntReconAsOutsider</span> -DomainName megabigtech<span style="color:#eceff4">.</span><span style="color:#8fbcbb">com</span> <span style="color:#eceff4">|</span> <span style="color:#81a1c1">Format-Table</span>
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240815160609.png" alt=""></p>
+<p>This domain is associated with a tenant, that indicates that is being hosted in Azure.</p>
+<blockquote>
+<p><strong>Troubleshoot</strong></p>
+<p>The <code>Resolve-DnsName</code> cmdlet is windows only. However, as you can see from the screenshots, I&rsquo;m using <code>pwsh</code> for linux. There is a port of <code>Resolve-DnsName</code> for linux that you can install:<br>
+<a href="https://github.com/rhymeswithmogul/Resolve-DnsNameCrossPlatform">https://github.com/rhymeswithmogul/Resolve-DnsNameCrossPlatform</a></p>
+<p>After installing, you&rsquo;ll want to remove every instance of the <code>-NoHostsFile</code> flag used in <strong>AADInternals</strong>, as that flag is not supported by the port and will print out some errors.</p>
+</blockquote>
+<h3 id="now-for-the-webapp-enumeration">Now for the Webapp enumeration</h3>
+<p>Check for DNS records with our newly installed tool.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Resolve-DnsName</span> dev<span style="color:#eceff4">.</span><span style="color:#8fbcbb">megabigtech</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">com</span>
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240815175435.png" alt=""></p>
+<p>There is a <strong>CNAME</strong> record pointing to <code>mbtwebsite.blob.core.windows.net</code>, which is a blob URL. A blob URL will always have this structure <code>https://&lt;storageAccountName&gt;.blob.core.windows.net</code>.</p>
+<p>So we can conclude that this webapp is being served in a blob container called <code>$web</code>.</p>
+<p><img src="/img/archive/Pasted%20image%2020240815175819.png" alt=""></p>
+<h2 id="enumerating-the-blob">Enumerating the blob</h2>
+<p>We are going to enumerate the blob manually, but first I&rsquo;d like to show you the automated way with <a href="">AzSubEnum</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 azsubenum.py -b mbtwebsite -t <span style="color:#b48ead">10</span> -p permutations.txt --blobsenum -bt <span style="color:#b48ead">10</span>
+</span></span></code></pre></div><p>Flags:</p>
+<blockquote>
+<p><code> -b BASE (storage account name)</code><br>
+<code>-t Threads</code><br>
+<code>-p Permutations file for storage account</code><br>
+<code>--blobsenum (flag to enumerate blobs)</code><br>
+<code>-bw Blob Wordlist (default is permutations file)</code><br>
+<code>-bt Blob Threads</code></p>
+</blockquote>
+<p><img src="/img/archive/Pasted%20image%2020240909215523.png" alt=""></p>
+<p>Thanks to <a href="">Priest</a>, this tool is now able to enumerate blobs as well and will print out their path. It also generates an <code>.html</code> file for better navigation or if you want to include the results in a report.</p>
+<h3 id="manual-enumeration">Manual enumeration</h3>
+<p>To check if the file is being served in a blob, you can make a request to it and see the headers it returns.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Invoke-WebRequest</span> -Uri <span style="color:#a3be8c">&#39;https://mbtwebsite.blob.core.windows.net/$web/index.html&#39;</span> -Method Head
+</span></span></code></pre></div><p>In this case, we see the <code>x-ms-blob-type: BlockBlob</code> header in the response, confirming it is indeed a blob.</p>
+<h4 id="listing-the-blob-container">Listing the Blob Container:</h4>
+<p>To list a Blob Container, you can add the following parameters to the request: <code>?restype=container&amp;comp=list</code>.</p>
+<pre tabindex="0"><code>https://mbtwebsite.blob.core.windows.net/$web?restype=container&amp;comp=list&amp;delimiter=%2F
+</code></pre><p><img src="/img/archive/Pasted%20image%2020240815180832.png" alt=""></p>
+<blockquote>
+<p>The <code>delimiter</code> parameter is to filter blobs that have a <code>/</code>.</p>
+</blockquote>
+<p>As you can see, nothing really interesting, only the <code>static/</code> prefix. We are not stopping here, there is more stuff we can try.</p>
+<h4 id="including-versions">Including <code>versions</code></h4>
+<p>The <code>include=versions</code> parameter can be used to list the version of the blobs and some metadata. This will disclose every  blob in this container alongside with it&rsquo;s version (which we don&rsquo;t really care, we just want the file name).</p>
+<p>To use this parameter, we also have to include the header <code>x-ms-version</code>.</p>
+<p><strong>Using BurpSuite for this:</strong></p>
+<p><img src="/img/archive/Pasted%20image%2020240815172741.png" alt=""></p>
+<p><img src="/img/archive/Pasted%20image%2020240815172622.png" alt=""></p>
+<p>Some files are now appearing that weren&rsquo;t showing before! That <code>scripts-transfer.zip</code> is especially interesting.</p>
+<h4 id="downloading-the-blob">Downloading the Blob</h4>
+<p>Requesting the blob with the correct <code>versionId</code>:</p>
+<p>Copy the <strong>VersionId</strong> that was included in the response for the file that we want to fetch and add it in the <code>versionId</code> parameter.</p>
+<p><img src="/img/archive/Pasted%20image%2020240815173404.png" alt=""></p>
+<p>Download the zip and extract it:</p>
+<p><img src="/img/archive/Pasted%20image%2020240815173602.png" alt=""></p>
+<p>Powershell files are always a good sign. Let&rsquo;s see their contents:</p>
+<p><img src="/img/archive/Pasted%20image%2020240815173705.png" alt=""></p>
+<p><strong>And we find hard-coded credentials!</strong></p>
+<pre tabindex="0"><code>marcus@megabigtech.com
+TheEagles12345!
+</code></pre><p><img src="/img/archive/Pasted%20image%2020240815173903.png" alt=""></p>
+<pre tabindex="0"><code>marcus_adm
+MegaBigTech123!
+</code></pre><h2 id="connecting-to-azure">Connecting to Azure</h2>
+<p>To interact with Azure, I&rsquo;m using Az Powershell. You can install it with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Install-Module</span> -Name Az -Scope CurrentUser -Repository PSGallery -Force
+</span></span></code></pre></div><p>Logging in as Marcus:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$Username <span style="color:#eceff4">=</span> <span style="color:#a3be8c">&#34;marcus@megabigtech.com&#34;</span>
+</span></span><span style="display:flex;"><span>$Password <span style="color:#eceff4">=</span> <span style="color:#a3be8c">&#34;TheEagles12345!&#34;</span> <span style="color:#eceff4">|</span> <span style="color:#81a1c1">ConvertTo-SecureString</span> -AsPlainText -Force
+</span></span><span style="display:flex;"><span>$Credential <span style="color:#eceff4">=</span> <span style="color:#81a1c1">New-Object</span> System<span style="color:#eceff4">.</span><span style="color:#8fbcbb">Management</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">Automation</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">PSCredential</span> <span style="color:#eceff4">(</span>$Username<span style="color:#eceff4">,</span> $Password<span style="color:#eceff4">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1">Connect-AzAccount</span> -Credential $Credential 
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240815174158.png" alt=""></p>
+<p>Achieved inital access. Let&rsquo;s check the details for this account.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1">Get-AzADUser</span> -SignedIn <span style="color:#eceff4">|</span> <span style="color:#81a1c1">fl
+</span></span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240815174436.png" alt=""></p>
+<p>And we get the flag!</p>
+
+      </div>
+    </article>
+
+    
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        
+        
+                <span class="tag"><a href="https://kafka-esc.com/tags/azure/">azure</a></span>
+            
+        
+                <span class="tag"><a href="https://kafka-esc.com/tags/blobs/">blobs</a></span>
+            
+        
+                <span class="tag"><a href="https://kafka-esc.com/tags/storage/">storage</a></span>
+            
+        
+    </p>
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://kafka-esc.com/categories/writeups/">writeups</a></span>
+        <span class="tag"><a href="https://kafka-esc.com/categories/articles/">articles</a></span>
+        
+    </p>
+
+
+      
+    </div>
+
+    
+
+    
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h"></span>
+            <hr />
+        </div>
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://kafka-esc.com/posts/2024/09/cawasp-review/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">CAWASP Review</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="https://kafka-esc.com/posts/2023/10/cve-2023-43045-ibm-otp-bypass/">
+                    <span class="button__text">CVE-2023-43045 - IBM OTP Bypass</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>V2UncmUgYWxsIG1hZCBoZXJlLgo=</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+<script type="text/javascript" src="/bundle.min.234deadcc884d4680ca3aca6c399e1b8be43e2dda3246bee583704b9b34b6c9e15c08c09655d87968efb503e980f888fcdc8b8685654ca9b8e9aa6cd23dd2080.js" integrity="sha512-I03q3MiE1GgMo6ymw5nhuL5D4t2jJGvuWDcEubNLbJ4VwIwJZV2Hlo77UD6YD4iPzci4aFZUypuOmqbNI90ggA=="></script>
+
+
+
+    </body>
+</html>

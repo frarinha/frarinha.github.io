@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reviews on [KafkaEsc]</title>
+    <link>https://kafka-esc.com/tags/reviews/</link>
+    <description>Recent content in Reviews on [KafkaEsc]</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Sep 2024 22:19:10 +0000</lastBuildDate>
+    <atom:link href="https://kafka-esc.com/tags/reviews/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CAWASP Review</title>
+      <link>https://kafka-esc.com/posts/2024/09/cawasp-review/</link>
+      <pubDate>Sun, 08 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/posts/2024/09/cawasp-review/</guid>
+      <description>The market for cloud computing continues to grow worldwide, businesses are increasingly adopting theses solutions as they are affordable, flexible and scalable.&#xA;As security professionals, we have to keep up with the transformations of information technology. I didn&amp;rsquo;t want this to be a knowledge gap for me. So I decided I would learn about Azure security. The question is: Where do I start? (Spoiler alert: It&amp;rsquo;s not by reading Microsoft&amp;rsquo;s documentation).</description>
+    </item>
+  </channel>
+</rss>

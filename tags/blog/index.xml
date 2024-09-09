@@ -6,7 +6,7 @@
     <description>Recent content in Blog on [KafkaEsc]</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Sep 2024 18:16:14 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Sep 2024 22:19:10 +0000</lastBuildDate>
     <atom:link href="https://kafka-esc.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
@@ -16,11 +16,18 @@
       <description></description>
     </item>
     <item>
-      <title>1. Intro to Azure Recon with BloodHound</title>
-      <link>https://kafka-esc.com/posts/2024/09/1.-intro-to-azure-recon-with-bloodhound/</link>
-      <pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>https://kafka-esc.com/posts/2024/09/1.-intro-to-azure-recon-with-bloodhound/</guid>
-      <description>Scenario After discovering that a public company GitHub repository contained accidentally committed credentials, Mega Big Tech has requested us to investigate the extent of potential exposure. They want to determine if these credentials can be used to access their cloud environment and if any confidential data is at risk.&#xA;Azure credentials Password: Bigt3ch123! IAM user: Jose.Rodriguez@megabigtech.com To quote John Lambert, Defenders think in lists. Attackers think in graphs. As long as this is true, attackers win .</description>
+      <title>CAWASP Review</title>
+      <link>https://kafka-esc.com/posts/2024/09/cawasp-review/</link>
+      <pubDate>Sun, 08 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/posts/2024/09/cawasp-review/</guid>
+      <description>The market for cloud computing continues to grow worldwide, businesses are increasingly adopting theses solutions as they are affordable, flexible and scalable.&#xA;As security professionals, we have to keep up with the transformations of information technology. I didn&amp;rsquo;t want this to be a knowledge gap for me. So I decided I would learn about Azure security. The question is: Where do I start? (Spoiler alert: It&amp;rsquo;s not by reading Microsoft&amp;rsquo;s documentation).</description>
+    </item>
+    <item>
+      <title>PwnedLabs - Azure Blob Container to Initial Access</title>
+      <link>https://kafka-esc.com/posts/2024/09/pwnedlabs-azure-blob-container-to-initial-access/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/posts/2024/09/pwnedlabs-azure-blob-container-to-initial-access/</guid>
+      <description>Lab: https://pwnedlabs.io/labs/azure-blob-container-to-initial-access&#xA;Scenario Mega Big Tech have adopted a hybrid cloud architecture and continues to use a local on-premise Active Directory domain, as well as the Azure cloud. They are wary of being targeted due to their importance in the tech world, and have asked your team to assess the security of their infrastructure, including cloud services. An interesting URL has been found in some public documentation, and you are tasked with assessing it.</description>
     </item>
     <item>
       <title>CVE-2023-43045 - IBM OTP Bypass</title>

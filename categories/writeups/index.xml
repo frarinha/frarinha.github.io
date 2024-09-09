@@ -6,14 +6,14 @@
     <description>Recent content in Writeups on [KafkaEsc]</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Sep 2024 17:57:41 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Sep 2024 21:39:35 +0000</lastBuildDate>
     <atom:link href="https://kafka-esc.com/categories/writeups/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>1. Intro to Azure Recon with BloodHound</title>
-      <link>https://kafka-esc.com/posts/2024/09/1.-intro-to-azure-recon-with-bloodhound/</link>
-      <pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>https://kafka-esc.com/posts/2024/09/1.-intro-to-azure-recon-with-bloodhound/</guid>
-      <description>Scenario After discovering that a public company GitHub repository contained accidentally committed credentials, Mega Big Tech has requested us to investigate the extent of potential exposure. They want to determine if these credentials can be used to access their cloud environment and if any confidential data is at risk.&#xA;Azure credentials Password: Bigt3ch123! IAM user: Jose.Rodriguez@megabigtech.com To quote John Lambert, Defenders think in lists. Attackers think in graphs. As long as this is true, attackers win .</description>
+      <title>PwnedLabs - Azure Blob Container to Initial Access</title>
+      <link>https://kafka-esc.com/posts/2024/09/pwnedlabs-azure-blob-container-to-initial-access/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/posts/2024/09/pwnedlabs-azure-blob-container-to-initial-access/</guid>
+      <description>Lab: https://pwnedlabs.io/labs/azure-blob-container-to-initial-access&#xA;Scenario Mega Big Tech have adopted a hybrid cloud architecture and continues to use a local on-premise Active Directory domain, as well as the Azure cloud. They are wary of being targeted due to their importance in the tech world, and have asked your team to assess the security of their infrastructure, including cloud services. An interesting URL has been found in some public documentation, and you are tasked with assessing it.</description>
     </item>
   </channel>
 </rss>
