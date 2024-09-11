@@ -50,7 +50,7 @@ Troubleshoot Microburst uses the Resolve-DnsName cmdlet to resolve the hosts. Th
 sed -i &#39;s/Resolve-DnsName \$lookup -ErrorAction Stop -Verbose:\$false/Resolve-DnsName \$lookup -Verbose:\$false -DnsOnly -ErrorAction SilentlyContinue/g&#39; Misc/*.ps1 sed -i &#39;s/\$lookupResult -ne &#34;&#34;/\$lookupResult -ne \$null/g&#39; Misc/*.ps1 Now, onto to the troubleshoot!
 Troubleshoot Microburst uses the Resolve-DnsName cmdlet to resolve the hosts. The Resolve-DnsName cmdlet is windows only. However, there is a port of Resolve-DnsName based on dig that is cross-platform that you can install on your linux machine.">
   <meta itemprop="datePublished" content="2024-09-11T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-09-11T22:15:58+00:00">
+  <meta itemprop="dateModified" content="2024-09-11T22:18:33+00:00">
   <meta itemprop="wordCount" content="353">
   <meta itemprop="image" content="https://kafka-esc.com/d4hzf6a-cf291fb5-d8ff-4dcc-8381-30acb13cb09d.png">
   <meta itemprop="keywords" content="Blog,Troubleshoot,Microburst,Powershell">
@@ -74,7 +74,7 @@ Troubleshoot Microburst uses the Resolve-DnsName cmdlet to resolve the hosts. Th
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-09-11T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-09-11T22:15:58+00:00">
+    <meta property="article:modified_time" content="2024-09-11T22:18:33+00:00">
     <meta property="article:tag" content="Blog">
     <meta property="article:tag" content="Troubleshoot">
     <meta property="article:tag" content="Microburst">
@@ -240,7 +240,7 @@ Troubleshoot Microburst uses the Resolve-DnsName cmdlet to resolve the hosts. Th
 <div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sed -i <span style="color:#a3be8c">&#39;s/Resolve-DnsName \$lookup -ErrorAction Stop -Verbose:\$false/Resolve-DnsName \$lookup -Verbose:\$false -DnsOnly -ErrorAction SilentlyContinue/g&#39;</span> Misc/*.ps1
 </span></span></code></pre></div><p><strong>Swapping <code>&quot;&quot;</code> to <code>$null</code></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sed -i <span style="color:#a3be8c">&#39;s/\$lookupResult -ne &#34;&#34;/\$lookupResult -ne \$null/g&#39;</span> Misc/*.ps1
-</span></span></code></pre></div><h5 id="in-the-end-it-should-look-like-this">In the end it should look like this</h5>
+</span></span></code></pre></div><h4 id="in-the-end-it-should-look-like-this">In the end it should look like this</h4>
 <div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">try</span><span style="color:#eceff4">{(</span>$lookupResult <span style="color:#eceff4">=</span> <span style="color:#81a1c1">Resolve-DnsName</span> $lookup -Verbose:$false -DnsOnly -ErrorAction SilentlyContinue <span style="color:#eceff4">|</span> <span style="color:#81a1c1">select </span>Name <span style="color:#eceff4">|</span> <span style="color:#81a1c1">Select-Object</span> -First <span style="color:#b48ead">1</span><span style="color:#eceff4">)|</span><span style="color:#81a1c1">Out-Null</span><span style="color:#eceff4">}</span><span style="color:#81a1c1;font-weight:bold">catch</span><span style="color:#eceff4">{}</span>
 </span></span><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">if</span> <span style="color:#eceff4">(</span>$lookupResult <span style="color:#81a1c1">-ne</span> $null<span style="color:#eceff4">){</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#81a1c1">Write-Verbose</span> <span style="color:#a3be8c">&#34;Found </span>$lookup<span style="color:#a3be8c">&#34;</span><span style="color:#eceff4">;</span> $runningList <span style="color:#eceff4">+=</span> $lookup<span style="color:#eceff4">;</span> $TempTbl<span style="color:#eceff4">.</span><span style="color:#8fbcbb">Rows</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">Add</span><span style="color:#eceff4">([</span><span style="color:#8fbcbb">string</span><span style="color:#eceff4">]</span>$lookup<span style="color:#eceff4">,[</span><span style="color:#8fbcbb">string</span><span style="color:#eceff4">]</span>$subLookup<span style="color:#eceff4">[</span>$_<span style="color:#eceff4">])</span> <span style="color:#eceff4">|</span> <span style="color:#81a1c1">Out-Null</span>
