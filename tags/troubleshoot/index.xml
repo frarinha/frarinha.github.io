@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Troubleshoot on [KafkaEsc]</title>
+    <link>https://kafka-esc.com/tags/troubleshoot/</link>
+    <description>Recent content in Troubleshoot on [KafkaEsc]</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Sep 2024 22:15:58 +0000</lastBuildDate>
+    <atom:link href="https://kafka-esc.com/tags/troubleshoot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Microburst working on Linux</title>
+      <link>https://kafka-esc.com/posts/2024/09/getting-microburst-working-on-linux/</link>
+      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/posts/2024/09/getting-microburst-working-on-linux/</guid>
+      <description>TL;DR Install this Resolve-DnsName Port and hammer these 2 commands in your Microburst folder:&#xA;sed -i &amp;#39;s/Resolve-DnsName \$lookup -ErrorAction Stop -Verbose:\$false/Resolve-DnsName \$lookup -Verbose:\$false -DnsOnly -ErrorAction SilentlyContinue/g&amp;#39; Misc/*.ps1 sed -i &amp;#39;s/\$lookupResult -ne &amp;#34;&amp;#34;/\$lookupResult -ne \$null/g&amp;#39; Misc/*.ps1 Now, onto to the troubleshoot!&#xA;Troubleshoot Microburst uses the Resolve-DnsName cmdlet to resolve the hosts. The Resolve-DnsName cmdlet is windows only. However, there is a port of Resolve-DnsName based on dig that is cross-platform that you can install on your linux machine.</description>
+    </item>
+  </channel>
+</rss>

@@ -6,8 +6,15 @@
     <description>Recent content in Tutorials on [KafkaEsc]</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Sep 2024 22:15:06 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Sep 2024 22:15:58 +0000</lastBuildDate>
     <atom:link href="https://kafka-esc.com/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Microburst working on Linux</title>
+      <link>https://kafka-esc.com/posts/2024/09/getting-microburst-working-on-linux/</link>
+      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/posts/2024/09/getting-microburst-working-on-linux/</guid>
+      <description>TL;DR Install this Resolve-DnsName Port and hammer these 2 commands in your Microburst folder:&#xA;sed -i &amp;#39;s/Resolve-DnsName \$lookup -ErrorAction Stop -Verbose:\$false/Resolve-DnsName \$lookup -Verbose:\$false -DnsOnly -ErrorAction SilentlyContinue/g&amp;#39; Misc/*.ps1 sed -i &amp;#39;s/\$lookupResult -ne &amp;#34;&amp;#34;/\$lookupResult -ne \$null/g&amp;#39; Misc/*.ps1 Now, onto to the troubleshoot!&#xA;Troubleshoot Microburst uses the Resolve-DnsName cmdlet to resolve the hosts. The Resolve-DnsName cmdlet is windows only. However, there is a port of Resolve-DnsName based on dig that is cross-platform that you can install on your linux machine.</description>
+    </item>
     <item>
       <title>Add shortcuts to Windows explorer right click menu</title>
       <link>https://kafka-esc.com/posts/2022/08/add-shortcuts-to-windows-explorer-right-click-menu/</link>

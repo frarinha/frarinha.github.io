@@ -5,8 +5,70 @@
         <description>Recent content in Posts on [KafkaEsc]</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 08 Sep 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 11 Sep 2024 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://kafka-esc.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Getting Microburst working on Linux</title>
+            <link>https://kafka-esc.com/posts/2024/09/getting-microburst-working-on-linux/</link>
+            <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
+            
+            <guid>https://kafka-esc.com/posts/2024/09/getting-microburst-working-on-linux/</guid>
+            <description>TL;DR Install this Resolve-DnsName Port and hammer these 2 commands in your Microburst folder:
+sed -i &amp;#39;s/Resolve-DnsName \$lookup -ErrorAction Stop -Verbose:\$false/Resolve-DnsName \$lookup -Verbose:\$false -DnsOnly -ErrorAction SilentlyContinue/g&amp;#39; Misc/*.ps1 sed -i &amp;#39;s/\$lookupResult -ne &amp;#34;&amp;#34;/\$lookupResult -ne \$null/g&amp;#39; Misc/*.ps1 Now, onto to the troubleshoot!
+Troubleshoot Microburst uses the Resolve-DnsName cmdlet to resolve the hosts. The Resolve-DnsName cmdlet is windows only. However, there is a port of Resolve-DnsName based on dig that is cross-platform that you can install on your linux machine.</description>
+            <content type="html"><![CDATA[<h2 id="tldr">TL;DR</h2>
+<p>Install this <a href="https://github.com/rhymeswithmogul/Resolve-DnsNameCrossPlatform">Resolve-DnsName Port</a> and hammer these 2 commands in your Microburst folder:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sed -i <span style="color:#a3be8c">&#39;s/Resolve-DnsName \$lookup -ErrorAction Stop -Verbose:\$false/Resolve-DnsName \$lookup -Verbose:\$false -DnsOnly -ErrorAction SilentlyContinue/g&#39;</span> Misc/*.ps1
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sed -i <span style="color:#a3be8c">&#39;s/\$lookupResult -ne &#34;&#34;/\$lookupResult -ne \$null/g&#39;</span> Misc/*.ps1
+</span></span></code></pre></div><p>Now, onto to the troubleshoot!</p>
+<h2 id="troubleshoot">Troubleshoot</h2>
+<p>Microburst uses the <code>Resolve-DnsName</code> cmdlet to resolve the hosts. The <code>Resolve-DnsName</code> cmdlet is windows only. However, there is a port of <code>Resolve-DnsName</code> based on <code>dig</code> that is cross-platform that you can install on your linux machine.</p>
+<h3 id="install-port">Install Port</h3>
+<p><a href="https://github.com/rhymeswithmogul/Resolve-DnsNameCrossPlatform">https://github.com/rhymeswithmogul/Resolve-DnsNameCrossPlatform</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>git clone https<span style="color:#bf616a">:</span><span style="color:#eceff4">//</span>github<span style="color:#eceff4">.</span>com<span style="color:#eceff4">/</span>rhymeswithmogul<span style="color:#eceff4">/</span><span style="color:#81a1c1">Resolve-DnsNameCrossPlatform</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">git</span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1">Install-Module</span> <span style="color:#eceff4">./</span><span style="color:#81a1c1">Resolve-DnsNameCrossPlatform</span><span style="color:#eceff4">/</span><span style="color:#81a1c1">Resolve-DnsNameCrossPlatform</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">psd1</span>
+</span></span></code></pre></div><h3 id="broken-behaviour">Broken behaviour</h3>
+<p><img src="/img/archive/Pasted%20image%2020240911220948.png" alt=""></p>
+<p>Microburst is matching every domain it permutates as a valid one.</p>
+<p>Let&rsquo;s investigate a bit and look for where this cmdlet is used in the script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grep -r Resolve-DnsName
+</span></span></code></pre></div><p><img src="/img/archive/Pasted%20image%2020240911221604.png" alt=""></p>
+<p>It is used in 2 files:</p>
+<ul>
+<li>Invoke-EnumerateAzureSubDomains.ps1</li>
+<li>Invoke-EnumerateAzureBlobs.ps1</li>
+</ul>
+<p><img src="/img/archive/Pasted%20image%2020240911222935.png" alt=""></p>
+<h3 id="the-problem">The Problem</h3>
+<p>There are 2, actually.</p>
+<p><strong>First Problem</strong></p>
+<p>In the following code snippet, our <code>Resolve-DnsName</code> port is not successfully resolving the host.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">try</span><span style="color:#eceff4">{(</span>$lookupResult <span style="color:#eceff4">=</span> <span style="color:#81a1c1">Resolve-DnsName</span> $lookup -Verbose:$false -DnsOnly -ErrorAction SilentlyContinue <span style="color:#eceff4">|</span> <span style="color:#81a1c1">select </span>Name <span style="color:#eceff4">|</span> <span style="color:#81a1c1">Select-Object</span> -First <span style="color:#b48ead">1</span><span style="color:#eceff4">)|</span><span style="color:#81a1c1">Out-Null</span><span style="color:#eceff4">}</span><span style="color:#81a1c1;font-weight:bold">catch</span><span style="color:#eceff4">{}</span>
+</span></span></code></pre></div><p>It errors out with the error:</p>
+<pre tabindex="0"><code>ForEach-Object: Cannot find an overload for &#34;new&#34; and the argument count: &#34;1&#34;.
+</code></pre><p><img src="/img/archive/Pasted%20image%2020240911223800.png" alt=""></p>
+<p>We can fix this by changing the flag <code>-ErrorAction Stop</code> to <code>-ErrorAction SilentlyContinue</code> and it will resolve the host fine.</p>
+<p><strong>Second Problem</strong></p>
+<p>The second problem is that the <code>Resolve-DnsName</code> is not returning <code>&quot;&quot;</code> when it fails to resolve a host, it returns <code>$null</code>.</p>
+<p><img src="/img/archive/Pasted%20image%2020240911224357.png" alt=""></p>
+<p>So this condition in the script is never going to work as <code>$lookupResult</code> will have the value <code>$null</code> when it fails to resolve. This will match every failed dns query, which is the opposite of what we want.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">if</span> <span style="color:#eceff4">(</span>$lookupResult <span style="color:#81a1c1">-ne</span> <span style="color:#a3be8c">&#34;&#34;</span><span style="color:#eceff4">){</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#81a1c1">Write-Verbose</span> <span style="color:#a3be8c">&#34;Found </span>$lookup<span style="color:#a3be8c">&#34;</span><span style="color:#eceff4">;</span> $runningList <span style="color:#eceff4">+=</span> $lookup<span style="color:#eceff4">;</span> $TempTbl<span style="color:#eceff4">.</span><span style="color:#8fbcbb">Rows</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">Add</span><span style="color:#eceff4">([</span><span style="color:#8fbcbb">string</span><span style="color:#eceff4">]</span>$lookup<span style="color:#eceff4">,[</span><span style="color:#8fbcbb">string</span><span style="color:#eceff4">]</span>$subLookup<span style="color:#eceff4">[</span>$_<span style="color:#eceff4">])</span> <span style="color:#eceff4">|</span> <span style="color:#81a1c1">Out-Null</span>
+</span></span><span style="display:flex;"><span><span style="color:#eceff4">}</span>
+</span></span></code></pre></div><p>We can fix it by swapping that <code>&quot;&quot;</code> to <code>$null</code>.</p>
+<h3 id="fixing-the-script">Fixing the script</h3>
+<p><strong>Changing the <code>-ErrorAction</code> flag</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sed -i <span style="color:#a3be8c">&#39;s/Resolve-DnsName \$lookup -ErrorAction Stop -Verbose:\$false/Resolve-DnsName \$lookup -Verbose:\$false -DnsOnly -ErrorAction SilentlyContinue/g&#39;</span> Misc/*.ps1
+</span></span></code></pre></div><p><strong>Swapping <code>&quot;&quot;</code> to <code>$null</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sed -i <span style="color:#a3be8c">&#39;s/\$lookupResult -ne &#34;&#34;/\$lookupResult -ne \$null/g&#39;</span> Misc/*.ps1
+</span></span></code></pre></div><h5 id="in-the-end-it-should-look-like-this">In the end it should look like this</h5>
+<div class="highlight"><pre tabindex="0" style="color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">try</span><span style="color:#eceff4">{(</span>$lookupResult <span style="color:#eceff4">=</span> <span style="color:#81a1c1">Resolve-DnsName</span> $lookup -Verbose:$false -DnsOnly -ErrorAction SilentlyContinue <span style="color:#eceff4">|</span> <span style="color:#81a1c1">select </span>Name <span style="color:#eceff4">|</span> <span style="color:#81a1c1">Select-Object</span> -First <span style="color:#b48ead">1</span><span style="color:#eceff4">)|</span><span style="color:#81a1c1">Out-Null</span><span style="color:#eceff4">}</span><span style="color:#81a1c1;font-weight:bold">catch</span><span style="color:#eceff4">{}</span>
+</span></span><span style="display:flex;"><span><span style="color:#81a1c1;font-weight:bold">if</span> <span style="color:#eceff4">(</span>$lookupResult <span style="color:#81a1c1">-ne</span> $null<span style="color:#eceff4">){</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#81a1c1">Write-Verbose</span> <span style="color:#a3be8c">&#34;Found </span>$lookup<span style="color:#a3be8c">&#34;</span><span style="color:#eceff4">;</span> $runningList <span style="color:#eceff4">+=</span> $lookup<span style="color:#eceff4">;</span> $TempTbl<span style="color:#eceff4">.</span><span style="color:#8fbcbb">Rows</span><span style="color:#eceff4">.</span><span style="color:#8fbcbb">Add</span><span style="color:#eceff4">([</span><span style="color:#8fbcbb">string</span><span style="color:#eceff4">]</span>$lookup<span style="color:#eceff4">,[</span><span style="color:#8fbcbb">string</span><span style="color:#eceff4">]</span>$subLookup<span style="color:#eceff4">[</span>$_<span style="color:#eceff4">])</span> <span style="color:#eceff4">|</span> <span style="color:#81a1c1">Out-Null</span>
+</span></span><span style="display:flex;"><span><span style="color:#eceff4">}</span>
+</span></span></code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>CAWASP Review</title>

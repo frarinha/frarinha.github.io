@@ -6,13 +6,34 @@
     <description>Recent content in Tags on [KafkaEsc]</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Sep 2024 20:14:07 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Sep 2024 22:15:58 +0000</lastBuildDate>
     <atom:link href="https://kafka-esc.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog</title>
       <link>https://kafka-esc.com/tags/blog/</link>
-      <pubDate>Sun, 08 Sep 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
       <guid>https://kafka-esc.com/tags/blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Microburst</title>
+      <link>https://kafka-esc.com/tags/microburst/</link>
+      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/tags/microburst/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Powershell</title>
+      <link>https://kafka-esc.com/tags/powershell/</link>
+      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/tags/powershell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Troubleshoot</title>
+      <link>https://kafka-esc.com/tags/troubleshoot/</link>
+      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/tags/troubleshoot/</guid>
       <description></description>
     </item>
     <item>
