@@ -27,7 +27,7 @@ As security professionals, we have to keep up with the transformations of inform
 <li><a href="https://www.alteredsecurity.com/azureadlab">Certified Azure Red Team Professional (CARTP)</a></li>
 <li><a href="https://www.alteredsecurity.com/azureadvanced">Certified Azure Red Team Expert (CARTE)</a>.</li>
 </ul>
-<p>The <strong>CARTP</strong> focuses more on red teaming: getting initial access, moving laterally and escalation of privileges within Azure Entra ID. On the other hand, <strong>CAWASP</strong> is more focused on the exploitation of Azure services integrated in web applications, like app registrations, function apps, key vaults, storage accounts, databases etc. Finally, for those with more experience, there&rsquo;s <strong>CARTE</strong>, which consolidates everything into one package and adds a layer on evasion of top of it.</p>
+<p>The <strong>CARTP</strong> focuses more on red teaming: getting initial access, moving laterally and escalation of privileges within Azure Entra ID. On the other hand, <strong>CAWASP</strong> is more focused on the exploitation of Azure services integrated in web applications, like app registrations, function apps, key vaults, storage accounts, databases etc. Finally, for those with more experience, there&rsquo;s <strong>CARTE</strong>, which consolidates everything into one package and adds a layer of evasion on top of it.</p>
 <p>My current job role involves a lot of web application testing, so i thought the <strong>CAWASP</strong> certification would be more appropriate and have further carry over to my day-to-day functions.</p>
 <p>In this course you&rsquo;ll get a very good overview of the most common Azure Services.</p>
 <p>You&rsquo;ll learn:</p>
