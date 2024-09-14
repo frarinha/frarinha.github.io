@@ -5,8 +5,69 @@
         <description>Recent content in Posts on [KafkaEsc]</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 11 Sep 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 14 Sep 2024 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://kafka-esc.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>CVE-2023-45854 - Interger Overflow in Shopkit 1.0</title>
+            <link>https://kafka-esc.com/posts/2024/09/cve-2023-45854-interger-overflow-in-shopkit-1.0/</link>
+            <pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate>
+            
+            <guid>https://kafka-esc.com/posts/2024/09/cve-2023-45854-interger-overflow-in-shopkit-1.0/</guid>
+            <description>Vulnerability Properties Title: Shopkit 1.0 is vulnerable to an Interger Overflow on add to cart functionality
+CVE ID: CVE-2023-45854
+CVSSv3 Base Score: 7.5
+CVSSv3.1 Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+Vendor: Shopkit
+Advisory Release Date: 14-09-24
+Vulnerability Summary A critical vulnerability has been identified in the add-to-cart functionality of Shopkit. The vulnerability occurs due to an integer overflow caused by the system&amp;rsquo;s inability to accurately process and store large values, allowing attackers to manipulate the cart&amp;rsquo;s contents.</description>
+            <content type="html"><![CDATA[<h2 id="vulnerability-properties">Vulnerability Properties</h2>
+<p><strong>Title:</strong> Shopkit 1.0 is vulnerable to an Interger Overflow on add to cart functionality<br>
+<strong>CVE ID:</strong> <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-45854">CVE-2023-45854</a><br>
+<strong>CVSSv3 Base Score:</strong> 7.5<br>
+<strong>CVSSv3.1 Vector:</strong> <code>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</code><br>
+<strong>Vendor:</strong> Shopkit<br>
+<strong>Advisory Release Date:</strong> 14-09-24</p>
+<h2 id="vulnerability-summary">Vulnerability Summary</h2>
+<p>A critical vulnerability has been identified in the <strong>add-to-cart</strong> functionality of Shopkit. The vulnerability occurs due to an integer overflow caused by the system&rsquo;s inability to accurately process and store large values, allowing attackers to manipulate the cart&rsquo;s contents. This flaw enables malicious actors to introduce negative values into the cart, resulting in unauthorized modifications to the total amount due.</p>
+<h2 id="proof-of-concept">Proof of Concept</h2>
+<p>The vulnerable component is the <strong>add-to-cart</strong> functionality:</p>
+<p><img src="/img/archive/add_cart_browser.png" alt=""></p>
+<p>This sends a POST request to <code>/cart/add</code> with the parameter <code>qtd</code> (quantity).</p>
+<p><img src="/img/archive/Pasted%20image%2020240914162757.png" alt=""></p>
+<p>Changing the value of this parameter to a very big interger causes the quantity to overflow and display a negative number.</p>
+<p><img src="/img/archive/Pasted%20image%2020240914162615.png" alt=""></p>
+<p>The offset can be calculated by subtracting the absolute value of the current quantity by the absolute value of the pretended quantity.</p>
+<p>Adding that value to the cart:</p>
+<p><img src="/img/archive/Pasted%20image%2020240914162859.png" alt=""></p>
+<p>This will result on a quantity of <code>-1</code>.</p>
+<p><img src="/img/archive/Pasted%20image%2020240914162941.png" alt=""></p>
+<h3 id="impact">Impact</h3>
+<p>When attackers can manipulate the cart&rsquo;s contents by adding negative values, it means they can effectively &ldquo;remove&rdquo; items from the cart without actually removing them. This can have severe consequences for merchants.</p>
+<h2 id="vulnerable-versions">Vulnerable Versions</h2>
+<ul>
+<li>Shopkit 1.0  from before 13/12/23</li>
+</ul>
+<h2 id="solution">Solution</h2>
+<ul>
+<li>Update to the latest version.</li>
+</ul>
+<h2 id="vulnerability-timeline">Vulnerability Timeline</h2>
+<ul>
+<li>05/08/23 - Bug reported to vendor</li>
+<li>11/08/23 - Bug validated by vendor</li>
+<li>13/12/23 - Patch released by vendor</li>
+<li>14/09/24 - Advisory released</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://cwe.mitre.org/data/definitions/840.html">https://cwe.mitre.org/data/definitions/840.html</a></li>
+<li><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-45854">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-45854</a></li>
+<li><a href="https://owasp.org/www-community/vulnerabilities/Business_logic_vulnerability">https://owasp.org/www-community/vulnerabilities/Business_logic_vulnerability</a></li>
+<li><a href="https://portswigger.net/web-security/logic-flaws">https://portswigger.net/web-security/logic-flaws</a></li>
+</ul>
+]]></content>
+        </item>
         
         <item>
             <title>Getting Microburst working on Linux</title>
