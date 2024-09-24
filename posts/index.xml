@@ -14,7 +14,7 @@
             <pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate>
             
             <guid>https://kafka-esc.com/posts/2024/09/cve-2023-45854-interger-overflow-in-shopkit-1.0/</guid>
-            <description>Vulnerability Properties Title: Shopkit 1.0 is vulnerable to an Interger Overflow on add to cart functionality
+            <description>Vulnerability Properties Title: Shopkit 1.0 is vulnerable to an integer Overflow on add to cart functionality
 CVE ID: CVE-2023-45854
 CVSSv3 Base Score: 7.5
 CVSSv3.1 Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
@@ -22,7 +22,7 @@ Vendor: Shopkit
 Advisory Release Date: 14-09-24
 Vulnerability Summary A critical vulnerability has been identified in the add-to-cart functionality of Shopkit. The vulnerability occurs due to an integer overflow caused by the system&amp;rsquo;s inability to accurately process and store large values, allowing attackers to manipulate the cart&amp;rsquo;s contents.</description>
             <content type="html"><![CDATA[<h2 id="vulnerability-properties">Vulnerability Properties</h2>
-<p><strong>Title:</strong> Shopkit 1.0 is vulnerable to an Interger Overflow on add to cart functionality<br>
+<p><strong>Title:</strong> Shopkit 1.0 is vulnerable to an integer Overflow on add to cart functionality<br>
 <strong>CVE ID:</strong> <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-45854">CVE-2023-45854</a><br>
 <strong>CVSSv3 Base Score:</strong> 7.5<br>
 <strong>CVSSv3.1 Vector:</strong> <code>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</code><br>
@@ -35,7 +35,7 @@ Vulnerability Summary A critical vulnerability has been identified in the add-t
 <p><img src="/img/archive/add_cart_browser.png" alt=""></p>
 <p>This sends a POST request to <code>/cart/add</code> with the parameter <code>qtd</code> (quantity).</p>
 <p><img src="/img/archive/Pasted%20image%2020240914162757.png" alt=""></p>
-<p>Changing the value of this parameter to a very big interger causes the quantity to overflow and display a negative number.</p>
+<p>Changing the value of this parameter to a very big integer causes the quantity to overflow and display a negative number.</p>
 <p><img src="/img/archive/Pasted%20image%2020240914162615.png" alt=""></p>
 <p>The offset can be calculated by subtracting the absolute value of the current quantity by the absolute value of the pretended quantity.</p>
 <p>Adding that value to the cart:</p>

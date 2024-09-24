@@ -6,14 +6,14 @@
     <description>Recent content in Blog on [KafkaEsc]</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Sep 2024 15:32:17 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Sep 2024 09:54:04 +0000</lastBuildDate>
     <atom:link href="https://kafka-esc.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CVE-2023-45854 - Interger Overflow in Shopkit 1.0</title>
       <link>https://kafka-esc.com/posts/2024/09/cve-2023-45854-interger-overflow-in-shopkit-1.0/</link>
       <pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate>
       <guid>https://kafka-esc.com/posts/2024/09/cve-2023-45854-interger-overflow-in-shopkit-1.0/</guid>
-      <description>Vulnerability Properties Title: Shopkit 1.0 is vulnerable to an Interger Overflow on add to cart functionality&#xA;CVE ID: CVE-2023-45854&#xA;CVSSv3 Base Score: 7.5&#xA;CVSSv3.1 Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N&#xA;Vendor: Shopkit&#xA;Advisory Release Date: 14-09-24&#xA;Vulnerability Summary A critical vulnerability has been identified in the add-to-cart functionality of Shopkit. The vulnerability occurs due to an integer overflow caused by the system&amp;rsquo;s inability to accurately process and store large values, allowing attackers to manipulate the cart&amp;rsquo;s contents.</description>
+      <description>Vulnerability Properties Title: Shopkit 1.0 is vulnerable to an integer Overflow on add to cart functionality&#xA;CVE ID: CVE-2023-45854&#xA;CVSSv3 Base Score: 7.5&#xA;CVSSv3.1 Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N&#xA;Vendor: Shopkit&#xA;Advisory Release Date: 14-09-24&#xA;Vulnerability Summary A critical vulnerability has been identified in the add-to-cart functionality of Shopkit. The vulnerability occurs due to an integer overflow caused by the system&amp;rsquo;s inability to accurately process and store large values, allowing attackers to manipulate the cart&amp;rsquo;s contents.</description>
     </item>
     <item>
       <title>Getting Microburst working on Linux</title>
