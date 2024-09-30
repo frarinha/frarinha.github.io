@@ -333,11 +333,11 @@ MegaBigTech123!
         </item>
         
         <item>
-            <title>CAWASP Review</title>
-            <link>https://kafka-esc.com/posts/2024/02/cawasp-review/</link>
+            <title>MCRTP Review</title>
+            <link>https://kafka-esc.com/posts/2024/02/mcrtp-review/</link>
             <pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate>
             
-            <guid>https://kafka-esc.com/posts/2024/02/cawasp-review/</guid>
+            <guid>https://kafka-esc.com/posts/2024/02/mcrtp-review/</guid>
             <description>On my journey to learn how to test Azure cloud environments, I realized that a comprehensive understanding of Red Teaming was also an essential skill to effectively assess and identify vulnerabilities, misconfigurations and weaknesses.
 In search of practical labs to learn and practice my red teaming skills, I stumbled upon Pwned Labs, a platform that offers a wide range of cutting-edge cloud-based labs for hands-on practice. The platform was founded by Ian Austin, a seasoned security researcher with over 20 years of experience.</description>
             <content type="html"><![CDATA[<p>On my journey to learn how to test Azure cloud environments, I realized that a comprehensive understanding of Red Teaming was also an essential skill to effectively assess and identify vulnerabilities, misconfigurations and weaknesses.</p>
