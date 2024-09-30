@@ -6,13 +6,20 @@
     <description>Recent content in Categories on [KafkaEsc]</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Sep 2024 18:27:33 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Sep 2024 18:28:09 +0000</lastBuildDate>
     <atom:link href="https://kafka-esc.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Articles</title>
       <link>https://kafka-esc.com/categories/articles/</link>
-      <pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
       <guid>https://kafka-esc.com/categories/articles/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reviews</title>
+      <link>https://kafka-esc.com/categories/reviews/</link>
+      <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/categories/reviews/</guid>
       <description></description>
     </item>
     <item>
@@ -34,13 +41,6 @@
       <link>https://kafka-esc.com/categories/tutorials/</link>
       <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
       <guid>https://kafka-esc.com/categories/tutorials/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Reviews</title>
-      <link>https://kafka-esc.com/categories/reviews/</link>
-      <pubDate>Sun, 08 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>https://kafka-esc.com/categories/reviews/</guid>
       <description></description>
     </item>
     <item>
