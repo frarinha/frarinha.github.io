@@ -333,6 +333,72 @@ MegaBigTech123!
         </item>
         
         <item>
+            <title>CAWASP Review</title>
+            <link>https://kafka-esc.com/posts/2024/02/cawasp-review/</link>
+            <pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate>
+            
+            <guid>https://kafka-esc.com/posts/2024/02/cawasp-review/</guid>
+            <description>On my journey to learn how to test Azure cloud environments, I realized that a comprehensive understanding of Red Teaming was also an essential skill to effectively assess and identify vulnerabilities, misconfigurations and weaknesses.
+In search of practical labs to learn and practice my red teaming skills, I stumbled upon Pwned Labs, a platform that offers a wide range of cutting-edge cloud-based labs for hands-on practice. The platform was founded by Ian Austin, a seasoned security researcher with over 20 years of experience.</description>
+            <content type="html"><![CDATA[<p>On my journey to learn how to test Azure cloud environments, I realized that a comprehensive understanding of Red Teaming was also an essential skill to effectively assess and identify vulnerabilities, misconfigurations and weaknesses.</p>
+<p>In search of practical labs to learn and practice my red teaming skills, I stumbled upon <a href="https://pwnedlabs.io/">Pwned Labs</a>, a platform that offers a wide range of cutting-edge cloud-based labs for hands-on practice. The platform was founded by <a href="https://www.linkedin.com/in/i%D0%B0n-%D0%B0ustin/">Ian Austin</a>, a seasoned security researcher with over 20 years of experience. He has an impressive technical background, from systems administration to participating in the prestigious NATO-sponsored event, Locked Shields cyber defense exercise. This would explain his &ldquo;purple&rdquo; focus, with emphasis on both red and blue team capabilities. He has fulfilled the roles of System Administrator, Security Engineer, Penetration Tester, Security Researcher and was head of content and innovation at Hack The Box, which really caught my eye. Moreover, he has a background in psychology which rounds off a pretty nice knowledge cocktail for an instructor if you ask me.</p>
+<p>During my exploration of the <strong>Pwned Labs</strong> platform, I came across an advertisement for their upcoming <strong>Microsoft Cloud Attack and Defense Bootcamp</strong> — a live 4-week-long, instructor-led bootcamp with a structured learning path designed to equip participants with the knowledge and skills necessary to conduct red team assessments of Azure environments.</p>
+<p>Given the value being proposed, I was surprised by the relatively low cost of the bootcamp compared to other similar offerings on the market, so I decided to take this opportunity and enroll in the bootcamp.</p>
+<p><strong>Exam Certificate</strong></p>
+<p><img src="/img/archive/Pasted%20image%2020240930183623.png" alt=""></p>
+<p><strong>Bootcamp Certificate</strong></p>
+<p><img src="/img/archive/Pasted%20image%2020240929122120.png" alt=""></p>
+<h2 id="what-is-mcrtp">What is MCRTP?</h2>
+<p>The Microsoft Cloud Red Team Professional is a certification offered by <strong>Pwned Labs</strong> designed to validate your ability to perform a red teaming assessment over a Microsoft Azure cloud environment. To prove your skills you&rsquo;ll need to pass their 24h exam by assessing and identifying security weaknesses and misconfigurations in a lab environment and capture a flag.</p>
+<p>To prepare you for the exam, <strong>Pwned Labs</strong> has created a comprehensive 4-week bootcamp with a hands-on structured path.</p>
+<p>You&rsquo;ll learn:</p>
+<ul>
+<li><strong>Key Azure, Entra ID and Microsoft Graph concepts</strong></li>
+<li><strong>Leveraging Azure resources and features to gain initial access and move laterally</strong></li>
+<li><strong>Modern phishing techniques to gain initial access</strong></li>
+<li><strong>Lateral movement with token abuse</strong></li>
+<li><strong>Using Office/Microsoft 365 to find sensitive data</strong></li>
+<li><strong>Enumerating and Exploiting Conditional Access Policy and MFA enablement gaps</strong></li>
+<li><strong>Lateral Movement from On-Prem AD to Azure and vice-versa</strong></li>
+<li><strong>Detecting threats with Microsoft Sentinel</strong></li>
+</ul>
+<h2 id="pricing--material">Pricing &amp; Material</h2>
+<p>The bootcamp comes at $349. It includes the bootcamp materials, lifetime access to the bootcamp content — let me repeat that, <em>lifetime</em> access — where you can explore multiple azure resources, 45 day access to <strong>Pwned Labs</strong> premium lab access, and not 1 but <strong>2</strong> certification exam attempt vouchers.</p>
+<p><strong>The bootcamp materials include:</strong></p>
+<ul>
+<li>4 <strong>Live Sessions</strong> led by Ian himself.</li>
+<li><strong>Video recordings</strong> of the zoom sessions that you can watch and review on your own time.</li>
+<li><strong>Slides</strong> used in the sessions.</li>
+<li>Pwned Labs premium <strong>labs</strong> that include detailed and comprehensive write-ups.</li>
+<li>Access to a private <strong>Discord Channel</strong> where you can interact with the community.</li>
+</ul>
+<h2 id="bootcamp-review">Bootcamp Review</h2>
+<p>Ian starts the bootcamp by providing a general Microsoft Cloud overview, explaining simple concepts. He then goes through the topics programmed for the session, explaining how the Azure resources work and demonstrating real world and trending threat actor techniques. After that, participants engage in a hands-on challenge, applying the learned techniques in the bootcamp lab. Finally, the solution to the challenge is demonstrated live and Ian discusses how the exploited vulnerabilities could be mitigated. This iterative process repeats for 2 to 3 times per zoom session. At the end of each session there is a Q&amp;A section where we can ask and discuss questions that arise from the structured learning path labs and from the the bootcamp session.</p>
+<p>I personally really liked this approach, as I like to learn hands-on and this kept the 4h zoom sessions dynamic and engaging.<br>
+The first session was a bit turbulent as everybody in the zoom call had permissions to unmute themselves. As expected, Ian got bombarded with non-relevant questions. This was addressed promptly and the following sessions were way smoother with small Q&amp;A sections after each topic.</p>
+<p>In my opinion this is not an entry-level course. You&rsquo;ll be better off if you complete some introductory pentesting certifications before attempting this one. You should have intermediate level knowledge in Webapp, Active Directory and Cloud pentesting.</p>
+<p>As an internal penetration tester, the defending sections for each topic were of special interest to me. As I want to be as useful as possible to developers and systems administrators when mitigating vulnerabilities.</p>
+<h3 id="labs">Labs</h3>
+<p>The structured learning path is divided in 4 weeks, one deditcated to each session. In these learning paths you&rsquo;ll find the labs from <strong>Pwned Labs</strong> — free and premium tier — carefully organized for each bootcamp topic. You also get reading recommendations for blog posts written by the <strong>Pwned Labs</strong> research team.</p>
+<p>The lab environments contain pretty much every azure resource that you can think of. The Entra Id directory is particularly well-designed, with roles and permissions that are logical and intuitive.<br>
+The write-ups for the challenges will include explanations on how to use the tools in exploitation process — I learned about 30 Azure related tools, for windows and linux.</p>
+<p>Honestly, these are probably the best labs that I&rsquo;ve experienced and I&rsquo;ve tested quite a bunch of them, from certifications to CTF platforms and even home hosted labs. I didn&rsquo;t encounter a single stability issue while using the labs. Which means that I could fully focus on learning the materials, test and troubleshoot the tools that were being used. I encourage you to give them a try, as majority of them are free. You can test the labs for yourself and read the write-ups.</p>
+<h3 id="exam">Exam</h3>
+<p>The exam consists of a 24 hour challenge in which you are tasked with simulating a real-world attack on a mock company&rsquo;s Azure environment to uncover vulnerabilities before malicious actors do. In this Red Team assessment you get a &ldquo;leg up&rdquo; (assumed breach) and the objective is to find what resources you can access and if it&rsquo;s possible to capitalize on these security flaws to move laterally, get access to sensitive information and compromise more resources.</p>
+<p>The exam is completely self-contained, no phishing or external resources are needed. It&rsquo;s not proctored, and at the end you only need to submit a single flag to prove your skills, with no written report or additional documentation needed.</p>
+<p>I personally had quite a bit of trouble with this exam, but some of it was self imposed 😅. It took me 14h straight hours to find the final flag, I had to go through a lot of enumeration to find the chain attacks.<br>
+It was quite impressive to me how the exam was designed. The challenges are made in a way that you have to stack your knowledge to solve a single task. There was a lot of creativity involved in the development of the exam lab and at the end you really feel like you proved your newly acquired skills.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I really enjoyed this certification. It was fun, interesting, refreshing and challenging. I&rsquo;m glad I enrolled in the bootcamp, as this format forced me to work extra hard. I tried to complete every challenge programmed for each week before every session. That means pretty much all my free time was allocated to this objective. It&rsquo;s intense, but I find that I learn the most when I really immerse myself in a subject for a period of time.</p>
+<p>I hate this marketing cliché, but I&rsquo;m going to have to say it, this certification is really &ldquo;To security professionals by security professionals&rdquo;. It has everything that you would look for in a good certification. Well designed and stable labs, comprehensive materials, a structured learning path and a lot of support. The community in Discord is active and engaging, it&rsquo;s a great space to share ideas and learn from others. The exam is challenging yet fair, you have 2 exam attempt vouchers. This demonstrates to me that they have a genuine interest in your learning success, rather than seeking to profit from possible failures. There&rsquo;s no intrusive proctoring process or requirement for a written report — a refreshing change from the usual process.</p>
+<p>The best part was the Discord channel. It was awesome to be able to freely ask questions there, participate in discussions with experienced people and try to help the other participants with any issues that we faced.<br>
+It&rsquo;s worth mentioning that Ian was there the whole time providing lightning fast support to anyone that encountered issues. He&rsquo;s incredibly humble and understanding, and went so far as to include some of my contributions from the Discord channel in the official lab write-ups, which I think really demonstrates his genuine commitment to sharing knowledge.</p>
+<p>If you are looking to take you Azure Red Teaming skills to the next level, I would strongly encourage you to hop on the next bootcamp.</p>
+<p>You can get it from <a href="https://bootcamps.pwnedlabs.io/mcrtp-bootcamp">here</a>.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>CVE-2023-43045 - IBM OTP Bypass</title>
             <link>https://kafka-esc.com/posts/2023/10/cve-2023-43045-ibm-otp-bypass/</link>
             <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>

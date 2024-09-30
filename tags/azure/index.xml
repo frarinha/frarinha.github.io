@@ -6,7 +6,7 @@
     <description>Recent content in Azure on [KafkaEsc]</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Sep 2024 20:14:07 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Sep 2024 18:24:49 +0000</lastBuildDate>
     <atom:link href="https://kafka-esc.com/tags/azure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CAWASP Review</title>
@@ -21,6 +21,13 @@
       <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
       <guid>https://kafka-esc.com/posts/2024/09/pwnedlabs-azure-blob-container-to-initial-access/</guid>
       <description>Lab: https://pwnedlabs.io/labs/azure-blob-container-to-initial-access&#xA;Scenario Mega Big Tech have adopted a hybrid cloud architecture and continues to use a local on-premise Active Directory domain, as well as the Azure cloud. They are wary of being targeted due to their importance in the tech world, and have asked your team to assess the security of their infrastructure, including cloud services. An interesting URL has been found in some public documentation, and you are tasked with assessing it.</description>
+    </item>
+    <item>
+      <title>CAWASP Review</title>
+      <link>https://kafka-esc.com/posts/2024/02/cawasp-review/</link>
+      <pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://kafka-esc.com/posts/2024/02/cawasp-review/</guid>
+      <description>On my journey to learn how to test Azure cloud environments, I realized that a comprehensive understanding of Red Teaming was also an essential skill to effectively assess and identify vulnerabilities, misconfigurations and weaknesses.&#xA;In search of practical labs to learn and practice my red teaming skills, I stumbled upon Pwned Labs, a platform that offers a wide range of cutting-edge cloud-based labs for hands-on practice. The platform was founded by Ian Austin, a seasoned security researcher with over 20 years of experience.</description>
     </item>
   </channel>
 </rss>
